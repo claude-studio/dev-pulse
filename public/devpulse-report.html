@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevPulse — 개발 뉴스 리포트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --border: #1e1e1e;
+    --accent: #e8ff47;
+    --accent2: #ff4757;
+    --accent3: #00d2ff;
+    --text: #e8e8e8;
+    --muted: #555;
+    --mono: 'Space Mono', monospace;
+    --display: 'Bebas Neue', sans-serif;
+    --body: 'Noto Sans KR', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
+
+  /* 노이즈 텍스처 오버레이 */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* 헤더 */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .header-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .header-meta.right { text-align: right; }
+
+  .masthead {
+    text-align: center;
+    padding: 32px 0;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .masthead-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--accent);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .masthead h1 {
+    font-family: var(--display);
+    font-size: clamp(64px, 10vw, 120px);
+    letter-spacing: 0.05em;
+    line-height: 0.9;
+    color: var(--text);
+  }
+
+  .masthead h1 span {
+    color: var(--accent);
+  }
+
+  /* 티커 */
+  .ticker-wrap {
+    background: var(--accent);
+    color: var(--bg);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 3px solid var(--bg);
+  }
+
+  .ticker-inner {
+    display: inline-flex;
+    gap: 0;
+    animation: ticker 30s linear infinite;
+  }
+
+  .ticker-item {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0 48px;
+  }
+
+  .ticker-sep {
+    color: rgba(0,0,0,0.3);
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* 레이아웃 */
+  main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+  }
+
+  /* 날짜 구분선 */
+  .date-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 40px 0 24px;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: 0.2s;
+  }
+
+  .date-divider .date-text {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .date-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* 카드 그리드 */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  /* 카드 기본 */
+  .card {
+    background: var(--surface);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .card:hover {
+    background: #161616;
+  }
+
+  .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .card:hover::after { opacity: 1; }
+
+  /* 카드 크기 변형 */
+  .card-hero { grid-column: span 8; grid-row: span 2; padding: 40px; }
+  .card-tall { grid-column: span 4; grid-row: span 2; }
+  .card-wide { grid-column: span 6; }
+  .card-sm { grid-column: span 4; }
+  .card-full { grid-column: span 12; }
+  .card-third { grid-column: span 4; }
+
+  /* 카테고리 태그 */
+  .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid currentColor;
+    margin-bottom: 16px;
+    border-radius: 2px;
+  }
+
+  .tag-tool { color: var(--accent); border-color: var(--accent); }
+  .tag-release { color: var(--accent3); border-color: var(--accent3); }
+  .tag-infra { color: #ff9f43; border-color: #ff9f43; }
+  .tag-ai { color: #a29bfe; border-color: #a29bfe; }
+  .tag-security { color: var(--accent2); border-color: var(--accent2); }
+
+  .card-hero::after { background: var(--accent); }
+  .card[data-cat="release"]::after { background: var(--accent3); }
+  .card[data-cat="infra"]::after { background: #ff9f43; }
+  .card[data-cat="ai"]::after { background: #a29bfe; }
+  .card[data-cat="security"]::after { background: var(--accent2); }
+
+  /* 버전 배지 */
+  .version {
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .card-hero .version { font-size: clamp(60px, 8vw, 120px); color: var(--accent); }
+  .card[data-cat="release"] .version { color: var(--accent3); }
+  .card[data-cat="infra"] .version { color: #ff9f43; }
+  .card[data-cat="ai"] .version { color: #a29bfe; }
+  .card[data-cat="security"] .version { color: var(--accent2); }
+
+  /* 제목 */
+  .card-title {
+    font-family: var(--body);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .card-hero .card-title {
+    font-size: clamp(22px, 2.5vw, 32px);
+  }
+
+  /* 날짜 */
+  .card-date {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  /* 불릿 */
+  .bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .bullets li {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #aaa;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    font-size: 11px;
+  }
+
+  .card-hero .bullets li { font-size: 14px; color: #ccc; }
+
+  /* 링크 */
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    margin-top: 20px;
+    transition: color 0.2s;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+  }
+
+  .card:hover .card-link { color: var(--text); border-bottom-color: currentColor; }
+
+  /* 큰 숫자 배경 */
+  .bg-num {
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    font-family: var(--display);
+    font-size: 180px;
+    line-height: 1;
+    color: rgba(255,255,255,0.015);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Vercel 섹션 */
+  .vercel-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .vercel-item {
+    border-left: 2px solid #ff9f43;
+    padding-left: 14px;
+  }
+
+  .vercel-item-title {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .vercel-item-desc {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  /* 푸터 */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brand {
+    font-family: var(--display);
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+
+  .footer-brand span { color: var(--accent); }
+
+  .footer-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  /* 애니메이션 */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card:nth-child(1) { animation-delay: 0.1s; }
+  .card:nth-child(2) { animation-delay: 0.2s; }
+  .card:nth-child(3) { animation-delay: 0.3s; }
+  .card:nth-child(4) { animation-delay: 0.4s; }
+  .card:nth-child(5) { animation-delay: 0.5s; }
+  .card:nth-child(6) { animation-delay: 0.6s; }
+  .card:nth-child(7) { animation-delay: 0.7s; }
+
+  /* 스캔라인 효과 (hero) */
+  .card-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(232,255,71,0.015) 2px,
+      rgba(232,255,71,0.015) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* 모바일 */
+  @media (max-width: 768px) {
+    header { padding: 0 24px; grid-template-columns: 1fr; }
+    .header-meta { display: none; }
+    main { padding: 0 24px 48px; }
+    .card-hero, .card-tall, .card-wide, .card-sm, .card-third, .card-full {
+      grid-column: span 12;
+      grid-row: span 1;
+    }
+    footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<header>
+  <div class="header-meta">
+    <div>VOL. 001 / ISSUE 01</div>
+    <div style="margin-top:4px">CLAUDE CODE + FRONTEND</div>
+  </div>
+  <div class="masthead">
+    <div class="masthead-label">📡 Daily Digest</div>
+    <h1>DEV<span>PULSE</span></h1>
+  </div>
+  <div class="header-meta right">
+    <div>2026.03.25 WED</div>
+    <div style="margin-top:4px">8 SOURCES MONITORED</div>
+  </div>
+</header>
+
+<!-- 티커 -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-item">CLAUDE CODE v2.1.81 <span class="ticker-sep">///</span></span>
+    <span class="ticker-item">NEXT.JS 16.2 — 400% FASTER DEV START <span class="ticker-sep">///</span></span>
+    <span class="ticker-item">TYPESCRIPT 6.0.2 STABLE <span class="ticker-sep">///</span></span>
+    <span class="ticker-item">VITE 8.0.2 + ROLLDOWN 통합 <span class="ticker-sep">///</span></span>
+    <span class="ticker-item">TAILWIND CSS v4.2.2 <span class="ticker-sep">///</span></span>
+    <span class="ticker-item">REACT v19.2.4 SERVER ACTION 보안 강화 <span class="ticker-sep">///</span></span>
+    <span class="ticker-item">VERCEL — CLI 활동 로그 추가 <span class="ticker-sep">///</span></span>
+    <!-- 반복 -->
+    <span class="ticker-item">CLAUDE CODE v2.1.81 <span class="ticker-sep">///</span></span>
+    <span class="ticker-item">NEXT.JS 16.2 — 400% FASTER DEV START <span class="ticker-sep">///</span></span>
+    <span class="ticker-item">TYPESCRIPT 6.0.2 STABLE <span class="ticker-sep">///</span></span>
+    <span class="ticker-item">VITE 8.0.2 + ROLLDOWN 통합 <span class="ticker-sep">///</span></span>
+    <span class="ticker-item">TAILWIND CSS v4.2.2 <span class="ticker-sep">///</span></span>
+    <span class="ticker-item">REACT v19.2.4 SERVER ACTION 보안 강화 <span class="ticker-sep">///</span></span>
+    <span class="ticker-item">VERCEL — CLI 활동 로그 추가 <span class="ticker-sep">///</span></span>
+  </div>
+</div>
+
+<main>
+
+  <!-- 날짜 구분 -->
+  <div class="date-divider">
+    <span class="date-text">🤖 Claude Code / AI — 2026.03.20</span>
+  </div>
+
+  <div class="grid">
+    <!-- HERO: Claude Code -->
+    <div class="card card-hero" data-cat="tool">
+      <div class="tag tag-tool">[TOOL]</div>
+      <div class="version">v2.1.81</div>
+      <div class="card-title">Claude Code</div>
+      <div class="card-date">2026-03-20 · anthropics/claude-code</div>
+      <ul class="bullets">
+        <li><strong>--bare 플래그</strong> 추가 — 훅·LSP·플러그인 없이 스크립트 모드로 실행, API 키 직접 지정 필요</li>
+        <li><strong>--channels 권한 릴레이</strong> — 채널 서버가 도구 승인 프롬프트를 휴대폰으로 전달 가능</li>
+        <li>여러 세션에서 OAuth 토큰 갱신 시 반복 재인증 문제 해결</li>
+        <li>MCP OAuth — Client ID Metadata Document (CIMD / SEP-991) 지원</li>
+        <li>플러그인 디렉토리 삭제 시 프롬프트 제출 차단 버그 수정</li>
+        <li>MCP 읽기/검색 도구 호출을 단일 라인으로 축소 (Ctrl+O 확장)</li>
+        <li>Node.js 18 크래시 수정 · 음성 모드 WebSocket 복구 개선</li>
+      </ul>
+      <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.81" target="_blank">
+        github.com/anthropics/claude-code →
+      </a>
+      <div class="bg-num">81</div>
+    </div>
+
+    <!-- Next.js -->
+    <div class="card card-tall" data-cat="release">
+      <div class="tag tag-release">[RELEASE]</div>
+      <div class="version">16.2</div>
+      <div class="card-title">Next.js</div>
+      <div class="card-date">2026-03-18 · vercel/next.js</div>
+      <ul class="bullets">
+        <li>next dev 시작 <strong>~400% 향상</strong></li>
+        <li>서버 렌더링 <strong>~50% 향상</strong></li>
+        <li>Turbopack 기본 번들러 채택</li>
+        <li>Server Function 터미널 로그</li>
+        <li>Hydration diff 표시 (+ Client / - Server)</li>
+        <li>AGENTS.md 기본 포함 (AI Agent 지원)</li>
+        <li>Adapters API 정식 안정화</li>
+        <li>ImageResponse 최대 20배 향상</li>
+      </ul>
+      <a class="card-link" href="https://nextjs.org/blog/next-16-2" target="_blank">
+        nextjs.org/blog/next-16-2 →
+      </a>
+      <div class="bg-num">16</div>
+    </div>
+  </div>
+
+  <!-- 날짜 구분 -->
+  <div class="date-divider">
+    <span class="date-text">⚛️ Frontend — 2026.03.18 ~ 2026.03.23</span>
+  </div>
+
+  <div class="grid">
+
+    <!-- TypeScript -->
+    <div class="card card-wide" data-cat="release">
+      <div class="tag tag-release">[RELEASE]</div>
+      <div class="version">TS 6.0.2</div>
+      <div class="card-title">TypeScript 6.0 Stable</div>
+      <div class="card-date">2026-03-23 · microsoft/TypeScript</div>
+      <ul class="bullets">
+        <li>Temporal API 내장 타입 지원 (Stage-4)</li>
+        <li>Map/WeakMap — getOrInsert, getOrInsertComputed 추가</li>
+        <li>RegExp.escape 지원</li>
+        <li><strong>Breaking:</strong> strict 기본값 true, target es5 deprecated</li>
+        <li>TypeScript 7.0 (Go 기반) 전환 브릿지 역할</li>
+      </ul>
+      <a class="card-link" href="https://devblogs.microsoft.com/typescript/announcing-typescript-6-0/" target="_blank">
+        devblogs.microsoft.com →
+      </a>
+    </div>
+
+    <!-- Vite -->
+    <div class="card card-wide" data-cat="release">
+      <div class="tag tag-release">[TOOL]</div>
+      <div class="version">Vite 8.0</div>
+      <div class="card-title">Vite 8.0.2</div>
+      <div class="card-date">2026-03-23 · vitejs/vite</div>
+      <ul class="bullets">
+        <li><strong>Rolldown 통합</strong> — 메이저 빌드 성능 향상</li>
+        <li>ESM Oxc 런타임 지원</li>
+        <li>네이티브 플러그인 v2 기본 활성화</li>
+        <li>WASM SSR 지원 (.wasm?init)</li>
+        <li>개발 서버 콘솔 로그 포워딩</li>
+      </ul>
+      <a class="card-link" href="https://github.com/vitejs/vite/releases" target="_blank">
+        github.com/vitejs/vite →
+      </a>
+    </div>
+
+    <!-- Tailwind -->
+    <div class="card card-third" data-cat="release">
+      <div class="tag tag-release">[RELEASE]</div>
+      <div class="version">v4.2.2</div>
+      <div class="card-title">Tailwind CSS</div>
+      <div class="card-date">2026-03-18 · tailwindlabs/tailwindcss</div>
+      <ul class="bullets">
+        <li>Vite 8 지원 (@tailwindcss/vite)</li>
+        <li>calc(var(--spacing)*…) 정규화 수정</li>
+        <li>@property at-rules 충돌 수정</li>
+      </ul>
+      <a class="card-link" href="https://github.com/tailwindlabs/tailwindcss/releases" target="_blank">
+        tailwindlabs/tailwindcss →
+      </a>
+    </div>
+
+    <!-- React -->
+    <div class="card card-third" data-cat="security">
+      <div class="tag tag-security">[SECURITY]</div>
+      <div class="version">v19.2.4</div>
+      <div class="card-title">React</div>
+      <div class="card-date">2026-01-26 · facebook/react</div>
+      <ul class="bullets">
+        <li>Server Actions DoS 완화 강화</li>
+        <li>Server Components 보안 하드닝</li>
+        <li>v19.x 전 브랜치 동일 패치 적용</li>
+      </ul>
+      <a class="card-link" href="https://github.com/facebook/react/releases" target="_blank">
+        github.com/facebook/react →
+      </a>
+    </div>
+
+    <!-- Vercel -->
+    <div class="card card-third" data-cat="infra">
+      <div class="tag tag-infra">[INFRA]</div>
+      <div class="card-title" style="font-size:16px; margin-bottom: 20px;">Vercel Changelog</div>
+      <div class="card-date">2026-03-23</div>
+      <div class="vercel-items">
+        <div class="vercel-item">
+          <div class="vercel-item-title">Enterprise Build Machine 기본값</div>
+          <div class="vercel-item-desc">팀 레벨 기본 빌드 머신 설정 가능</div>
+        </div>
+        <div class="vercel-item">
+          <div class="vercel-item-title">vercel activity CLI 명령어</div>
+          <div class="vercel-item-desc">타입·날짜·프로젝트 필터로 활동 로그 조회</div>
+        </div>
+        <div class="vercel-item">
+          <div class="vercel-item-title">런타임 에러 코드 표시</div>
+          <div class="vercel-item-desc">HTTP 상태와 함께 에러 코드 표시</div>
+        </div>
+      </div>
+      <a class="card-link" href="https://vercel.com/changelog" target="_blank">
+        vercel.com/changelog →
+      </a>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-brand">DEV<span>PULSE</span></div>
+  <div class="footer-meta">
+    <div>GENERATED 2026.03.25</div>
+    <div>8 SOURCES · CLAUDE CODE + FRONTEND</div>
+    <div style="color:#333; margin-top:4px">Powered by Claude Code</div>
+  </div>
+</footer>
+
+</body>
+</html>

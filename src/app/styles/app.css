@@ -1,0 +1,177 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #0a0a0a;
+  --color-surface: #111111;
+  --color-border: #1e1e1e;
+  --color-accent: #e8ff47;
+  --color-accent2: #ff4757;
+  --color-accent3: #00d2ff;
+  --color-text: #e8e8e8;
+  --color-muted: #555555;
+  --color-infra: #ff9f43;
+  --color-ai: #a29bfe;
+  --font-mono: 'Space Mono', monospace;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Noto Sans KR', sans-serif;
+}
+
+/* 기본 리셋 — Tailwind preflight의 * margin/padding 0을 유지하면서 box-sizing 추가 */
+@layer base {
+  html {
+    line-height: normal;
+  }
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  overflow-x: hidden;
+  cursor: crosshair;
+  line-height: normal;
+}
+
+/* 노이즈 텍스처 오버레이 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* 카드 ::after 상단 컬러 바 */
+.card-accent::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.card-accent:hover::after {
+  opacity: 1;
+}
+
+.card-accent-tool::after {
+  background: var(--color-accent);
+}
+
+.card-accent-release::after {
+  background: var(--color-accent3);
+}
+
+.card-accent-infra::after {
+  background: var(--color-infra);
+}
+
+.card-accent-ai::after {
+  background: var(--color-ai);
+}
+
+.card-accent-security::after {
+  background: var(--color-accent2);
+}
+
+/* hero 카드 스캔라인 효과 */
+.card-hero-scanline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(232, 255, 71, 0.015) 2px,
+    rgba(232, 255, 71, 0.015) 4px
+  );
+  pointer-events: none;
+}
+
+/* 배경 장식 숫자 */
+.bg-num {
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+  font-family: var(--font-display);
+  font-size: 180px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.015);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 티커 애니메이션 */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-animate {
+  animation: ticker 30s linear infinite;
+}
+
+/* 진입 애니메이션 */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-down {
+  animation: fadeDown 0.6s ease both;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease both;
+}
+
+/* 카드 stagger delay */
+.card-stagger:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.card-stagger:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.card-stagger:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.card-stagger:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.card-stagger:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.card-stagger:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.card-stagger:nth-child(7) {
+  animation-delay: 0.7s;
+}
