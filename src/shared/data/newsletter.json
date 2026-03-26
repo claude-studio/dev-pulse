@@ -1,15 +1,16 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 03",
+    "volume": "VOL. 001 / ISSUE 04",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.03.26 THU",
     "sourceCount": 8
   },
   "ticker": [
     "CLAUDE CODE v2.1.84 — WINDOWS POWERSHELL 도구 추가",
-    "NEXT.JS 16.2.1 — 동적 메타데이터·Turbopack 버그 픽스",
+    "VITE 8.0.3 — ROLLDOWN RC.12 업데이트 및 버그 픽스",
     "TYPESCRIPT 6.0.2 STABLE",
     "VITE 8.0.2 + ROLLDOWN 통합",
+    "NEXT.JS 16.2.1 — 동적 메타데이터·Turbopack 버그 픽스",
     "TAILWIND CSS v4.2.2",
     "REACT v19.2.4 SERVER ACTION 보안 강화",
     "VERCEL — CLI 활동 로그 추가"
@@ -72,7 +73,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.01.26 ~ 2026.03.23",
+      "date": "2026.01.26 ~ 2026.03.26",
       "news": [
         {
           "id": "typescript-602",
@@ -96,25 +97,26 @@
           }
         },
         {
-          "id": "vite-802",
+          "id": "vite-803",
           "category": "release",
           "variant": "wide",
           "tag": "TOOL",
-          "version": "Vite 8.0",
-          "title": "Vite 8.0.2",
-          "date": "2026-03-23",
+          "version": "Vite 8.0.3",
+          "title": "Vite 8.0.3",
+          "date": "2026-03-26",
           "source": "vitejs/vite",
           "bullets": [
-            "<strong>Rolldown 통합</strong> — 메이저 빌드 성능 향상",
-            "ESM Oxc 런타임 지원",
-            "네이티브 플러그인 v2 기본 활성화",
-            "WASM SSR 지원 (.wasm?init)",
-            "개발 서버 콘솔 로그 포워딩"
+            "<strong>Rolldown 1.0.0-rc.12</strong> 업데이트 — 최신 RC로 번들 성능 지속 개선",
+            "<strong>HTML 멀티 엔트리 CSS 캐싱</strong> 버그 수정 — 엔트리 간 스타일 누락 방지",
+            "<strong>Module Runner</strong> Base64 소스맵 비ASCII 문자 처리 수정",
+            "<strong>SSR ssrTransform</strong> `meta` 바인딩과 `import.meta` 충돌 오류 수정",
+            "<strong>옵티마이저</strong> glob import 내 서브패스 임포트 해석 버그 수정"
           ],
           "link": {
-            "url": "https://github.com/vitejs/vite/releases",
+            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.3",
             "label": "github.com/vitejs/vite →"
-          }
+          },
+          "bgNum": "8"
         },
         {
           "id": "tailwind-422",
