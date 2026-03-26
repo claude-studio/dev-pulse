@@ -1,12 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 01",
+    "volume": "VOL. 001 / ISSUE 02",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.03.25 WED",
+    "date": "2026.03.26 THU",
     "sourceCount": 8
   },
   "ticker": [
-    "CLAUDE CODE v2.1.81",
+    "CLAUDE CODE v2.1.84 — WINDOWS POWERSHELL 도구 추가",
     "NEXT.JS 16.2 — 400% FASTER DEV START",
     "TYPESCRIPT 6.0.2 STABLE",
     "VITE 8.0.2 + ROLLDOWN 통합",
@@ -17,31 +17,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.03.20",
+      "date": "2026.03.26",
       "news": [
         {
-          "id": "claude-code-2181",
+          "id": "claude-code-2184",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.81",
+          "version": "v2.1.84",
           "title": "Claude Code",
-          "date": "2026-03-20",
+          "date": "2026-03-26",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>--bare 플래그</strong> 추가 — 훅·LSP·플러그인 없이 스크립트 모드로 실행, API 키 직접 지정 필요",
-            "<strong>--channels 권한 릴레이</strong> — 채널 서버가 도구 승인 프롬프트를 휴대폰으로 전달 가능",
-            "여러 세션에서 OAuth 토큰 갱신 시 반복 재인증 문제 해결",
-            "MCP OAuth — Client ID Metadata Document (CIMD / SEP-991) 지원",
-            "플러그인 디렉토리 삭제 시 프롬프트 제출 차단 버그 수정",
-            "MCP 읽기/검색 도구 호출을 단일 라인으로 축소 (Ctrl+O 확장)",
-            "Node.js 18 크래시 수정 · 음성 모드 WebSocket 복구 개선"
+            "<strong>PowerShell 도구</strong> Windows 옵트인 프리뷰 추가 — 네이티브 셸 명령 실행 지원",
+            "<strong>TaskCreated 훅</strong> 신규 — TaskCreate로 태스크 생성 시 자동 트리거",
+            "<strong>WorktreeCreate 훅</strong> HTTP 타입 지원 — hookSpecificOutput.worktreePath로 경로 반환",
+            "Rules·Skills <strong>paths: YAML 리스트</strong> 허용 — 다중 glob 패턴 동시 지정 가능",
+            "<strong>MCP 서버 중복 제거</strong> — 로컬 설정과 claude.ai 커넥터 동시 등록 시 로컬 우선",
+            "MCP 툴 설명 <strong>2KB 캡</strong> 적용 — OpenAPI 생성 서버의 컨텍스트 팽창 방지",
+            "유휴 <strong>75분 후 /clear 넛지</strong> — 오래된 세션의 불필요한 토큰 재캐싱 방지"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.81",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.84",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "81"
+          "bgNum": "84"
         },
         {
           "id": "nextjs-162",
@@ -72,7 +72,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.03.18 ~ 2026.03.23",
+      "date": "2026.01.26 ~ 2026.03.23",
       "news": [
         {
           "id": "typescript-602",
