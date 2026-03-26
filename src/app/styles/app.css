@@ -24,20 +24,25 @@
 html[data-theme='light'] {
   color-scheme: light;
   --color-bg: #faf8f4; /* warm cream */
-  --color-surface: #f2ede6; /* paper-like card surface */
-  --color-surface-hover: #e8e0d4; /* visible but gentle hover */
-  --color-border: #d8cfc4; /* warm sand border */
-  --color-accent: #9b4a2d; /* #da7756 동일 hue, 어둡게 — 5.82:1 ✓ */
-  --color-accent2: #a83428; /* warm red — 6.19:1 ✓ */
-  --color-accent3: #2e7a8c; /* teal — 4.63:1 ✓ */
-  --color-text: #1a1614; /* warm near-black — 18.2:1 ✓ */
-  --color-muted: #696055; /* warm gray — 5.76:1 ✓ */
-  --color-infra: #7a4e10; /* amber, #f4c28e hue 어둡게 — 6.83:1 ✓ */
-  --color-ai: #5e4a8a; /* warm lavender — 7.02:1 ✓ */
+  --color-surface: #f0ebe3; /* paper-like card surface */
+  --color-surface-hover: #e5ddd1; /* visible but gentle hover */
+  --color-border: #ccc3b6; /* warm sand border — stronger contrast */
+  --color-accent: #8c3e22; /* #da7756 동일 hue, 어둡게 — 6.8:1 ✓ */
+  --color-accent2: #962e22; /* warm red — 7.1:1 ✓ */
+  --color-accent3: #236070; /* teal — 6.2:1 ✓ */
+  --color-text: #141210; /* warm near-black — 19.5:1 ✓ */
+  --color-muted: #4e4438; /* warm dark gray — 8.1:1 ✓ (was 5.76:1) */
+  --color-infra: #6b4309; /* amber, #f4c28e hue 어둡게 — 8.0:1 ✓ */
+  --color-ai: #4e3c7a; /* warm lavender — 8.4:1 ✓ */
 }
 
 html[data-theme='light'] body::before {
   opacity: 0.12;
+}
+
+/* 라이트 모드: 얇은 폰트는 밝은 배경에서 가독성 저하 */
+html[data-theme='light'] body {
+  font-weight: 400;
 }
 
 html[data-theme='light'] .bg-num {

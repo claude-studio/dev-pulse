@@ -9,7 +9,7 @@ export function Bullets({ items, large = false }: BulletsProps) {
       {items.map((item, i) => (
         <li
           key={i}
-          className={`relative pl-4 leading-[1.5] text-[#aaa] ${large ? 'text-sm text-[#ccc]' : 'text-[13px]'}`}
+          className={`relative pl-4 leading-[1.5] text-muted ${large ? 'text-sm' : 'text-[13px]'}`}
         >
           <span className="absolute left-0 text-[11px] text-muted">→</span>
           <span dangerouslySetInnerHTML={{ __html: item }} />

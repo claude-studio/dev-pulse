@@ -32,3 +32,6 @@ dist-ssr
 
 # Claude Code
 .claude/worktrees/
+
+# Playwright snapshots
+e2e/**-snapshots/
