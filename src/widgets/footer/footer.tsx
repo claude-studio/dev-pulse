@@ -16,6 +16,16 @@ export function Footer({ meta }: FooterProps) {
           {meta.sourceCount} SOURCES · {meta.topic}
         </div>
         <div className="text-[#333] mt-1">Powered by Claude Code</div>
+        <div className="mt-1">
+          <a
+            href="https://github.com/claude-studio/dev-pulse"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#333] hover:text-accent transition-colors"
+          >
+            GitHub
+          </a>
+        </div>
       </div>
     </footer>
   );

@@ -1,26 +1,87 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-bg: #0a0a0a;
-  --color-surface: #111111;
-  --color-border: #1e1e1e;
-  --color-accent: #e8ff47;
-  --color-accent2: #ff4757;
-  --color-accent3: #00d2ff;
-  --color-text: #e8e8e8;
-  --color-muted: #555555;
-  --color-infra: #ff9f43;
-  --color-ai: #a29bfe;
+  /* ── Claude Code Identity: Warm Coral × Amber-Black Terminal ── */
+
+  /* Dark mode defaults */
+  --color-bg: #0f0d0c; /* warm near-black, amber-tinted */
+  --color-surface: #171412; /* warm dark card surface */
+  --color-surface-hover: #1f1b18; /* subtle hover lift */
+  --color-border: #2c2620; /* warm dark border */
+  --color-accent: #da7756; /* Claude coral — 6.38:1 ✓ */
+  --color-accent2: #e06050; /* warm terracotta-red — 5.49:1 ✓ */
+  --color-accent3: #80bfc8; /* muted teal complement — 9.64:1 ✓ */
+  --color-text: #ede8e0; /* warm cream — 16.2:1 ✓ */
+  --color-muted: #8a8278; /* warm gray — 5.25:1 ✓ */
+  --color-infra: #d4a060; /* amber, same family as accent — 8.43:1 ✓ */
+  --color-ai: #b8a0d8; /* warm lavender — 8.53:1 ✓ */
   --font-mono: 'Space Mono', monospace;
   --font-display: 'Bebas Neue', sans-serif;
   --font-body: 'Noto Sans KR', sans-serif;
+}
+
+/* ── Light mode: warm cream paper × deep terracotta ── */
+html[data-theme='light'] {
+  color-scheme: light;
+  --color-bg: #faf8f4; /* warm cream */
+  --color-surface: #f2ede6; /* paper-like card surface */
+  --color-surface-hover: #e8e0d4; /* visible but gentle hover */
+  --color-border: #d8cfc4; /* warm sand border */
+  --color-accent: #9b4a2d; /* #da7756 동일 hue, 어둡게 — 5.82:1 ✓ */
+  --color-accent2: #a83428; /* warm red — 6.19:1 ✓ */
+  --color-accent3: #2e7a8c; /* teal — 4.63:1 ✓ */
+  --color-text: #1a1614; /* warm near-black — 18.2:1 ✓ */
+  --color-muted: #696055; /* warm gray — 5.76:1 ✓ */
+  --color-infra: #7a4e10; /* amber, #f4c28e hue 어둡게 — 6.83:1 ✓ */
+  --color-ai: #5e4a8a; /* warm lavender — 7.02:1 ✓ */
+}
+
+html[data-theme='light'] body::before {
+  opacity: 0.12;
+}
+
+html[data-theme='light'] .bg-num {
+  color: rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme='light'] .card-hero-scanline::before {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.012) 2px,
+    rgba(0, 0, 0, 0.012) 4px
+  );
 }
 
 /* 기본 리셋 — Tailwind preflight의 * margin/padding 0을 유지하면서 box-sizing 추가 */
 @layer base {
   html {
     line-height: normal;
+    color-scheme: dark; /* 스크롤바·시스템 UI 다크 처리 */
   }
+
+  html[data-theme='light'] {
+    color-scheme: light;
+  }
+}
+
+/* 테마 전환 시 부드러운 트랜지션 */
+body,
+body * {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.15s ease;
+}
+
+/* 애니메이션 요소는 트랜지션 제외 (깜빡임 방지) */
+.animate-fade-down,
+.animate-fade-up,
+.card-stagger,
+.ticker-animate,
+body::before {
+  transition: none;
 }
 
 body {
@@ -89,8 +150,8 @@ body::before {
     0deg,
     transparent,
     transparent 2px,
-    rgba(232, 255, 71, 0.015) 2px,
-    rgba(232, 255, 71, 0.015) 4px
+    rgba(218, 119, 86, 0.018) 2px,
+    rgba(218, 119, 86, 0.018) 4px
   );
   pointer-events: none;
 }

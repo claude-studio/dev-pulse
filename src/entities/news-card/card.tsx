@@ -19,7 +19,7 @@ export function Card({ item }: CardProps) {
 
   return (
     <div
-      className={`relative overflow-hidden bg-surface p-7 transition-colors duration-200 hover:bg-[#161616] animate-fade-up card-stagger card-accent card-accent-${category} ${isHero ? 'card-hero-scanline' : ''} ${variantClasses[variant]}`}
+      className={`relative overflow-hidden bg-surface p-7 hover:bg-surface-hover animate-fade-up card-stagger card-accent card-accent-${category} ${isHero ? 'card-hero-scanline' : ''} ${variantClasses[variant]}`}
     >
       <Tag category={category} label={tag} />
       {version && <Version text={version} category={category} hero={isHero} />}
