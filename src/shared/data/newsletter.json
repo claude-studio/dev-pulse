@@ -1,13 +1,13 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 02",
+    "volume": "VOL. 001 / ISSUE 03",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.03.26 THU",
     "sourceCount": 8
   },
   "ticker": [
     "CLAUDE CODE v2.1.84 — WINDOWS POWERSHELL 도구 추가",
-    "NEXT.JS 16.2 — 400% FASTER DEV START",
+    "NEXT.JS 16.2.1 — 동적 메타데이터·Turbopack 버그 픽스",
     "TYPESCRIPT 6.0.2 STABLE",
     "VITE 8.0.2 + ROLLDOWN 통합",
     "TAILWIND CSS v4.2.2",
@@ -44,27 +44,27 @@
           "bgNum": "84"
         },
         {
-          "id": "nextjs-162",
+          "id": "nextjs-1621",
           "category": "release",
           "variant": "tall",
           "tag": "RELEASE",
-          "version": "16.2",
+          "version": "16.2.1",
           "title": "Next.js",
-          "date": "2026-03-18",
+          "date": "2026-03-20",
           "source": "vercel/next.js",
           "bullets": [
-            "next dev 시작 <strong>~400% 향상</strong>",
-            "서버 렌더링 <strong>~50% 향상</strong>",
-            "Turbopack 기본 번들러 채택",
-            "Server Function 터미널 로그",
-            "Hydration diff 표시 (+ Client / - Server)",
-            "AGENTS.md 기본 포함 (AI Agent 지원)",
-            "Adapters API 정식 안정화",
-            "ImageResponse 최대 20배 향상"
+            "<strong>버그 픽스 릴리즈</strong> — 신규 기능 없이 안정성 집중 개선",
+            "<strong>동적 메타데이터 라우트</strong> 어댑터 출력 오류 수정",
+            "<strong>Turbopack webpack 로더</strong> 러너 레이어 버그 수정",
+            "<strong>스탠드얼론 모드</strong> + 캐싱 활성화 시 Server Actions 정상 동작",
+            "<strong>레이아웃 세그먼트</strong> 최적화 처리 오류 수정",
+            "메타데이터 import의 <strong>top-level await</strong> 처리 개선",
+            "<strong>Worker 스레드</strong> 생성자 평가 설정 준수 수정",
+            "<strong>turbo-persistence</strong> 불필요한 메모리 매핑 경고 제거"
           ],
           "link": {
-            "url": "https://nextjs.org/blog/next-16-2",
-            "label": "nextjs.org/blog/next-16-2 →"
+            "url": "https://github.com/vercel/next.js/releases/tag/v16.2.1",
+            "label": "github.com/vercel/next.js →"
           },
           "bgNum": "16"
         }
