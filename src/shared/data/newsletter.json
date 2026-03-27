@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 04",
+    "volume": "VOL. 001 / ISSUE 05",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.03.26 THU",
+    "date": "2026.03.27 FRI",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.85 — MCP 헤더헬퍼 멀티 서버 지원 및 훅 조건부 실행 추가",
     "CLAUDE CODE v2.1.84 — WINDOWS POWERSHELL 도구 추가",
     "VITE 8.0.3 — ROLLDOWN RC.12 업데이트 및 버그 픽스",
     "TYPESCRIPT 6.0.2 STABLE",
@@ -18,31 +19,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.03.26",
+      "date": "2026.03.27",
       "news": [
         {
-          "id": "claude-code-2184",
+          "id": "claude-code-2185",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.84",
+          "version": "v2.1.85",
           "title": "Claude Code",
           "date": "2026-03-26",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>PowerShell 도구</strong> Windows 옵트인 프리뷰 추가 — 네이티브 셸 명령 실행 지원",
-            "<strong>TaskCreated 훅</strong> 신규 — TaskCreate로 태스크 생성 시 자동 트리거",
-            "<strong>WorktreeCreate 훅</strong> HTTP 타입 지원 — hookSpecificOutput.worktreePath로 경로 반환",
-            "Rules·Skills <strong>paths: YAML 리스트</strong> 허용 — 다중 glob 패턴 동시 지정 가능",
-            "<strong>MCP 서버 중복 제거</strong> — 로컬 설정과 claude.ai 커넥터 동시 등록 시 로컬 우선",
-            "MCP 툴 설명 <strong>2KB 캡</strong> 적용 — OpenAPI 생성 서버의 컨텍스트 팽창 방지",
-            "유휴 <strong>75분 후 /clear 넛지</strong> — 오래된 세션의 불필요한 토큰 재캐싱 방지"
+            "<strong>MCP headersHelper</strong> 환경변수 추가 — `CLAUDE_CODE_MCP_SERVER_NAME/URL`로 하나의 헬퍼가 여러 서버 동시 지원",
+            "훅에 조건부 <strong>`if` 필드</strong> 추가 — `Bash(git *)` 퍼미션 룰 문법으로 실행 조건 필터링, 프로세스 오버헤드 감소",
+            "<strong>PreToolUse 훅</strong>이 `AskUserQuestion` 직접 응답 가능 — `updatedInput` 반환으로 헤드리스 UI 통합 지원",
+            "<strong>딥링크 쿼리</strong> 최대 5,000자로 확장 — `claude-cli://open?q=…` 긴 프리필 프롬프트에 스크롤 경고 표시",
+            "<strong>MCP OAuth</strong>가 RFC 9728 Protected Resource Metadata 탐색 준수 — 인증 서버 자동 발견",
+            "조직 정책(`managed-settings.json`) 차단 <strong>플러그인</strong> — 마켓플레이스 숨김 및 설치·활성화 완전 차단",
+            "<strong>/compact</strong> \"context exceeded\" 오류 수정 — 대화가 너무 커서 compact 요청 자체가 실패하던 버그 해결"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.84",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.85",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "84"
+          "bgNum": "85"
         },
         {
           "id": "nextjs-1621",
@@ -73,7 +74,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.01.26 ~ 2026.03.26",
+      "date": "2026.01.26 ~ 2026.03.27",
       "news": [
         {
           "id": "typescript-602",
