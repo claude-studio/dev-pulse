@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 05",
+    "volume": "VOL. 001 / ISSUE 06",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.03.27 FRI",
+    "date": "2026.03.28 SAT",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.86 — API 헤더·VCS 제외·세션 버그 수정 및 메모리 최적화",
     "CLAUDE CODE v2.1.85 — MCP 헤더헬퍼 멀티 서버 지원 및 훅 조건부 실행 추가",
     "CLAUDE CODE v2.1.84 — WINDOWS POWERSHELL 도구 추가",
     "VITE 8.0.3 — ROLLDOWN RC.12 업데이트 및 버그 픽스",
@@ -22,28 +23,28 @@
       "date": "2026.03.27",
       "news": [
         {
-          "id": "claude-code-2185",
+          "id": "claude-code-2186",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.85",
+          "version": "v2.1.86",
           "title": "Claude Code",
-          "date": "2026-03-26",
+          "date": "2026-03-27",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>MCP headersHelper</strong> 환경변수 추가 — `CLAUDE_CODE_MCP_SERVER_NAME/URL`로 하나의 헬퍼가 여러 서버 동시 지원",
-            "훅에 조건부 <strong>`if` 필드</strong> 추가 — `Bash(git *)` 퍼미션 룰 문법으로 실행 조건 필터링, 프로세스 오버헤드 감소",
-            "<strong>PreToolUse 훅</strong>이 `AskUserQuestion` 직접 응답 가능 — `updatedInput` 반환으로 헤드리스 UI 통합 지원",
-            "<strong>딥링크 쿼리</strong> 최대 5,000자로 확장 — `claude-cli://open?q=…` 긴 프리필 프롬프트에 스크롤 경고 표시",
-            "<strong>MCP OAuth</strong>가 RFC 9728 Protected Resource Metadata 탐색 준수 — 인증 서버 자동 발견",
-            "조직 정책(`managed-settings.json`) 차단 <strong>플러그인</strong> — 마켓플레이스 숨김 및 설치·활성화 완전 차단",
-            "<strong>/compact</strong> \"context exceeded\" 오류 수정 — 대화가 너무 커서 compact 요청 자체가 실패하던 버그 해결"
+            "<strong>API 헤더</strong> — 세션 추적용 `X-Claude-Code-Session-Id` 헤더 추가",
+            "<strong>VCS 제외 목록</strong> — Jujutsu, Sapling 메타데이터 자동 스킵 (.jj, .sl)",
+            "<strong>--resume 버그</strong> 수정 — v2.1.85 이전 세션 tool_result 오류 해결",
+            "<strong>외부 파일 접근</strong> 고정 — 프로젝트 루트 외 파일 (CLAUDE.md 등) 읽기/쓰기 복구",
+            "<strong>설정 I/O 최적화</strong> — 스킬 호출마다 반복되던 디스크 쓰기 제거, Windows 손상 방지",
+            "<strong>/feedback 메모리 누수</strong> 해결 — 긴 세션에서 트랜스크립트 캐시 누적 수정",
+            "<strong>플러그인 권한</strong> 복구 — macOS/Linux에서 마켓플레이스 플러그인 \"Permission denied\" 해결"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.85",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.86",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "85"
+          "bgNum": "86"
         },
         {
           "id": "nextjs-1621",
