@@ -17,7 +17,7 @@ user-invocable: true
 allowed-tools:
   - Read
   - Write
-  - WebFetch
+  - Bash(curl *)
   - Bash(git *)
   - Bash(date *)
 ---
@@ -70,28 +70,53 @@ existingVersions = {
 
 ---
 
-### Step 2 — 최신 릴리즈 수집 (WebFetch)
+### Step 2 — 최신 릴리즈 수집 (Bash+curl 필수, WebFetch 금지)
 
-**GitHub API** (각 repo의 최신 릴리즈):
+**GitHub API는 반드시 Bash 도구로 curl을 직접 실행한다. WebFetch는 원격 환경에서 403을 반환하므로 절대 사용하지 않는다.**
 
+`GH_TOKEN`은 Remote Trigger 메시지에서 제공된다. (보안상 이 파일에 직접 기재하지 않음)
+
+```bash
+# GH_TOKEN은 트리거 메시지의 Step 0에서 설정됨
+
+curl -s -H "User-Agent: dev-pulse-bot" \
+     -H "Accept: application/vnd.github.v3+json" \
+     -H "Authorization: token $GH_TOKEN" \
+     https://api.github.com/repos/anthropics/claude-code/releases/latest
+
+curl -s -H "User-Agent: dev-pulse-bot" \
+     -H "Accept: application/vnd.github.v3+json" \
+     -H "Authorization: token $GH_TOKEN" \
+     https://api.github.com/repos/vercel/next.js/releases/latest
+
+curl -s -H "User-Agent: dev-pulse-bot" \
+     -H "Accept: application/vnd.github.v3+json" \
+     -H "Authorization: token $GH_TOKEN" \
+     https://api.github.com/repos/microsoft/TypeScript/releases/latest
+
+curl -s -H "User-Agent: dev-pulse-bot" \
+     -H "Accept: application/vnd.github.v3+json" \
+     -H "Authorization: token $GH_TOKEN" \
+     https://api.github.com/repos/vitejs/vite/releases/latest
+
+curl -s -H "User-Agent: dev-pulse-bot" \
+     -H "Accept: application/vnd.github.v3+json" \
+     -H "Authorization: token $GH_TOKEN" \
+     https://api.github.com/repos/tailwindlabs/tailwindcss/releases/latest
+
+curl -s -H "User-Agent: dev-pulse-bot" \
+     -H "Accept: application/vnd.github.v3+json" \
+     -H "Authorization: token $GH_TOKEN" \
+     https://api.github.com/repos/facebook/react/releases/latest
 ```
-GET https://api.github.com/repos/{owner}/{repo}/releases/latest
-응답에서 추출: tag_name, body(릴리즈 노트), published_at, html_url
+
+각 응답에서 추출: `tag_name`, `body`(릴리즈 노트), `published_at`, `html_url`
+
+**RSS 피드** (curl 사용):
+
+```bash
+curl -s https://vercel.com/atom   # 최신 3개 항목 title, description 추출
 ```
-
-대상 URL:
-
-- `https://api.github.com/repos/anthropics/claude-code/releases/latest`
-- `https://api.github.com/repos/vercel/next.js/releases/latest`
-- `https://api.github.com/repos/microsoft/TypeScript/releases/latest`
-- `https://api.github.com/repos/vitejs/vite/releases/latest`
-- `https://api.github.com/repos/tailwindlabs/tailwindcss/releases/latest`
-- `https://api.github.com/repos/facebook/react/releases/latest`
-
-**RSS 피드**:
-
-- Next.js Blog: `https://nextjs.org/feed.xml` (최신 포스트 제목/내용)
-- Vercel Changelog: `https://vercel.com/atom` (최신 3개 항목)
 
 ---
 
@@ -196,16 +221,18 @@ sourceCount: 전체 항목 수
 
 ```bash
 # 1. newsletter.json 저장 (Write 도구)
-# 파일: /Users/genie/Desktop/jb/dev-pulse/src/shared/data/newsletter.json
+# 파일: src/shared/data/newsletter.json (리포 루트 기준 상대 경로)
 # 2-space indent, JSON 형식 유지
 
-# 2. 변경 확인
-git -C /Users/genie/Desktop/jb/dev-pulse diff --quiet src/shared/data/newsletter.json
+# 2. git 인증 설정 (원격 환경에서 필수)
+git remote set-url origin https://$GH_TOKEN@github.com/claude-studio/dev-pulse.git
+git config user.email "bot@dev-pulse.com"
+git config user.name "dev-pulse-bot"
 
-# 변경 있을 때만:
-git -C /Users/genie/Desktop/jb/dev-pulse add src/shared/data/newsletter.json
-git -C /Users/genie/Desktop/jb/dev-pulse commit -m "chore: update newsletter $(date -u +%Y-%m-%d)"
-git -C /Users/genie/Desktop/jb/dev-pulse push
+# 3. 변경 있을 때만 커밋 (git diff로 확인 후 진행)
+git add src/shared/data/newsletter.json
+git commit -m "chore: update newsletter $(date -u +%Y-%m-%d)"
+git push origin main
 ```
 
 완료 후 메시지:
