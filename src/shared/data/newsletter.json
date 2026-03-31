@@ -1,12 +1,11 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 08",
+    "volume": "VOL. 001 / ISSUE 07",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.03.31 MON",
+    "date": "2026.03.30 SUN",
     "sourceCount": 8
   },
   "ticker": [
-    "CLAUDE CODE v2.1.88 — PermissionDenied 훅·무중단 렌더링·대규모 버그픽스",
     "CLAUDE CODE v2.1.87 — Cowork Dispatch 메시지 전달 버그 수정",
     "CLAUDE CODE v2.1.86 — API 헤더·VCS 제외·세션 버그 수정 및 메모리 최적화",
     "CLAUDE CODE v2.1.85 — MCP 헤더헬퍼 멀티 서버 지원 및 훅 조건부 실행 추가",
@@ -22,31 +21,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.03.31",
+      "date": "2026.03.30",
       "news": [
         {
-          "id": "claude-code-2188",
+          "id": "claude-code-2187",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.88",
+          "version": "v2.1.87",
           "title": "Claude Code",
-          "date": "2026-03-30",
+          "date": "2026-03-29",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>CLAUDE_CODE_NO_FLICKER=1</strong> — 무중단 alt-screen 렌더링 옵트인 환경변수 추가",
-            "<strong>PermissionDenied 훅</strong> — auto 모드 거부 시 `{retry: true}` 반환으로 재시도 가능",
-            "<strong>@명칭 서브에이전트</strong> — named subagent를 @ mention typeahead에서 직접 선택 가능",
-            "<strong>프롬프트 캐시 미스</strong> 수정 — 긴 세션에서 tool 스키마 변화로 캐시 무효화되던 문제 해결",
-            "<strong>CLAUDE.md 중복 주입</strong> 수정 — 파일 다수 읽기 세션에서 수십 번 재주입되던 버그 해결",
-            "<strong>JSON 스키마 캐시</strong> 버그 수정 — 다중 스키마 워크플로우에서 ~50% 실패율 원인 해결",
-            "<strong>OOM 크래시·메모리 누수</strong> — 1GiB 이상 파일 Edit 및 대용량 JSON 입력 처리 안정화"
+            "<strong>Cowork Dispatch 메시지 전달</strong> 버그 수정 — 메시지가 전달되지 않던 문제 해결",
+            "<strong>API 헤더</strong> — 세션 추적용 `X-Claude-Code-Session-Id` 헤더 추가 (v2.1.86)",
+            "<strong>VCS 제외 목록</strong> — Jujutsu, Sapling 메타데이터 자동 스킵 (.jj, .sl) (v2.1.86)",
+            "<strong>--resume 버그</strong> 수정 — v2.1.85 이전 세션 tool_result 오류 해결 (v2.1.86)",
+            "<strong>외부 파일 접근</strong> 복구 — 프로젝트 루트 외 파일 (CLAUDE.md 등) 읽기/쓰기 정상화 (v2.1.86)",
+            "<strong>설정 I/O 최적화</strong> — 스킬 호출 시 반복 디스크 쓰기 제거 (v2.1.86)",
+            "<strong>플러그인 권한</strong> 복구 — macOS/Linux 마켓플레이스 플러그인 \"Permission denied\" 해결 (v2.1.86)"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.88",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.87",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "88"
+          "bgNum": "87"
         },
         {
           "id": "nextjs-1621",
