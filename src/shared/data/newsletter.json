@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 07",
+    "volume": "VOL. 001 / ISSUE 08",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.03.30 SUN",
+    "date": "2026.04.01 WED",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.89 — PreToolUse defer 권한·PermissionDenied 훅·CRLF 버그 수정",
     "CLAUDE CODE v2.1.87 — Cowork Dispatch 메시지 전달 버그 수정",
     "CLAUDE CODE v2.1.86 — API 헤더·VCS 제외·세션 버그 수정 및 메모리 최적화",
     "CLAUDE CODE v2.1.85 — MCP 헤더헬퍼 멀티 서버 지원 및 훅 조건부 실행 추가",
@@ -21,31 +22,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.03.30",
+      "date": "2026.04.01",
       "news": [
         {
-          "id": "claude-code-2187",
+          "id": "claude-code-2189",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.87",
+          "version": "v2.1.89",
           "title": "Claude Code",
-          "date": "2026-03-29",
+          "date": "2026-04-01",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>Cowork Dispatch 메시지 전달</strong> 버그 수정 — 메시지가 전달되지 않던 문제 해결",
-            "<strong>API 헤더</strong> — 세션 추적용 `X-Claude-Code-Session-Id` 헤더 추가 (v2.1.86)",
-            "<strong>VCS 제외 목록</strong> — Jujutsu, Sapling 메타데이터 자동 스킵 (.jj, .sl) (v2.1.86)",
-            "<strong>--resume 버그</strong> 수정 — v2.1.85 이전 세션 tool_result 오류 해결 (v2.1.86)",
-            "<strong>외부 파일 접근</strong> 복구 — 프로젝트 루트 외 파일 (CLAUDE.md 등) 읽기/쓰기 정상화 (v2.1.86)",
-            "<strong>설정 I/O 최적화</strong> — 스킬 호출 시 반복 디스크 쓰기 제거 (v2.1.86)",
-            "<strong>플러그인 권한</strong> 복구 — macOS/Linux 마켓플레이스 플러그인 \"Permission denied\" 해결 (v2.1.86)"
+            "<strong>PreToolUse 훅 defer 결정</strong> 추가 — 헤드리스 세션에서 툴 호출 시 일시 중단 후 `-p --resume`으로 재평가 가능",
+            "<strong>CLAUDE_CODE_NO_FLICKER=1</strong> 환경변수 추가 — 가상화 스크롤백으로 alt-screen 깜빡임 없는 렌더링",
+            "<strong>PermissionDenied 훅</strong> 추가 — auto 모드 거부 후 `{retry: true}` 반환 시 모델 재시도 가능",
+            "<strong>Named 서브에이전트</strong> — `@` 멘션 타입어헤드 제안에 이름 붙인 서브에이전트 표시",
+            "<strong>MCP_CONNECTION_NONBLOCKING=true</strong> — `-p` 모드에서 MCP 연결 대기 스킵, 서버 연결 최대 5초로 제한",
+            "<strong>CRLF/Markdown 줄바꿈</strong> 버그 수정 — Windows에서 줄바꿈 이중 적용 및 하드 줄바꿈 유실 해결",
+            "<strong>StructuredOutput 스키마 캐시</strong> 버그 수정 — 다중 스키마 사용 시 ~50% 실패율 해소 및 메모리 누수 수정"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.87",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.89",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "87"
+          "bgNum": "89"
         },
         {
           "id": "nextjs-1621",
