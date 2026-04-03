@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 09",
+    "volume": "VOL. 001 / ISSUE 10",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.02 THU",
+    "date": "2026.04.03 THU",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.91 — MCP 대용량 결과 유지·플러그인 bin 실행·plan 모드 컨테이너 재시작 버그 수정",
     "CLAUDE CODE v2.1.90 — /powerup 학습 기능·rate-limit 무한 루프·캐시 미스 버그 수정",
     "NEXT.JS 16.2.2 — Turbopack HMR 개선·TypeScript v6 지원·Safari CSS 수정",
     "CLAUDE CODE v2.1.89 — PreToolUse defer 권한·PermissionDenied 훅·CRLF 버그 수정",
@@ -24,31 +25,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.02",
+      "date": "2026.04.03",
       "news": [
         {
-          "id": "claude-code-2190",
+          "id": "claude-code-2191",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.90",
+          "version": "v2.1.91",
           "title": "Claude Code",
-          "date": "2026-04-01",
+          "date": "2026-04-02",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>/powerup</strong> 명령어 추가 — 애니메이션 데모로 Claude Code 기능을 대화형 학습",
-            "<strong>CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE</strong> 환경변수 추가 — `git pull` 실패 시 기존 마켓플레이스 캐시 유지 (오프라인 환경 지원)",
-            "<strong>.husky</strong> 디렉토리를 보호 경로에 추가 (acceptEdits 모드)",
-            "사용량 한도 도달 시 <strong>rate-limit 대화상자 무한 재표시</strong> → 세션 크래시 버그 수정",
-            "<strong>--resume</strong> 사용 시 지연 도구·MCP 서버·커스텀 에이전트 첫 요청 프롬프트 캐시 미스 수정 (v2.1.69 회귀)",
-            "<strong>PostToolUse format-on-save 훅</strong>이 파일 재작성 후 Edit/Write 'File content has changed' 실패 수정",
-            "<strong>auto 모드</strong>에서 명시적 사용자 경계(\"don't push\", \"wait for X\") 무시 버그 수정"
+            "<strong>MCP 대용량 결과 유지</strong> — `_meta[\"anthropic/maxResultSizeChars\"]` 어노테이션으로 최대 500K까지 결과 유지 (DB 스키마 등)",
+            "<strong>disableSkillShellExecution</strong> 설정 추가 — 스킬·커스텀 슬래시 명령·플러그인 내 인라인 셸 실행 비활성화 가능",
+            "<strong>deep link 멀티라인 프롬프트</strong> 지원 — `claude-cli://open?q=`에서 인코딩된 줄바꿈(%0A) 허용",
+            "<strong>플러그인 bin/ 실행파일</strong> — 플러그인이 `bin/` 아래 실행파일을 Bash 도구에서 직접 호출 가능",
+            "<strong>--resume 트랜스크립트 체인</strong> 버그 수정 — 비동기 기록 실패 시 대화 기록 유실 문제 해결",
+            "<strong>plan 모드 컨테이너 재시작</strong> 버그 수정 — 재시작 후 플랜 파일 추적 실패 및 빈 승인 모달 해결",
+            "<strong>cmd+delete</strong> 줄 시작까지 삭제 수정 — iTerm2·kitty·WezTerm·Ghostty·Windows Terminal 지원"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.90",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.91",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "90"
+          "bgNum": "91"
         },
         {
           "id": "nextjs-1622",
