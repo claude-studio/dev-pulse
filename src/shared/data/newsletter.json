@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 10",
+    "volume": "VOL. 001 / ISSUE 11",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.03 THU",
+    "date": "2026.04.04 SAT",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.92 — forceRemoteSettingsRefresh 정책·Bedrock 마법사·/cost 모델별 내역 추가",
     "CLAUDE CODE v2.1.91 — MCP 대용량 결과 유지·플러그인 bin 실행·plan 모드 컨테이너 재시작 버그 수정",
     "CLAUDE CODE v2.1.90 — /powerup 학습 기능·rate-limit 무한 루프·캐시 미스 버그 수정",
     "NEXT.JS 16.2.2 — Turbopack HMR 개선·TypeScript v6 지원·Safari CSS 수정",
@@ -25,31 +26,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.03",
+      "date": "2026.04.04",
       "news": [
         {
-          "id": "claude-code-2191",
+          "id": "claude-code-2192",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.91",
+          "version": "v2.1.92",
           "title": "Claude Code",
-          "date": "2026-04-02",
+          "date": "2026-04-04",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>MCP 대용량 결과 유지</strong> — `_meta[\"anthropic/maxResultSizeChars\"]` 어노테이션으로 최대 500K까지 결과 유지 (DB 스키마 등)",
-            "<strong>disableSkillShellExecution</strong> 설정 추가 — 스킬·커스텀 슬래시 명령·플러그인 내 인라인 셸 실행 비활성화 가능",
-            "<strong>deep link 멀티라인 프롬프트</strong> 지원 — `claude-cli://open?q=`에서 인코딩된 줄바꿈(%0A) 허용",
-            "<strong>플러그인 bin/ 실행파일</strong> — 플러그인이 `bin/` 아래 실행파일을 Bash 도구에서 직접 호출 가능",
-            "<strong>--resume 트랜스크립트 체인</strong> 버그 수정 — 비동기 기록 실패 시 대화 기록 유실 문제 해결",
-            "<strong>plan 모드 컨테이너 재시작</strong> 버그 수정 — 재시작 후 플랜 파일 추적 실패 및 빈 승인 모달 해결",
-            "<strong>cmd+delete</strong> 줄 시작까지 삭제 수정 — iTerm2·kitty·WezTerm·Ghostty·Windows Terminal 지원"
+            "<strong>forceRemoteSettingsRefresh</strong> 정책 설정 추가 — 원격 관리 설정이 신선하게 갱신될 때까지 CLI 시작 차단, 갱신 실패 시 종료(fail-closed)",
+            "<strong>Bedrock 대화형 설정 마법사</strong> 추가 — 로그인 화면 \"3rd-party platform\" 선택 시 AWS 인증·리전·자격증명·모델 핀을 단계별 안내",
+            "<strong>/cost</strong> 명령어에 구독 사용자용 모델별·캐시 히트 분류 내역 추가",
+            "<strong>/release-notes</strong> 대화형 버전 선택기로 개선 — 과거 버전 노트 탐색 가능",
+            "<strong>Remote Control 세션 이름</strong> 호스트네임 기반 기본 접두사 사용 (예: myhost-graceful-unicorn), <strong>--remote-control-session-name-prefix</strong>로 커스터마이즈 가능",
+            "<strong>Pro 사용자 캐시 만료 힌트</strong> — 세션 재진입 시 prompt cache 만료 후 다음 턴 미캐시 예상 토큰 수 푸터 표시",
+            "<strong>tmux 창 삭제·재번호 매김</strong> 후 서브에이전트 영구 실패(\"Could not determine pane count\") 버그 수정"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.91",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.92",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "91"
+          "bgNum": "92"
         },
         {
           "id": "nextjs-1622",
