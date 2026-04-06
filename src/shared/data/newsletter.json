@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 12",
+    "volume": "VOL. 001 / ISSUE 13",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.04.06 MON",
     "sourceCount": 8
   },
   "ticker": [
+    "VITE 8.0.5 — server.fs 경로 탐색 취약점 긴급 보안 패치 4종",
     "VITE 8.0.4 — esbuild 0.28 지원·HMR truncate·옵티마이저 1초 로깅 추가",
     "CLAUDE CODE v2.1.92 — forceRemoteSettingsRefresh 정책·Bedrock 마법사·/cost 모델별 내역 추가",
     "CLAUDE CODE v2.1.91 — MCP 대용량 결과 유지·플러그인 bin 실행·plan 모드 컨테이너 재시작 버그 수정",
@@ -106,23 +107,23 @@
           }
         },
         {
-          "id": "vite-804",
+          "id": "vite-805",
           "category": "release",
           "variant": "wide",
           "tag": "TOOL",
-          "version": "Vite 8.0.4",
-          "title": "Vite 8.0.4",
+          "version": "Vite 8.0.5",
+          "title": "Vite 8.0.5",
           "date": "2026-04-06",
           "source": "vitejs/vite",
           "bullets": [
-            "<strong>esbuild 0.28</strong> peer deps 허용 — 최신 esbuild 버전과의 호환성 확장",
-            "<strong>HMR 파일 목록 truncate</strong> — 대규모 HMR 업데이트 시 긴 파일 목록 자동 잘림 처리",
-            "<strong>옵티마이저 성능 로깅</strong> — 의존성 스캔·번들이 1초 이상 소요 시 자동 로그 출력",
-            "<strong>tsconfig paths `#` 접두사</strong> 해석 버그 수정 — subpath imports 올바르게 처리",
-            "<strong>WebWorker SSR</strong> 빌드에 browser 플랫폼 설정 적용 버그 수정"
+            "<strong>경로 탐색(Path Traversal) 취약점</strong> 긴급 보안 패치 — optimize deps sourcemap 핸들러에서 파일 경로 탐색 공격 차단",
+            "<strong>server.fs 체크</strong>를 env transport 전송에도 적용 — 환경 변수 전송 경로의 파일 시스템 접근 제한 누락 버그 수정",
+            "쿼리 파라미터 스트리핑 이후에도 <strong>server.fs 검증</strong> 수행 — URL 쿼리 제거 후 경로에도 접근 제한 적용",
+            "소스맵에서 <strong>패키지 외부 파일 참조 차단</strong> — 소스맵이 패키지 루트 밖 파일을 참조하는 것 금지",
+            "내부 코드베이스 <strong>TypeScript 6</strong>으로 업그레이드"
           ],
           "link": {
-            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.4",
+            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.5",
             "label": "github.com/vitejs/vite →"
           },
           "bgNum": "8"
