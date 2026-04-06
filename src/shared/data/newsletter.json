@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 11",
+    "volume": "VOL. 001 / ISSUE 12",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.04 SAT",
+    "date": "2026.04.06 MON",
     "sourceCount": 8
   },
   "ticker": [
+    "VITE 8.0.4 — esbuild 0.28 지원·HMR truncate·옵티마이저 1초 로깅 추가",
     "CLAUDE CODE v2.1.92 — forceRemoteSettingsRefresh 정책·Bedrock 마법사·/cost 모델별 내역 추가",
     "CLAUDE CODE v2.1.91 — MCP 대용량 결과 유지·플러그인 bin 실행·plan 모드 컨테이너 재시작 버그 수정",
     "CLAUDE CODE v2.1.90 — /powerup 학습 기능·rate-limit 무한 루프·캐시 미스 버그 수정",
@@ -81,7 +82,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.01.26 ~ 2026.03.27",
+      "date": "2026.01.26 ~ 2026.04.06",
       "news": [
         {
           "id": "typescript-602",
@@ -105,23 +106,23 @@
           }
         },
         {
-          "id": "vite-803",
+          "id": "vite-804",
           "category": "release",
           "variant": "wide",
           "tag": "TOOL",
-          "version": "Vite 8.0.3",
-          "title": "Vite 8.0.3",
-          "date": "2026-03-26",
+          "version": "Vite 8.0.4",
+          "title": "Vite 8.0.4",
+          "date": "2026-04-06",
           "source": "vitejs/vite",
           "bullets": [
-            "<strong>Rolldown 1.0.0-rc.12</strong> 업데이트 — 최신 RC로 번들 성능 지속 개선",
-            "<strong>HTML 멀티 엔트리 CSS 캐싱</strong> 버그 수정 — 엔트리 간 스타일 누락 방지",
-            "<strong>Module Runner</strong> Base64 소스맵 비ASCII 문자 처리 수정",
-            "<strong>SSR ssrTransform</strong> `meta` 바인딩과 `import.meta` 충돌 오류 수정",
-            "<strong>옵티마이저</strong> glob import 내 서브패스 임포트 해석 버그 수정"
+            "<strong>esbuild 0.28</strong> peer deps 허용 — 최신 esbuild 버전과의 호환성 확장",
+            "<strong>HMR 파일 목록 truncate</strong> — 대규모 HMR 업데이트 시 긴 파일 목록 자동 잘림 처리",
+            "<strong>옵티마이저 성능 로깅</strong> — 의존성 스캔·번들이 1초 이상 소요 시 자동 로그 출력",
+            "<strong>tsconfig paths `#` 접두사</strong> 해석 버그 수정 — subpath imports 올바르게 처리",
+            "<strong>WebWorker SSR</strong> 빌드에 browser 플랫폼 설정 적용 버그 수정"
           ],
           "link": {
-            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.3",
+            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.4",
             "label": "github.com/vitejs/vite →"
           },
           "bgNum": "8"
