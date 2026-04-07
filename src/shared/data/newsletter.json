@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 13",
+    "volume": "VOL. 001 / ISSUE 14",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.06 MON",
+    "date": "2026.04.07 TUE",
     "sourceCount": 8
   },
   "ticker": [
+    "VITE 8.0.6 — Rolldown RC.13 업데이트 및 CSS·CJS interop 버그 수정",
     "VITE 8.0.5 — server.fs 경로 탐색 취약점 긴급 보안 패치 4종",
     "VITE 8.0.4 — esbuild 0.28 지원·HMR truncate·옵티마이저 1초 로깅 추가",
     "CLAUDE CODE v2.1.92 — forceRemoteSettingsRefresh 정책·Bedrock 마법사·/cost 모델별 내역 추가",
@@ -83,7 +84,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.01.26 ~ 2026.04.06",
+      "date": "2026.01.26 ~ 2026.04.07",
       "news": [
         {
           "id": "typescript-602",
@@ -107,23 +108,23 @@
           }
         },
         {
-          "id": "vite-805",
+          "id": "vite-806",
           "category": "release",
           "variant": "wide",
           "tag": "TOOL",
-          "version": "Vite 8.0.5",
-          "title": "Vite 8.0.5",
-          "date": "2026-04-06",
+          "version": "Vite 8.0.6",
+          "title": "Vite 8.0.6",
+          "date": "2026-04-07",
           "source": "vitejs/vite",
           "bullets": [
-            "<strong>경로 탐색(Path Traversal) 취약점</strong> 긴급 보안 패치 — optimize deps sourcemap 핸들러에서 파일 경로 탐색 공격 차단",
-            "<strong>server.fs 체크</strong>를 env transport 전송에도 적용 — 환경 변수 전송 경로의 파일 시스템 접근 제한 누락 버그 수정",
-            "쿼리 파라미터 스트리핑 이후에도 <strong>server.fs 검증</strong> 수행 — URL 쿼리 제거 후 경로에도 접근 제한 적용",
-            "소스맵에서 <strong>패키지 외부 파일 참조 차단</strong> — 소스맵이 패키지 루트 밖 파일을 참조하는 것 금지",
-            "내부 코드베이스 <strong>TypeScript 6</strong>으로 업그레이드"
+            "<strong>Rolldown 1.0.0-rc.13</strong> 업데이트 — 번들러 안정성·최적화 향상 및 최신 RC 반영",
+            "<strong>CSS</strong> — Sass 에러 객체 중복 변이(mutation) 방지 버그 수정",
+            "<strong>optimize-deps</strong> — CJS interop 할당 호이스팅 처리 수정으로 의존성 최적화 안정성 개선",
+            "DNS 순서가 <strong>verbatim</strong>일 때 `getLocalhostAddressIfDiffersFromDNS` 조기 반환으로 서버 시작 성능 향상",
+            "<strong>create-vite</strong> — 불필요한 `DOM.Iterable` lib 선언 제거로 tsconfig 경량화"
           ],
           "link": {
-            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.5",
+            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.6",
             "label": "github.com/vitejs/vite →"
           },
           "bgNum": "8"
