@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 16",
+    "volume": "VOL. 001 / ISSUE 17",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.04.08 WED",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.96 — Bedrock 403 인증 헤더 누락 회귀 버그 수정",
     "CLAUDE CODE v2.1.94 — Bedrock Mantle 지원·기본 effort high 상향·Slack MCP 콤팩트 헤더 추가",
     "VITE 8.0.7 — DNS 동기 조회 전환으로 서버 시작 안정성 개선",
     "VITE 8.0.6 — Rolldown RC.13 업데이트 및 CSS·CJS interop 버그 수정",
@@ -31,31 +32,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.07",
+      "date": "2026.04.08",
       "news": [
         {
-          "id": "claude-code-2194",
+          "id": "claude-code-2196",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.94",
+          "version": "v2.1.96",
           "title": "Claude Code",
-          "date": "2026-04-07",
+          "date": "2026-04-08",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>Amazon Bedrock Mantle 지원</strong> — <strong>CLAUDE_CODE_USE_MANTLE=1</strong> 환경변수로 Mantle 기반 Bedrock 백엔드 활성화",
-            "<strong>기본 effort 레벨 high로 상향</strong> — API 키·Bedrock/Vertex/Foundry·Team·Enterprise 사용자 기본값 medium → high (<strong>/effort</strong>로 조절 가능)",
-            "<strong>Slack MCP 콤팩트 헤더</strong> — send-message 도구 호출 시 클릭 가능한 채널 링크가 포함된 <strong>Slacked #channel</strong> 헤더 표시",
-            "플러그인 <strong>keep-coding-instructions</strong> 프론트매터 필드 지원 — 플러그인 출력 스타일 커스터마이즈 가능",
-            "<strong>hookSpecificOutput.sessionTitle</strong> 추가 — <strong>UserPromptSubmit</strong> 훅에서 세션 제목 직접 설정 가능",
-            "<strong>플러그인 스킬 이름 안정화</strong> — <code>\"skills\": [\".\/\"]</code> 선언 시 디렉터리명 대신 프론트매터 <strong>name</strong> 필드 우선 사용",
-            "<strong>429 rate-limit 에이전트 멈춤 버그 수정</strong> — 긴 Retry-After 헤더 수신 시 조용히 대기하던 문제 해결, 에러 즉시 표면화"
+            "<strong>Bedrock 403 Authorization 헤더 누락 회귀 수정</strong> — v2.1.94 Mantle 지원 추가 과정에서 발생한 인증 오류 당일 패치 (v2.1.96)",
+            "<strong>AWS_BEARER_TOKEN_BEDROCK</strong> 사용 시 모든 요청이 403으로 실패하던 문제 해결 (v2.1.96)",
+            "<strong>CLAUDE_CODE_SKIP_BEDROCK_AUTH</strong> 설정 환경에서도 동일 회귀 수정 적용 (v2.1.96)",
+            "<strong>Amazon Bedrock Mantle</strong> 정식 지원 — <code>CLAUDE_CODE_USE_MANTLE=1</code>로 활성화, 403 수정으로 안정 사용 가능 (v2.1.94)",
+            "<strong>기본 effort 레벨 high</strong>로 상향 — API·Bedrock/Vertex/Foundry·Team·Enterprise 전 플랜 기본값 변경, <code>/effort</code>로 재조정 (v2.1.94)",
+            "<strong>Slack MCP 콤팩트 헤더</strong> — send-message 호출 시 클릭 가능한 <strong>Slacked #channel</strong> 링크 표시 (v2.1.94)",
+            "<strong>플러그인 스킬 이름 안정화</strong> — 프론트매터 <code>name</code> 필드 우선 사용으로 설치 방식 무관한 일관된 호출명 보장 (v2.1.94)"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.94",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.96",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "94"
+          "bgNum": "96"
         },
         {
           "id": "nextjs-1622",
