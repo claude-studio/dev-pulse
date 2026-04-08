@@ -1,11 +1,13 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 17",
+    "volume": "VOL. 001 / ISSUE 18",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.04.08 WED",
     "sourceCount": 8
   },
   "ticker": [
+    "NEXT.JS 16.2.3 — CVE-2026-23869 보안 패치 및 Turbopack 안정성 개선",
+    "REACT v19.2.5 — Server Components 순환 참조 보호 로직 강화",
     "CLAUDE CODE v2.1.96 — Bedrock 403 인증 헤더 누락 회귀 버그 수정",
     "CLAUDE CODE v2.1.94 — Bedrock Mantle 지원·기본 effort high 상향·Slack MCP 콤팩트 헤더 추가",
     "VITE 8.0.7 — DNS 동기 조회 전환으로 서버 시작 안정성 개선",
@@ -59,26 +61,26 @@
           "bgNum": "96"
         },
         {
-          "id": "nextjs-1622",
+          "id": "nextjs-1623",
           "category": "release",
           "variant": "tall",
           "tag": "RELEASE",
-          "version": "16.2.2",
+          "version": "16.2.3",
           "title": "Next.js",
-          "date": "2026-04-01",
+          "date": "2026-04-08",
           "source": "vercel/next.js",
           "bullets": [
-            "<strong>버그 픽스 백포트 릴리즈</strong> — 신규 기능 없이 안정성 집중 개선",
-            "<strong>TypeScript v6</strong> `baseUrl` 및 `moduleResolution` 지원 중단 경고 백포트",
-            "<strong>create-next-app</strong> — CLI 플래그 제공 시 대화형 프롬프트 자동 스킵",
-            "<strong>next.config.js</strong>에 `serverFastRefresh` 옵션 추가",
-            "<strong>Turbopack</strong> — 앱 라우트 핸들러 서버 HMR 활성화",
-            "<strong>Turbopack</strong> — 메타데이터 라우트 서버 HMR 제외",
-            "<strong>CSS HMR Safari</strong> 버그 수정 (백포트)",
-            "glibc Linux 빌드 CI 수정 및 <strong>bmi2 qfilter</strong> 비활성화"
+            "<strong>보안 패치 백포트 릴리즈</strong> — <strong>CVE-2026-23869</strong> 취약점 수정 포함, 신규 기능 없이 안정성·보안 집중",
+            "<strong>CVE-2026-23869</strong> — Vercel Changelog 공개 취약점, 16.x 전 브랜치 동일 패치 적용",
+            "<strong>app-page ISR 재검증 오류 보고</strong> — <code>onRequestError</code>를 통한 stale ISR 재검증 오류 전파 수정",
+            "<strong>manifest.ts HMR 버그</strong> 수정 — 16.2에서 <code>manifest.ts</code> 파일이 HMR을 중단시키던 문제 해결",
+            "<strong>출력 에셋 중복 제거</strong> — emit 단계에서 컨텐츠 충돌 감지 및 중복 에셋 자동 제거",
+            "<strong>styled-jsx 레이스 컨디션</strong> 수정 — 동시 렌더링 중 스타일이 손실되던 문제 해결",
+            "<strong>turbo-tasks-backend</strong> — 작업 취소 및 오류 처리 안정성 개선",
+            "<strong>create-next-app</strong> — CLI 플래그 제공 시 대화형 프롬프트 자동 스킵 백포트"
           ],
           "link": {
-            "url": "https://github.com/vercel/next.js/releases/tag/v16.2.2",
+            "url": "https://github.com/vercel/next.js/releases/tag/v16.2.3",
             "label": "github.com/vercel/next.js →"
           },
           "bgNum": "16"
@@ -87,7 +89,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.01.26 ~ 2026.04.07",
+      "date": "2026.03.18 ~ 2026.04.08",
       "news": [
         {
           "id": "typescript-602",
@@ -152,21 +154,21 @@
           }
         },
         {
-          "id": "react-1924",
-          "category": "security",
+          "id": "react-1925",
+          "category": "release",
           "variant": "third",
-          "tag": "SECURITY",
-          "version": "v19.2.4",
+          "tag": "RELEASE",
+          "version": "v19.2.5",
           "title": "React",
-          "date": "2026-01-26",
+          "date": "2026-04-08",
           "source": "facebook/react",
           "bullets": [
-            "Server Actions DoS 완화 강화",
-            "Server Components 보안 하드닝",
-            "v19.x 전 브랜치 동일 패치 적용"
+            "<strong>React Server Components</strong> 순환 참조 보호 강화 — 컴포넌트 트리 내 무한 순환 검출 로직 추가",
+            "<strong>Server Components</strong> 렌더링 안정성 개선",
+            "v19.x 전체 브랜치 적용 패치"
           ],
           "link": {
-            "url": "https://github.com/facebook/react/releases",
+            "url": "https://github.com/facebook/react/releases/tag/v19.2.5",
             "label": "github.com/facebook/react →"
           }
         },
