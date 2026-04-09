@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 20",
+    "volume": "VOL. 001 / ISSUE 21",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.04.09 THU",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.98 — Google Vertex AI 마법사·Monitor 도구·Bash 권한 보안 다수 수정",
     "VITE 8.0.8 — ROLLDOWN RC.15 업데이트 및 DNS·SSR 버그 수정",
     "CLAUDE CODE v2.1.97 — NO_FLICKER 포커스 뷰·MCP 메모리 누수·Bash 권한 강화 다수 수정",
     "NEXT.JS 16.2.3 — CVE-2026-23869 보안 패치 및 Turbopack 안정성 개선",
@@ -36,31 +37,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.08",
+      "date": "2026.04.09",
       "news": [
         {
-          "id": "claude-code-2197",
+          "id": "claude-code-2198",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.97",
+          "version": "v2.1.98",
           "title": "Claude Code",
-          "date": "2026-04-08",
+          "date": "2026-04-09",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>NO_FLICKER 포커스 뷰 (<kbd>Ctrl+O</kbd>)</strong> 추가 — 프롬프트·단일 도구 요약(편집 diffstat 포함)·최종 응답만 보여주는 집중 모드 토글, CJK 문자 복사 깨짐·zellij 스크롤 아티팩트·MCP 결과 hover 크래시 등 다수 NO_FLICKER 버그 수정",
-            "<strong>상태 라인 설정 2종 추가</strong> — <code>refreshInterval</code>로 N초마다 status line 명령 재실행, <code>workspace.git_worktree</code>로 연결된 git worktree 경로를 JSON 입력에 노출",
-            "<strong>/agents 실행 표시 & Cedar 구문 강조</strong> — 에이전트 타입 옆에 <strong>● N running</strong> 인디케이터 표시, <code>.cedar</code>/<code>.cedarpolicy</code> 파일 구문 강조 지원 추가",
-            "<strong>권한 보안 강화</strong> — <code>--dangerously-skip-permissions</code> 묵시적 다운그레이드 수정, Bash 도구 env-var 접두사·네트워크 리다이렉트 검사 강화, JS 프로토타입 프로퍼티(e.g. <code>toString</code>)가 <code>settings.json</code>을 무력화하던 버그 및 관리형 allow 규칙 잔류 버그 수정",
-            "<strong>MCP 메모리 누수 & OAuth 수정</strong> — HTTP/SSE 재연결 시 ~50 MB/hr씩 누적되던 버퍼 미해제 수정, <code>oauth.authServerMetadataUrl</code>이 재시작 후 토큰 갱신 시 무시되던 버그(ADFS 등) 수정",
-            "<strong>429 지수 백오프 & /resume 다수 수정</strong> — 소형 Retry-After 헤더로 13초 내 재시도 소진 현상 수정, <code>--resume</code> 피커 검색·네비게이션·10 KB+ 파일 diff 소실·스크립트 타입 덮어쓰기 등 다수 수정",
-            "<strong>UX 개선</strong> — Accept Edits 모드에서 안전 env var 접두사 명령 자동 승인, Bridge 세션에 로컬 git 저장소·브랜치·작업 디렉토리 표시, CJK 문장 부호 뒤 <code>/</code>·<code>@</code> 자동완성 지원, <code>/claude-api</code> 스킬에 Managed Agents 커버리지 추가"
+            "<strong>Google Vertex AI 설정 마법사</strong> 추가 — 로그인 화면 '3rd-party platform' 선택 시 GCP 인증·프로젝트·리전 설정·자격증명 검증·모델 핀닝까지 단계별 안내하는 인터랙티브 위저드 신규 제공",
+            "<strong>Monitor 도구 & 서브프로세스 샌드박싱</strong> — 백그라운드 스크립트의 스트리밍 이벤트 구독용 <strong>Monitor 도구</strong> 추가; Linux에서 <code>CLAUDE_CODE_SUBPROCESS_ENV_SCRUB</code> 설정 시 PID 네임스페이스 격리 샌드박싱, <code>CLAUDE_CODE_SCRIPT_CAPS</code>로 세션별 스크립트 호출 수 제한 가능",
+            "<strong>CLAUDE_CODE_PERFORCE_MODE 환경변수</strong> — 설정 시 Edit/Write/NotebookEdit가 읽기 전용 파일에 <code>p4 edit</code> 힌트와 함께 오류 반환, Perforce 워크플로우와의 통합 지원",
+            "<strong>Bash 권한 보안 대규모 수정</strong> — 백슬래시 이스케이프 플래그로 읽기 전용 승인을 우회해 임의 코드 실행이 가능하던 버그, 복합 명령어 강제 권한 프롬프트 우회, <code>/dev/tcp</code>·<code>/dev/udp</code> 리다이렉트 자동 허용, JavaScript 프로토타입 프로퍼티가 <code>settings.json</code>을 무력화하던 버그 등 <strong>다수 권한 취약점</strong> 패치",
+            "<strong>/agents 탭 레이아웃 & LSP clientInfo</strong> — Running(실시간 서브에이전트)·Library(에이전트 실행·인스턴스 보기 액션) 탭 분리; LSP <code>initialize</code> 요청에 <code>clientInfo</code> 추가; <code>--exclude-dynamic-system-prompt-sections</code> 플래그로 cross-user 프롬프트 캐싱 최적화",
+            "<strong>/resume·/export 다수 수정</strong> — <code>--resume</code> 편집 불가·필터 상태 초기화·빈 목록 키 입력 무시·크로스 프로젝트 스테일 등 다수 수정; <code>/export</code> 절대경로·<code>~</code> 미동작·<code>.txt</code> 강제 변환 버그 수정; 미사용 파일이 있는 스테일 서브에이전트 워크트리 삭제 방지",
+            "<strong>MCP·OAuth·터미널 UX 수정</strong> — MCP OAuth <code>authServerMetadataUrl</code> 토큰 갱신 미적용(ADFS 등) 수정; xterm·VS Code 터미널 대문자 소문자 변환·macOS 텍스트 치환 버그 수정; <code>permissions.additionalDirectories</code> 재시작 없이 즉시 적용; Vim 모드 <code>j</code>/<code>k</code> 히스토리 탐색 추가"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.97",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.98",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "97"
+          "bgNum": "98"
         },
         {
           "id": "nextjs-1623",
