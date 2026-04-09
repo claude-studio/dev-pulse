@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 19",
+    "volume": "VOL. 001 / ISSUE 20",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.04.09 THU",
     "sourceCount": 8
   },
   "ticker": [
+    "VITE 8.0.8 — ROLLDOWN RC.15 업데이트 및 DNS·SSR 버그 수정",
     "CLAUDE CODE v2.1.97 — NO_FLICKER 포커스 뷰·MCP 메모리 누수·Bash 권한 강화 다수 수정",
     "NEXT.JS 16.2.3 — CVE-2026-23869 보안 패치 및 Turbopack 안정성 개선",
     "REACT v19.2.5 — Server Components 순환 참조 보호 로직 강화",
@@ -90,7 +91,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.03.18 ~ 2026.04.08",
+      "date": "2026.03.18 ~ 2026.04.09",
       "news": [
         {
           "id": "typescript-602",
@@ -114,26 +115,26 @@
           }
         },
         {
-          "id": "vite-807",
+          "id": "vite-808",
           "category": "release",
           "variant": "wide",
           "tag": "TOOL",
-          "version": "Vite 8.0.7",
-          "title": "Vite 8.0.7",
-          "date": "2026-04-07",
+          "version": "Vite 8.0.8",
+          "title": "Vite 8.0.8",
+          "date": "2026-04-09",
           "source": "vitejs/vite",
           "bullets": [
-            "<strong>DNS 동기 조회 전환</strong> — `dns.getDefaultResultOrder`를 비동기 `dns.promises` 대신 동기 방식으로 호출하도록 변경",
-            "Node.js DNS 설정(<strong>verbatim</strong>, <strong>ipv4first</strong>)이 서버 시작 시 즉시 반영되어 개발 환경 주소 해석 예측성 향상",
-            "`getLocalhostAddressIfDiffersFromDNS` 함수 내 <strong>비동기 DNS 의존 제거</strong>로 이벤트 루프 타이밍 엣지 케이스 해결",
-            "IPv4/IPv6 혼합 환경 및 <strong>컨테이너·원격 개발</strong> 환경에서 localhost 주소 감지 안정성 개선",
-            "<strong>단일 버그 픽스 마이크로 릴리즈</strong> — 8.0.6 이후 DNS 관련 회귀를 즉시 대응하는 패치"
+            "<strong>Rolldown 1.0.0-rc.15</strong> 업데이트 — 핵심 번들러 엔진 최신 RC 버전 탑재, 지속적인 Rolldown 안정화 진행",
+            "<strong>DNS 조회 임시 우회 적용</strong> — 8.0.7에서 도입한 동기 <code>dns.getDefaultResultOrder</code> 방식을 더 안전한 임시 우회 방식으로 교체하여 엣지 케이스 재발 방지",
+            "<strong>SSR 클래스 프로퍼티 키 호이스팅</strong> 버그 수정 — import 바인딩과 충돌하던 클래스 정적 프로퍼티 키 변환 오류 해결",
+            "<strong>8.0.7 DNS 회귀 즉시 대응</strong> — 동기 호출 방식 엣지 케이스로 발생하던 서버 시작 불안정 문제를 재수정",
+            "<strong>마이크로 패치 릴리즈</strong> — Rolldown RC.15 기능 추가와 함께 DNS·SSR 안정성에 집중한 단기 패치"
           ],
           "link": {
-            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.7",
+            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.8",
             "label": "github.com/vitejs/vite →"
           },
-          "bgNum": "7"
+          "bgNum": "8"
         },
         {
           "id": "tailwind-422",
