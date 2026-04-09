@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 18",
+    "volume": "VOL. 001 / ISSUE 19",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.08 WED",
+    "date": "2026.04.09 THU",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.97 — NO_FLICKER 포커스 뷰·MCP 메모리 누수·Bash 권한 강화 다수 수정",
     "NEXT.JS 16.2.3 — CVE-2026-23869 보안 패치 및 Turbopack 안정성 개선",
     "REACT v19.2.5 — Server Components 순환 참조 보호 로직 강화",
     "CLAUDE CODE v2.1.96 — Bedrock 403 인증 헤더 누락 회귀 버그 수정",
@@ -37,28 +38,28 @@
       "date": "2026.04.08",
       "news": [
         {
-          "id": "claude-code-2196",
+          "id": "claude-code-2197",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.96",
+          "version": "v2.1.97",
           "title": "Claude Code",
           "date": "2026-04-08",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>Bedrock 403 Authorization 헤더 누락 회귀 수정</strong> — v2.1.94 Mantle 지원 추가 과정에서 발생한 인증 오류 당일 패치 (v2.1.96)",
-            "<strong>AWS_BEARER_TOKEN_BEDROCK</strong> 사용 시 모든 요청이 403으로 실패하던 문제 해결 (v2.1.96)",
-            "<strong>CLAUDE_CODE_SKIP_BEDROCK_AUTH</strong> 설정 환경에서도 동일 회귀 수정 적용 (v2.1.96)",
-            "<strong>Amazon Bedrock Mantle</strong> 정식 지원 — <code>CLAUDE_CODE_USE_MANTLE=1</code>로 활성화, 403 수정으로 안정 사용 가능 (v2.1.94)",
-            "<strong>기본 effort 레벨 high</strong>로 상향 — API·Bedrock/Vertex/Foundry·Team·Enterprise 전 플랜 기본값 변경, <code>/effort</code>로 재조정 (v2.1.94)",
-            "<strong>Slack MCP 콤팩트 헤더</strong> — send-message 호출 시 클릭 가능한 <strong>Slacked #channel</strong> 링크 표시 (v2.1.94)",
-            "<strong>플러그인 스킬 이름 안정화</strong> — 프론트매터 <code>name</code> 필드 우선 사용으로 설치 방식 무관한 일관된 호출명 보장 (v2.1.94)"
+            "<strong>NO_FLICKER 포커스 뷰 (<kbd>Ctrl+O</kbd>)</strong> 추가 — 프롬프트·단일 도구 요약(편집 diffstat 포함)·최종 응답만 보여주는 집중 모드 토글, CJK 문자 복사 깨짐·zellij 스크롤 아티팩트·MCP 결과 hover 크래시 등 다수 NO_FLICKER 버그 수정",
+            "<strong>상태 라인 설정 2종 추가</strong> — <code>refreshInterval</code>로 N초마다 status line 명령 재실행, <code>workspace.git_worktree</code>로 연결된 git worktree 경로를 JSON 입력에 노출",
+            "<strong>/agents 실행 표시 & Cedar 구문 강조</strong> — 에이전트 타입 옆에 <strong>● N running</strong> 인디케이터 표시, <code>.cedar</code>/<code>.cedarpolicy</code> 파일 구문 강조 지원 추가",
+            "<strong>권한 보안 강화</strong> — <code>--dangerously-skip-permissions</code> 묵시적 다운그레이드 수정, Bash 도구 env-var 접두사·네트워크 리다이렉트 검사 강화, JS 프로토타입 프로퍼티(e.g. <code>toString</code>)가 <code>settings.json</code>을 무력화하던 버그 및 관리형 allow 규칙 잔류 버그 수정",
+            "<strong>MCP 메모리 누수 & OAuth 수정</strong> — HTTP/SSE 재연결 시 ~50 MB/hr씩 누적되던 버퍼 미해제 수정, <code>oauth.authServerMetadataUrl</code>이 재시작 후 토큰 갱신 시 무시되던 버그(ADFS 등) 수정",
+            "<strong>429 지수 백오프 & /resume 다수 수정</strong> — 소형 Retry-After 헤더로 13초 내 재시도 소진 현상 수정, <code>--resume</code> 피커 검색·네비게이션·10 KB+ 파일 diff 소실·스크립트 타입 덮어쓰기 등 다수 수정",
+            "<strong>UX 개선</strong> — Accept Edits 모드에서 안전 env var 접두사 명령 자동 승인, Bridge 세션에 로컬 git 저장소·브랜치·작업 디렉토리 표시, CJK 문장 부호 뒤 <code>/</code>·<code>@</code> 자동완성 지원, <code>/claude-api</code> 스킬에 Managed Agents 커버리지 추가"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.96",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.97",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "96"
+          "bgNum": "97"
         },
         {
           "id": "nextjs-1623",
