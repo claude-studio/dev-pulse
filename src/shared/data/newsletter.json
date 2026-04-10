@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 21",
+    "volume": "VOL. 001 / ISSUE 22",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.09 THU",
+    "date": "2026.04.10 FRI",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.100 — 릴리즈 노트 미공개 핫픽스 패치 (v2.1.99 건너뜀)",
     "CLAUDE CODE v2.1.98 — Google Vertex AI 마법사·Monitor 도구·Bash 권한 보안 다수 수정",
     "VITE 8.0.8 — ROLLDOWN RC.15 업데이트 및 DNS·SSR 버그 수정",
     "CLAUDE CODE v2.1.97 — NO_FLICKER 포커스 뷰·MCP 메모리 누수·Bash 권한 강화 다수 수정",
@@ -37,31 +38,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.09",
+      "date": "2026.04.10",
       "news": [
         {
-          "id": "claude-code-2198",
+          "id": "claude-code-21100",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.98",
+          "version": "v2.1.100",
           "title": "Claude Code",
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>Google Vertex AI 설정 마법사</strong> 추가 — 로그인 화면 '3rd-party platform' 선택 시 GCP 인증·프로젝트·리전 설정·자격증명 검증·모델 핀닝까지 단계별 안내하는 인터랙티브 위저드 신규 제공",
-            "<strong>Monitor 도구 & 서브프로세스 샌드박싱</strong> — 백그라운드 스크립트의 스트리밍 이벤트 구독용 <strong>Monitor 도구</strong> 추가; Linux에서 <code>CLAUDE_CODE_SUBPROCESS_ENV_SCRUB</code> 설정 시 PID 네임스페이스 격리 샌드박싱, <code>CLAUDE_CODE_SCRIPT_CAPS</code>로 세션별 스크립트 호출 수 제한 가능",
-            "<strong>CLAUDE_CODE_PERFORCE_MODE 환경변수</strong> — 설정 시 Edit/Write/NotebookEdit가 읽기 전용 파일에 <code>p4 edit</code> 힌트와 함께 오류 반환, Perforce 워크플로우와의 통합 지원",
-            "<strong>Bash 권한 보안 대규모 수정</strong> — 백슬래시 이스케이프 플래그로 읽기 전용 승인을 우회해 임의 코드 실행이 가능하던 버그, 복합 명령어 강제 권한 프롬프트 우회, <code>/dev/tcp</code>·<code>/dev/udp</code> 리다이렉트 자동 허용, JavaScript 프로토타입 프로퍼티가 <code>settings.json</code>을 무력화하던 버그 등 <strong>다수 권한 취약점</strong> 패치",
-            "<strong>/agents 탭 레이아웃 & LSP clientInfo</strong> — Running(실시간 서브에이전트)·Library(에이전트 실행·인스턴스 보기 액션) 탭 분리; LSP <code>initialize</code> 요청에 <code>clientInfo</code> 추가; <code>--exclude-dynamic-system-prompt-sections</code> 플래그로 cross-user 프롬프트 캐싱 최적화",
-            "<strong>/resume·/export 다수 수정</strong> — <code>--resume</code> 편집 불가·필터 상태 초기화·빈 목록 키 입력 무시·크로스 프로젝트 스테일 등 다수 수정; <code>/export</code> 절대경로·<code>~</code> 미동작·<code>.txt</code> 강제 변환 버그 수정; 미사용 파일이 있는 스테일 서브에이전트 워크트리 삭제 방지",
-            "<strong>MCP·OAuth·터미널 UX 수정</strong> — MCP OAuth <code>authServerMetadataUrl</code> 토큰 갱신 미적용(ADFS 등) 수정; xterm·VS Code 터미널 대문자 소문자 변환·macOS 텍스트 치환 버그 수정; <code>permissions.additionalDirectories</code> 재시작 없이 즉시 적용; Vim 모드 <code>j</code>/<code>k</code> 히스토리 탐색 추가"
+            "<strong>v2.1.100 핫픽스 공개</strong> (2026-04-10 05:16 UTC) — 릴리즈 노트 미기재; v2.1.99를 건너뛴 빠른 패치로 v2.1.98 배포 약 10시간 후 연속 출시",
+            "<strong>Google Vertex AI 설정 마법사</strong> 포함 — 로그인 화면 '3rd-party platform' 선택 시 GCP 인증·프로젝트·리전 설정·자격증명 검증·모델 핀닝까지 단계별 인터랙티브 안내 제공",
+            "<strong>Monitor 도구 & Linux 서브프로세스 샌드박싱</strong> — 백그라운드 스크립트의 스트리밍 이벤트 구독용 Monitor 도구 추가; <code>CLAUDE_CODE_SUBPROCESS_ENV_SCRUB</code> 설정 시 PID 네임스페이스 격리, <code>CLAUDE_CODE_SCRIPT_CAPS</code>로 세션별 스크립트 호출 수 제한",
+            "<strong>Bash 권한 보안 대규모 패치</strong> — 백슬래시 이스케이프 플래그로 읽기 전용 승인을 우회해 임의 코드 실행이 가능하던 버그, 복합 명령어 강제 권한 프롬프트 우회, <code>/dev/tcp·/dev/udp</code> 리다이렉트 자동 허용, JavaScript 프로토타입 프로퍼티가 <code>settings.json</code>을 무력화하던 버그 등 <strong>다수 취약점</strong> 누적 수정",
+            "<strong>NO_FLICKER 포커스 뷰 (Ctrl+O)</strong> — 프롬프트·도구 한 줄 요약(편집 diffstat 포함)·최종 응답만 표시하는 집중 모드; <code>refreshInterval</code> 설정으로 상태바 주기적 갱신 지원",
+            "<strong>/agents Running·Library 탭 분리</strong> — 실시간 서브에이전트 상태(Running)와 에이전트 실행·인스턴스 보기 액션(Library) 탭 분리; LSP <code>initialize</code>에 <code>clientInfo</code> 자동 제공; <code>--exclude-dynamic-system-prompt-sections</code>로 cross-user 프롬프트 캐싱 최적화",
+            "<strong>MCP·OAuth·/resume 다수 안정화</strong> — ADFS 등 <code>authServerMetadataUrl</code> 토큰 갱신 미적용 수정, 50 MB/hr MCP 메모리 누수 패치, /resume 편집 불가·필터 초기화·Vim <code>j/k</code> 히스토리 탐색 추가 등 v2.1.97–98 변경 포함"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.98",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.100",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "98"
+          "bgNum": "100"
         },
         {
           "id": "nextjs-1623",
