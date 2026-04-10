@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 22",
+    "volume": "VOL. 001 / ISSUE 23",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.04.10 FRI",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.101 — /team-onboarding 온보딩 가이드·OS CA 인증서 기본 신뢰 추가",
     "CLAUDE CODE v2.1.100 — 릴리즈 노트 미공개 핫픽스 패치 (v2.1.99 건너뜀)",
     "CLAUDE CODE v2.1.98 — Google Vertex AI 마법사·Monitor 도구·Bash 권한 보안 다수 수정",
     "VITE 8.0.8 — ROLLDOWN RC.15 업데이트 및 DNS·SSR 버그 수정",
@@ -41,28 +42,28 @@
       "date": "2026.04.10",
       "news": [
         {
-          "id": "claude-code-21100",
+          "id": "claude-code-21101",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.100",
+          "version": "v2.1.101",
           "title": "Claude Code",
           "date": "2026-04-10",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>v2.1.100 핫픽스 공개</strong> (2026-04-10 05:16 UTC) — 릴리즈 노트 미기재; v2.1.99를 건너뛴 빠른 패치로 v2.1.98 배포 약 10시간 후 연속 출시",
-            "<strong>Google Vertex AI 설정 마법사</strong> 포함 — 로그인 화면 '3rd-party platform' 선택 시 GCP 인증·프로젝트·리전 설정·자격증명 검증·모델 핀닝까지 단계별 인터랙티브 안내 제공",
-            "<strong>Monitor 도구 & Linux 서브프로세스 샌드박싱</strong> — 백그라운드 스크립트의 스트리밍 이벤트 구독용 Monitor 도구 추가; <code>CLAUDE_CODE_SUBPROCESS_ENV_SCRUB</code> 설정 시 PID 네임스페이스 격리, <code>CLAUDE_CODE_SCRIPT_CAPS</code>로 세션별 스크립트 호출 수 제한",
-            "<strong>Bash 권한 보안 대규모 패치</strong> — 백슬래시 이스케이프 플래그로 읽기 전용 승인을 우회해 임의 코드 실행이 가능하던 버그, 복합 명령어 강제 권한 프롬프트 우회, <code>/dev/tcp·/dev/udp</code> 리다이렉트 자동 허용, JavaScript 프로토타입 프로퍼티가 <code>settings.json</code>을 무력화하던 버그 등 <strong>다수 취약점</strong> 누적 수정",
-            "<strong>NO_FLICKER 포커스 뷰 (Ctrl+O)</strong> — 프롬프트·도구 한 줄 요약(편집 diffstat 포함)·최종 응답만 표시하는 집중 모드; <code>refreshInterval</code> 설정으로 상태바 주기적 갱신 지원",
-            "<strong>/agents Running·Library 탭 분리</strong> — 실시간 서브에이전트 상태(Running)와 에이전트 실행·인스턴스 보기 액션(Library) 탭 분리; LSP <code>initialize</code>에 <code>clientInfo</code> 자동 제공; <code>--exclude-dynamic-system-prompt-sections</code>로 cross-user 프롬프트 캐싱 최적화",
-            "<strong>MCP·OAuth·/resume 다수 안정화</strong> — ADFS 등 <code>authServerMetadataUrl</code> 토큰 갱신 미적용 수정, 50 MB/hr MCP 메모리 누수 패치, /resume 편집 불가·필터 초기화·Vim <code>j/k</code> 히스토리 탐색 추가 등 v2.1.97–98 변경 포함"
+            "<strong>/team-onboarding 명령어 신규 추가</strong> — 로컬 Claude Code 사용 이력을 분석해 팀 신규 합류자용 온보딩 가이드를 자동 생성, 반복적인 팀 세팅 작업 자동화",
+            "<strong>OS CA 인증서 스토어 기본 신뢰</strong> — 엔터프라이즈 TLS 프록시가 추가 설정 없이 즉시 작동; <code>CLAUDE_CODE_CERT_STORE=bundled</code> 설정 시 번들 CA만 사용",
+            "<strong>/ultraplan 원격 세션 자동 클라우드 환경 생성</strong> — 웹 사전 설정 없이 기본 클라우드 환경 자동 생성으로 원격 세션 진입 장벽 대폭 완화",
+            "<strong>포커스 모드 요약 품질 향상</strong> — Claude가 최종 메시지만 표시되는 환경을 인식해 더 자기완결적이고 맥락이 풍부한 요약 자동 생성",
+            "<strong>도구 미사용 가능 오류 메시지 개선</strong> — 현재 컨텍스트에서 왜 사용 불가능한지, 어떻게 진행할지 구체적인 안내 포함으로 디버깅 시간 단축",
+            "<strong>속도 제한 재시도 메시지 개선</strong> — 어떤 제한에 걸렸는지 및 리셋 시점을 명확히 표시 (기존 모호한 초 카운트다운 대체)",
+            "<strong>claude -p --resume 세션명 지원</strong> — <code>/rename</code>·<code>--name</code>으로 지정한 세션 제목 직접 수락; <code>settings.json</code> 미인식 훅 이벤트명 오류 차단 수정"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.100",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.101",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "100"
+          "bgNum": "101"
         },
         {
           "id": "nextjs-1623",
