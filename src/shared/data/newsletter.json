@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 23",
+    "volume": "VOL. 001 / ISSUE 24",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.10 FRI",
+    "date": "2026.04.13 MON",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.104 — v2.1.101 이후 핫픽스 패치 (v2.1.102·v2.1.103 건너뜀)",
     "CLAUDE CODE v2.1.101 — /team-onboarding 온보딩 가이드·OS CA 인증서 기본 신뢰 추가",
     "CLAUDE CODE v2.1.100 — 릴리즈 노트 미공개 핫픽스 패치 (v2.1.99 건너뜀)",
     "CLAUDE CODE v2.1.98 — Google Vertex AI 마법사·Monitor 도구·Bash 권한 보안 다수 수정",
@@ -39,31 +40,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.10",
+      "date": "2026.04.13",
       "news": [
         {
-          "id": "claude-code-21101",
+          "id": "claude-code-21104",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.101",
+          "version": "v2.1.104",
           "title": "Claude Code",
-          "date": "2026-04-10",
+          "date": "2026-04-13",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>/team-onboarding 명령어 신규 추가</strong> — 로컬 Claude Code 사용 이력을 분석해 팀 신규 합류자용 온보딩 가이드를 자동 생성, 반복적인 팀 세팅 작업 자동화",
+            "<strong>v2.1.104 핫픽스 패치 릴리즈</strong> — v2.1.102, v2.1.103 버전 건너뛰고 v2.1.101 직후 내부 안정화 패치 적용, 릴리즈 노트 미공개",
+            "<strong>/team-onboarding 명령어</strong> — 로컬 Claude Code 사용 이력을 분석해 팀 신규 합류자용 온보딩 가이드를 자동 생성, 반복적인 팀 세팅 작업 자동화",
             "<strong>OS CA 인증서 스토어 기본 신뢰</strong> — 엔터프라이즈 TLS 프록시가 추가 설정 없이 즉시 작동; <code>CLAUDE_CODE_CERT_STORE=bundled</code> 설정 시 번들 CA만 사용",
             "<strong>/ultraplan 원격 세션 자동 클라우드 환경 생성</strong> — 웹 사전 설정 없이 기본 클라우드 환경 자동 생성으로 원격 세션 진입 장벽 대폭 완화",
             "<strong>포커스 모드 요약 품질 향상</strong> — Claude가 최종 메시지만 표시되는 환경을 인식해 더 자기완결적이고 맥락이 풍부한 요약 자동 생성",
-            "<strong>도구 미사용 가능 오류 메시지 개선</strong> — 현재 컨텍스트에서 왜 사용 불가능한지, 어떻게 진행할지 구체적인 안내 포함으로 디버깅 시간 단축",
-            "<strong>속도 제한 재시도 메시지 개선</strong> — 어떤 제한에 걸렸는지 및 리셋 시점을 명확히 표시 (기존 모호한 초 카운트다운 대체)",
-            "<strong>claude -p --resume 세션명 지원</strong> — <code>/rename</code>·<code>--name</code>으로 지정한 세션 제목 직접 수락; <code>settings.json</code> 미인식 훅 이벤트명 오류 차단 수정"
+            "<strong>claude -p --resume 세션명 지원</strong> — <code>/rename</code>·<code>--name</code>으로 지정한 세션 제목 직접 수락; <code>settings.json</code> 미인식 훅 이벤트명 오류 차단 수정",
+            "<strong>속도 제한·오류 메시지 개선</strong> — 어떤 제한에 걸렸는지 및 리셋 시점 명확히 표시; 도구 미사용 가능 오류 시 구체적인 안내 포함으로 디버깅 시간 단축"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.101",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.104",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "101"
+          "bgNum": "104"
         },
         {
           "id": "nextjs-1623",
