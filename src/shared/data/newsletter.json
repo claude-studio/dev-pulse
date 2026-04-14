@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 25",
+    "volume": "VOL. 001 / ISSUE 26",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.04.14 TUE",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.107 — 장시간 작업 중 thinking hints 조기 표시",
     "CLAUDE CODE v2.1.105 — PreCompact 훅·플러그인 백그라운드 모니터·EnterWorktree path 파라미터 추가",
     "CLAUDE CODE v2.1.104 — v2.1.101 이후 핫픽스 패치 (v2.1.102·v2.1.103 건너뜀)",
     "CLAUDE CODE v2.1.101 — /team-onboarding 온보딩 가이드·OS CA 인증서 기본 신뢰 추가",
@@ -41,31 +42,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.13",
+      "date": "2026.04.14",
       "news": [
         {
-          "id": "claude-code-21105",
+          "id": "claude-code-21107",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.105",
+          "version": "v2.1.107",
           "title": "Claude Code",
-          "date": "2026-04-13",
+          "date": "2026-04-14",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>EnterWorktree `path` 파라미터</strong> 추가 — 기존 worktree로 직접 전환 가능, 현재 저장소 내 임의 worktree 경로 지정 지원으로 멀티 브랜치 전환이 더 유연해짐",
-            "<strong>PreCompact 훅 지원</strong> — 훅이 exit code 2 또는 <code>{\"decision\":\"block\"}</code> 반환으로 세션 컴팩션 차단 가능, 압축 시점을 완전 제어",
-            "<strong>플러그인 백그라운드 모니터</strong> — <code>monitors</code> 매니페스트 최상위 키로 세션 시작·스킬 호출 시 자동 무장; <code>/proactive</code>가 <code>/loop</code> 공식 별칭으로 추가",
-            "<strong>API 스트림 중단 & 네트워크 오류 메시지 개선</strong> — 5분간 데이터 없으면 스트림 자동 중단 후 non-streaming 재시도, 연결 오류 시 무음 스피너 대신 즉각 재시도 메시지 표시",
-            "<strong>/doctor 레이아웃 & /config 개선</strong> — 상태 아이콘 추가, <kbd>f</kbd> 키로 Claude가 감지된 문제 즉시 수정; 스킬 설명 한도 250→<strong>1,536자</strong>로 확대, 초과 시 시작 경고",
-            "<strong>WebFetch & MCP 대용량 출력 개선</strong> — 페이지에서 <code>&lt;style&gt;</code>·<code>&lt;script&gt;</code> 내용 제거로 CSS 페이지의 콘텐츠 예산 소진 방지, 대용량 MCP 결과에 포맷별 처리 레시피(<code>jq</code>, computed Read chunk) 안내",
-            "<strong>다수 버그 수정</strong> — 긴 프롬프트 줄바꿈 시 화면 공백·선행 공백 복사/트리밍 오류·Python rich/loguru 클릭가능 링크 깨짐·<kbd>alt+enter</kbd> 회귀·<strong>429</strong> 원시 JSON 노출·SSH/mosh 16색 팔레트 바랜 화면·Bedrock 비-US 지역 /model 피커 잘못된 ID 저장 등 수정"
+            "<strong>thinking hints 조기 표시</strong> — 장시간 실행 작업 중 Claude의 내부 추론 힌트가 이전보다 빠르게 화면에 등장, 작업 진행 중 현재 처리 맥락을 즉시 파악 가능",
+            "<strong>장시간 작업 대기 UX 개선</strong> — 복잡한 코드 분석·대규모 리팩터링·멀티 파일 검색 등에서 화면이 멈춘 것처럼 보이던 공백 구간 대폭 감소",
+            "<strong>체감 응답성 향상</strong> — 힌트 노출 시점이 앞당겨져 긴 처리 대기 시간의 심리적 부담이 낮아지고 작업 흐름 유지에 기여",
+            "<strong>Extended Thinking 연동 개선</strong> — 고성능 모델 사용 시 extended thinking 활성 구간의 추론 힌트가 조기 가시화, 처리 흐름을 더 명확히 추적 가능",
+            "<strong>v2.1.106 건너뛴 마이크로 패치</strong> — 단일 UX 개선만 포함한 핫픽스; 기존 PreCompact 훅·플러그인 모니터·EnterWorktree path 파라미터 등 v2.1.105 기능 전부 유지",
+            "<strong>도구 실행 후 thinking 구간 투명성</strong> — Bash·파일 도구 호출 직후 이어지는 thinking 구간에서도 힌트 표시 타이밍 개선, 전체 워크플로 가시성 향상",
+            "<strong>API·설정·Breaking change 없음</strong> — 순수 표시 타이밍 개선 패치로 훅·권한·MCP 등 기존 설정에 영향 없음"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.105",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.107",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "105"
+          "bgNum": "107"
         },
         {
           "id": "nextjs-1623",
