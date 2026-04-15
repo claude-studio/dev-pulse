@@ -185,7 +185,7 @@ body::before {
 }
 
 .ticker-animate {
-  animation: ticker 30s linear infinite;
+  animation: ticker 1000s linear infinite;
 }
 
 /* 진입 애니메이션 */
