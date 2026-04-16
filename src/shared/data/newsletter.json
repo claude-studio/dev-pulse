@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 29",
+    "volume": "VOL. 001 / ISSUE 30",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.04.16 THU",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.111 — Opus 4.7 xhigh 에포트·/ultrareview 클라우드 리뷰·Auto 모드 Max 확장",
     "CLAUDE CODE v2.1.110 — /TUI 전체화면 렌더링·푸시 알림 도구·Remote Control 명령 확장",
     "NEXT.JS 16.2.4 — Turbopack 버그 수정 백포트 및 Windows ARM64 Google Fonts 오류 해결",
     "CLAUDE CODE v2.1.109 — extended-thinking 진행 표시기 회전 힌트로 UX 개선",
@@ -46,31 +47,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.15",
+      "date": "2026.04.16",
       "news": [
         {
-          "id": "claude-code-21110",
+          "id": "claude-code-21111",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.110",
+          "version": "v2.1.111",
           "title": "Claude Code",
-          "date": "2026-04-15",
+          "date": "2026-04-16",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>/tui 전체화면 렌더링</strong> 추가 — <code>/tui fullscreen</code>으로 동일 대화 내 깜빡임 없는 렌더링 전환, <code>tui</code> 설정으로 기본값 지정 가능",
-            "<strong>Ctrl+O·/focus 명령 분리</strong> — <code>Ctrl+O</code>는 일반/상세 트랜스크립트 토글로 재정의, 포커스 뷰는 신규 <code>/focus</code> 명령으로 독립 분리",
-            "<strong>푸시 알림 도구 추가</strong> — Remote Control + \"Push when Claude decides\" 설정 활성화 시 Claude가 직접 모바일 푸시 알림 발송 가능",
-            "<strong>autoScrollEnabled 설정</strong> — 전체화면 모드에서 대화 자동 스크롤 비활성화 옵션 추가, <code>Ctrl+G</code> 외부 편집기에서 Claude 마지막 응답을 주석 컨텍스트로 표시 옵션도 지원",
-            "<strong>/plugin Installed 탭 개선</strong> — 주의 필요 항목·즐겨찾기 상단 노출, 비활성 항목 접기 UI, <code>f</code> 키로 즐겨찾기 토글; <code>/doctor</code>가 다중 스코프 MCP 서버 엔드포인트 충돌 경고 추가",
-            "<strong>Remote Control 명령 확장</strong> — <code>/autocompact</code>, <code>/context</code>, <code>/exit</code>, <code>/reload-plugins</code> 모바일·웹 클라이언트에서 실행 가능; <code>--resume</code>/<code>--continue</code>가 만료되지 않은 예약 작업 자동 복원",
-            "<strong>MCP·CPU·보안 버그 수정</strong> — SSE/HTTP 서버 연결 중단 시 도구 호출 무한 대기·비스트리밍 재시도 수 분 지연·전체화면 텍스트 선택 고CPU 수정; untrusted 파일명 명령 인젝션 방어 강화"
+            "<strong>Claude Opus 4.7 xhigh 에포트 레벨</strong> 추가 — <code>high</code>와 <code>max</code> 사이의 신규 단계, <code>/effort</code>·<code>--effort</code>·모델 피커에서 선택 가능; 인수 없이 호출 시 화살표 키 탐색·Enter 확정 인터랙티브 슬라이더 표시",
+            "<strong>Max 구독자 Auto 모드</strong> 지원 — Opus 4.7에서 Max 플랜 구독자도 Auto 모드 사용 가능; <code>--enable-auto-mode</code> 플래그 제거로 진입 장벽 완전 해소",
+            "<strong>/ultrareview 클라우드 코드 리뷰</strong> 추가 — 병렬 멀티에이전트로 현재 브랜치 종합 리뷰 실행; <code>/ultrareview &lt;PR#&gt;</code>으로 특정 GitHub PR 직접 리뷰 지원",
+            "<strong>/less-permission-prompts 스킬</strong> 추가 — 트랜스크립트에서 읽기 전용 Bash·MCP 호출 패턴을 스캔해 우선순위 기반 <code>.claude/settings.json</code> 허용 목록 자동 제안",
+            "<strong>"Auto (match terminal)" 테마</strong> 추가 — <code>/theme</code>에서 선택 가능, 터미널 다크/라이트 모드 자동 매칭; 플랜 파일이 프롬프트 내용 기반 의미있는 이름으로 자동 생성",
+            "<strong>읽기 전용 Bash 권한 프롬프트 개선</strong> — glob 패턴(<code>ls *.ts</code>) 명령 또는 <code>cd &lt;project-dir&gt; &amp;&amp;</code> 시작 명령은 권한 프롬프트 없이 실행; <code>Ctrl+U</code> 전체 입력 버퍼 클리어·<code>Ctrl+L</code> 전체 화면 강제 갱신 단축키 추가",
+            "<strong>다수 버그 수정</strong> — iTerm2+tmux 터미널 찢김 현상·LSP 진단 순서 오류·<code>/resume</code> 탭 완성 오작동·피드백 서베이 연속 표시·Windows <code>CLAUDE_ENV_FILE</code> 미적용 문제 해결; 429 rate-limit 오류 메시지 개선"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.110",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.111",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "110"
+          "bgNum": "111"
         },
         {
           "id": "nextjs-1624",
