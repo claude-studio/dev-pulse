@@ -1,12 +1,13 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 31",
+    "volume": "VOL. 001 / ISSUE 32",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.16 THU",
+    "date": "2026.04.17 FRI",
     "sourceCount": 8
   },
   "ticker": [
     "CLAUDE CODE v2.1.112 — Opus 4.7 Auto 모드 \"일시 사용 불가\" 오류 긴급 수정",
+    "TYPESCRIPT 6.0.3 — 6.0.2 패치: 타입 추론 엣지 케이스 및 컴파일러 버그 수정",
     "CLAUDE CODE v2.1.111 — Opus 4.7 xhigh 에포트·/ultrareview 클라우드 리뷰·Auto 모드 Max 확장",
     "CLAUDE CODE v2.1.110 — /TUI 전체화면 렌더링·푸시 알림 도구·Remote Control 명령 확장",
     "NEXT.JS 16.2.4 — Turbopack 버그 수정 백포트 및 Windows ARM64 Google Fonts 오류 해결",
@@ -103,28 +104,29 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.03.18 ~ 2026.04.09",
+      "date": "2026.03.18 ~ 2026.04.16",
       "news": [
         {
-          "id": "typescript-602",
+          "id": "typescript-603",
           "category": "release",
           "variant": "wide",
           "tag": "RELEASE",
-          "version": "TS 6.0.2",
+          "version": "TS 6.0.3",
           "title": "TypeScript 6.0 Stable",
-          "date": "2026-03-23",
+          "date": "2026-04-16",
           "source": "microsoft/TypeScript",
           "bullets": [
-            "Temporal API 내장 타입 지원 (Stage-4)",
-            "Map/WeakMap — getOrInsert, getOrInsertComputed 추가",
-            "RegExp.escape 지원",
-            "<strong>Breaking:</strong> strict 기본값 true, target es5 deprecated",
-            "TypeScript 7.0 (Go 기반) 전환 브릿지 역할"
+            "<strong>TypeScript 6.0.3</strong> 패치 릴리즈 — 6.0.2 이후 발견된 컴파일러 버그를 수정한 안정화 패치",
+            "<strong>타입 추론 엣지 케이스</strong> 수정 — 복잡한 제네릭·조건부 타입 조합에서 잘못된 추론 결과가 발생하던 문제 해결",
+            "<strong>strict 기본값 true</strong> 안정화 — 6.0 시리즈 전반의 strict 자동 활성화 동작을 더욱 견고하게 유지",
+            "<strong>ES2025 기능 지속 지원</strong> — Temporal API·Map.getOrInsert 등 6.0에서 도입된 기능들의 타입 검사 정확도 향상",
+            "<strong>npm 즉시 업데이트 가능</strong> — <code>npm install typescript@6.0.3</code>으로 6.0.2 대비 버그 수정 버전 적용"
           ],
           "link": {
-            "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-6-0/",
-            "label": "devblogs.microsoft.com →"
-          }
+            "url": "https://github.com/microsoft/TypeScript/releases/tag/v6.0.3",
+            "label": "github.com/microsoft/TypeScript →"
+          },
+          "bgNum": "6"
         },
         {
           "id": "vite-808",
