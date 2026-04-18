@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 33",
+    "volume": "VOL. 001 / ISSUE 34",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.17 FRI",
+    "date": "2026.04.18 SAT",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.114 — Agent Teams 팀메이트 권한 요청 시 퍼미션 다이얼로그 크래시 즉시 수정",
     "CLAUDE CODE v2.1.113 — 네이티브 바이너리 전환·deniedDomains 설정·Remote Control 기능 확장",
     "CLAUDE CODE v2.1.112 — Opus 4.7 Auto 모드 \"일시 사용 불가\" 오류 긴급 수정",
     "TYPESCRIPT 6.0.3 — 6.0.2 패치: 타입 추론 엣지 케이스 및 컴파일러 버그 수정",
@@ -50,31 +51,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.17",
+      "date": "2026.04.18",
       "news": [
         {
-          "id": "claude-code-21113",
+          "id": "claude-code-21114",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.113",
+          "version": "v2.1.114",
           "title": "Claude Code",
-          "date": "2026-04-17",
+          "date": "2026-04-18",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>네이티브 바이너리 전환</strong> — CLI가 플랫폼별 옵셔널 의존성을 통해 <strong>네이티브 Claude Code 바이너리</strong>를 직접 실행, 번들 JavaScript 방식 탈피로 성능·안정성 향상",
-            "<strong>sandbox.network.deniedDomains</strong> 설정 추가 — 광범위한 와일드카드 <code>allowedDomains</code>가 허용하는 도메인도 개별 차단 가능, 네트워크 샌드박스 제어 세분화",
-            "<strong>멀티라인 커서 readline 호환</strong> — <code>Ctrl+A</code>/<code>Ctrl+E</code>가 멀티라인 입력 시 현재 논리 줄의 시작·끝으로 이동, readline 동작과 완전히 일치",
-            "<strong>전체화면 뷰포트 스크롤</strong> — <code>Shift+↑/↓</code>로 선택 영역이 화면 끝을 벗어날 때 뷰포트 자동 스크롤, Windows <code>Ctrl+Backspace</code> 이전 단어 삭제 지원 추가",
-            "<strong>/ultrareview 병렬화 강화</strong> — 검사 병렬 실행·diffstat 표시·애니메이션 실행 상태 추가로 실행 속도 및 UX 개선",
-            "<strong>Remote Control 기능 확장</strong> — <code>/extra-usage</code> 명령·<code>@</code>파일 자동완성 제안을 모바일/웹 Remote Control 클라이언트에서도 사용 가능",
-            "<strong>서브에이전트 자동 타임아웃</strong> — 스트림 중 멈춘 서브에이전트가 <strong>10분</strong> 후 명확한 오류로 강제 종료, 무한 대기 방지"
+            "<strong>Permission Dialog 크래시 즉시 수정</strong> — Agent Teams 환경에서 팀메이트 에이전트가 도구 권한을 요청할 때 발생하던 다이얼로그 충돌을 긴급 해결한 핫픽스 릴리즈",
+            "<strong>멀티에이전트 권한 흐름 안정화</strong> — 팀메이트 서브에이전트의 도구 권한 요청이 메인 퍼미션 다이얼로그 렌더링 로직과 충돌하던 원인 제거",
+            "<strong>Agent Teams 연속 작업 보장</strong> — 권한 다이얼로그 크래시로 인한 작업 중단 없이 팀 기반 자동화 태스크를 끊김 없이 완수 가능",
+            "<strong>v2.1.113 당일 후속 핫픽스</strong> — 전날 배포된 v2.1.113에서 발견된 크리티컬 크래시를 감지·수정·배포한 빠른 패치 주기",
+            "<strong>도구 권한 요청 경로 분리</strong> — 일반 사용자 요청과 팀메이트 에이전트 요청 간 권한 다이얼로그 처리 분기 정확성 개선으로 엣지 케이스 방어",
+            "<strong>Agent Teams 사용자 즉시 업그레이드 권장</strong> — 팀 워크플로우에서 퍼미션 다이얼로그를 사용하는 모든 환경에 영향, <code>npm update -g @anthropic-ai/claude-code</code>로 적용",
+            "<strong>빠른 품질 관리 체계 재확인</strong> — 릴리즈 후 크리티컬 버그 당일 감지·재배포, Claude Code의 지속적인 높은 릴리즈 케이던스 유지"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.113",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.114",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "113"
+          "bgNum": "114"
         },
         {
           "id": "nextjs-1624",
