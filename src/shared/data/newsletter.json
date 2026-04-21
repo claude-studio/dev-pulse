@@ -1,11 +1,14 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 35",
+    "volume": "VOL. 001 / ISSUE 36",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.20 MON",
+    "date": "2026.04.21 TUE",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.116 — /resume 67% 가속·MCP 지연 시작·Thinking 인라인 진행 표시",
+    "TAILWIND CSS v4.2.3 — Canonicalization 대규모 강화·업그레이드 안정성 개선",
+    "VERCEL v51.8.0 — env add 기본값 sensitive·deploy-hooks·flags rollout 명령 추가",
     "VITE 8.0.9 — Rolldown RC.16 업데이트 및 HMR 보안 강화",
     "CLAUDE CODE v2.1.114 — Agent Teams 팀메이트 권한 요청 시 퍼미션 다이얼로그 크래시 즉시 수정",
     "CLAUDE CODE v2.1.113 — 네이티브 바이너리 전환·deniedDomains 설정·Remote Control 기능 확장",
@@ -52,31 +55,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.18",
+      "date": "2026.04.20",
       "news": [
         {
-          "id": "claude-code-21114",
+          "id": "claude-code-21116",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.114",
+          "version": "v2.1.116",
           "title": "Claude Code",
-          "date": "2026-04-18",
+          "date": "2026-04-20",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>Permission Dialog 크래시 즉시 수정</strong> — Agent Teams 환경에서 팀메이트 에이전트가 도구 권한을 요청할 때 발생하던 다이얼로그 충돌을 긴급 해결한 핫픽스 릴리즈",
-            "<strong>멀티에이전트 권한 흐름 안정화</strong> — 팀메이트 서브에이전트의 도구 권한 요청이 메인 퍼미션 다이얼로그 렌더링 로직과 충돌하던 원인 제거",
-            "<strong>Agent Teams 연속 작업 보장</strong> — 권한 다이얼로그 크래시로 인한 작업 중단 없이 팀 기반 자동화 태스크를 끊김 없이 완수 가능",
-            "<strong>v2.1.113 당일 후속 핫픽스</strong> — 전날 배포된 v2.1.113에서 발견된 크리티컬 크래시를 감지·수정·배포한 빠른 패치 주기",
-            "<strong>도구 권한 요청 경로 분리</strong> — 일반 사용자 요청과 팀메이트 에이전트 요청 간 권한 다이얼로그 처리 분기 정확성 개선으로 엣지 케이스 방어",
-            "<strong>Agent Teams 사용자 즉시 업그레이드 권장</strong> — 팀 워크플로우에서 퍼미션 다이얼로그를 사용하는 모든 환경에 영향, <code>npm update -g @anthropic-ai/claude-code</code>로 적용",
-            "<strong>빠른 품질 관리 체계 재확인</strong> — 릴리즈 후 크리티컬 버그 당일 감지·재배포, Claude Code의 지속적인 높은 릴리즈 케이던스 유지"
+            "<strong>/resume 대용량 세션 성능 67% 향상</strong> — 40MB 이상 세션 및 dead-fork 항목 다수 세션의 재개 속도를 최대 67% 개선, 대형 프로젝트 작업 복귀 시간 대폭 단축",
+            "<strong>MCP 시작 가속 — resources/templates/list 지연 로드</strong> 전환으로 여러 stdio 서버 구성 시 초기 연결 대기 시간 제거, 에이전트 준비 속도 향상",
+            "<strong>Thinking 스피너 인라인 진행 표시</strong> — \"still thinking·thinking more·almost done thinking\" 단계별 메시지를 인라인으로 표시, 별도 힌트 행 없이 깔끔한 UI 유지",
+            "<strong>/terminal-setup 스크롤 감도 자동 설정</strong> — VS Code, Cursor, Windsurf 터미널 전체화면 모드에서 스크롤 감도를 자동으로 최적화해 매끄러운 스크롤 경험 제공",
+            "<strong>/config 값 기반 검색 지원</strong> — 옵션 값으로도 설정 검색 가능 (예: \"vim\" 입력 시 에디터 모드 설정 즉시 탐색), 설정 탐색 UX 향상",
+            "<strong>보안: sandbox auto-allow 위험 경로 우회 차단</strong> — <code>rm</code>/<code>rmdir</code>이 <code>/</code>, <code>$HOME</code> 등 중요 시스템 디렉터리를 대상으로 할 때 dangerous-path 안전 검사 우회 방지",
+            "<strong>15+ 터미널 UX 버그 일괄 수정</strong> — Devanagari·인도계 문자 렌더링 오류, Kitty 프로토콜 Ctrl+-/Cmd+Left/Right 단축키, Ctrl+Z 행걸림, 스크롤백 중복, 모달 검색 오버플로우 등 해결"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.114",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.116",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "114"
+          "bgNum": "116"
         },
         {
           "id": "nextjs-1624",
@@ -107,7 +110,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.03.18 ~ 2026.04.20",
+      "date": "2026.03.18 ~ 2026.04.21",
       "news": [
         {
           "id": "typescript-603",
@@ -154,23 +157,24 @@
           "bgNum": "9"
         },
         {
-          "id": "tailwind-422",
+          "id": "tailwind-423",
           "category": "release",
           "variant": "third",
           "tag": "RELEASE",
-          "version": "v4.2.2",
+          "version": "v4.2.3",
           "title": "Tailwind CSS",
-          "date": "2026-03-18",
+          "date": "2026-04-20",
           "source": "tailwindlabs/tailwindcss",
           "bullets": [
-            "Vite 8 지원 (@tailwindcss/vite)",
-            "calc(var(--spacing)*…) 정규화 수정",
-            "@property at-rules 충돌 수정"
+            "<strong>Canonicalization 대규모 강화</strong> — <code>tracking-*</code>·<code>border-*</code>·<code>overflow-*</code>·<code>scroll-m/p-*</code> 등 축약 가능한 유틸리티를 자동으로 단축 형태로 병합",
+            "<strong>업그레이드 프로세스 안정성 개선</strong> — 업그레이드 중 파일 비어짐 방지, git 무시 파일 마이그레이션 제외, <code>.env</code> 파일 기본 스캔 제외 추가",
+            "유니코드 범위 초과 문자 크래시 수정 및 <code>@tailwindcss/webpack</code> import 쿼리 파라미터 고유 리소스 처리"
           ],
           "link": {
-            "url": "https://github.com/tailwindlabs/tailwindcss/releases",
+            "url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.2.3",
             "label": "tailwindlabs/tailwindcss →"
-          }
+          },
+          "bgNum": "3"
         },
         {
           "id": "react-1925",
@@ -197,20 +201,20 @@
           "variant": "third",
           "tag": "INFRA",
           "title": "Vercel Changelog",
-          "date": "2026-03-23",
+          "date": "2026-04-20",
           "type": "vercel",
           "items": [
             {
-              "title": "Enterprise Build Machine 기본값",
-              "description": "팀 레벨 기본 빌드 머신 설정 가능"
+              "title": "env add 기본값 sensitive 전환",
+              "description": "Production·Preview 환경변수 추가 시 자동 암호화 저장, --no-sensitive 옵션으로 기존 동작 유지 가능"
             },
             {
-              "title": "vercel activity CLI 명령어",
-              "description": "타입·날짜·프로젝트 필터로 활동 로그 조회"
+              "title": "vercel deploy-hooks 명령 추가",
+              "description": "배포 훅 생성·목록·삭제를 CLI에서 직접 관리, vercel connex create 명령도 함께 추가"
             },
             {
-              "title": "런타임 에러 코드 표시",
-              "description": "HTTP 상태와 함께 에러 코드 표시"
+              "title": "vercel flags rollout 프로그레시브 출시",
+              "description": "피처 플래그를 사용자 ID·환경·비율별로 단계적으로 롤아웃, Python 서비스 동적 크론 지원"
             }
           ],
           "link": {
