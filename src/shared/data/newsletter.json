@@ -1,11 +1,14 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 36",
+    "volume": "VOL. 001 / ISSUE 37",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.21 TUE",
+    "date": "2026.04.23 THU",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.118 — Vim 비주얼 모드·/usage 통합·커스텀 테마·Hooks MCP 도구 호출 추가",
+    "VITE 8.0.10 — Rolldown RC.17 업데이트 및 HMR·CSS·옵티마이저 버그 수정",
+    "TAILWIND CSS v4.2.4 — @tailwindcss/vite Vite 별칭 import 해석 오류 수정",
     "CLAUDE CODE v2.1.116 — /resume 67% 가속·MCP 지연 시작·Thinking 인라인 진행 표시",
     "TAILWIND CSS v4.2.3 — Canonicalization 대규모 강화·업그레이드 안정성 개선",
     "VERCEL v51.8.0 — env add 기본값 sensitive·deploy-hooks·flags rollout 명령 추가",
@@ -55,31 +58,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.20",
+      "date": "2026.04.23",
       "news": [
         {
-          "id": "claude-code-21116",
+          "id": "claude-code-21118",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.116",
+          "version": "v2.1.118",
           "title": "Claude Code",
-          "date": "2026-04-20",
+          "date": "2026-04-23",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>/resume 대용량 세션 성능 67% 향상</strong> — 40MB 이상 세션 및 dead-fork 항목 다수 세션의 재개 속도를 최대 67% 개선, 대형 프로젝트 작업 복귀 시간 대폭 단축",
-            "<strong>MCP 시작 가속 — resources/templates/list 지연 로드</strong> 전환으로 여러 stdio 서버 구성 시 초기 연결 대기 시간 제거, 에이전트 준비 속도 향상",
-            "<strong>Thinking 스피너 인라인 진행 표시</strong> — \"still thinking·thinking more·almost done thinking\" 단계별 메시지를 인라인으로 표시, 별도 힌트 행 없이 깔끔한 UI 유지",
-            "<strong>/terminal-setup 스크롤 감도 자동 설정</strong> — VS Code, Cursor, Windsurf 터미널 전체화면 모드에서 스크롤 감도를 자동으로 최적화해 매끄러운 스크롤 경험 제공",
-            "<strong>/config 값 기반 검색 지원</strong> — 옵션 값으로도 설정 검색 가능 (예: \"vim\" 입력 시 에디터 모드 설정 즉시 탐색), 설정 탐색 UX 향상",
-            "<strong>보안: sandbox auto-allow 위험 경로 우회 차단</strong> — <code>rm</code>/<code>rmdir</code>이 <code>/</code>, <code>$HOME</code> 등 중요 시스템 디렉터리를 대상으로 할 때 dangerous-path 안전 검사 우회 방지",
-            "<strong>15+ 터미널 UX 버그 일괄 수정</strong> — Devanagari·인도계 문자 렌더링 오류, Kitty 프로토콜 Ctrl+-/Cmd+Left/Right 단축키, Ctrl+Z 행걸림, 스크롤백 중복, 모달 검색 오버플로우 등 해결"
+            "<strong>Vim 비주얼 모드 추가</strong> — <code>v</code>(문자 선택)·<code>V</code>(라인 선택) 모드에 operator·visual feedback 완전 지원, Vim 키바인딩 완성도 대폭 향상",
+            "<strong>/usage 통합</strong> — <code>/cost</code>·<code>/stats</code> 두 명령을 <code>/usage</code>로 통합, 기존 단축키는 각 탭으로 바로가기로 계속 동작",
+            "<strong>커스텀 테마 지원</strong> — <code>/theme</code>에서 이름 있는 테마 생성·전환 가능, <code>~/.claude/themes/</code> JSON 직접 편집 또는 플러그인 <code>themes/</code> 디렉터리로 테마 배포",
+            "<strong>Hooks → MCP 도구 직접 호출</strong> — 훅에서 <code>type: \"mcp_tool\"</code>로 MCP 도구를 직접 실행 가능, 자동화 파이프라인 확장성 크게 향상",
+            "<strong>DISABLE_UPDATES 환경변수</strong> — 모든 업데이트 경로(자동·수동 <code>claude update</code> 포함)를 완전 차단, <code>DISABLE_AUTOUPDATER</code>보다 엄격한 잠금 옵션",
+            "<strong>Auto 모드 <code>\"$defaults\"</code> 병합 지원</strong> — <code>autoMode.allow</code> 등에 <code>\"$defaults\"</code> 포함 시 기본 규칙 대체 없이 커스텀 규칙 추가, WSL Windows 정책 상속(<code>wslInheritsWindowsSettings</code>) 추가",
+            "<strong>플러그인·세션 개선</strong> — <code>claude plugin tag</code> 버전 검증 릴리즈 태그 생성, <code>--continue/--resume</code>이 <code>/add-dir</code>로 추가한 디렉터리 세션 탐색, <code>/color</code>가 claude.ai/code 악센트 색상과 자동 동기화"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.116",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.118",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "116"
+          "bgNum": "118"
         },
         {
           "id": "nextjs-1624",
@@ -110,7 +113,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.03.18 ~ 2026.04.21",
+      "date": "2026.04.08 ~ 2026.04.23",
       "news": [
         {
           "id": "typescript-603",
@@ -135,46 +138,46 @@
           "bgNum": "6"
         },
         {
-          "id": "vite-809",
+          "id": "vite-8010",
           "category": "release",
           "variant": "wide",
           "tag": "TOOL",
-          "version": "Vite 8.0.9",
-          "title": "Vite 8.0.9",
-          "date": "2026-04-20",
+          "version": "Vite 8.0.10",
+          "title": "Vite 8.0.10",
+          "date": "2026-04-23",
           "source": "vitejs/vite",
           "bullets": [
-            "<strong>Rolldown 1.0.0-rc.16</strong> 업데이트 — 핵심 번들러 엔진 최신 RC 버전 탑재, 지속적인 Rolldown 안정화 진행",
-            "<strong>HMR 패치 파일 보안 강화</strong> — bundled-dev 모드에서 신뢰할 수 없는 오리진의 HMR 패치 파일 요청을 차단하여 보안성 향상",
-            "<strong>strictPort + 와일드카드 포트 바인딩</strong> 수정 — <code>strictPort</code> 설정 시 와일드카드 포트가 사용 중이어도 정상 바인딩 가능",
-            "<strong>watch 모드 emptyOutDir</strong> 수정 — 워치 리빌드 시 <code>emptyOutDir</code>이 적용되지 않던 버그 해결",
-            "<strong>CSS·Deno·옵티마이저 다수 버그 수정</strong> — cssEntriesMap 동일 basename 충돌, Deno 워크스페이스 루트 감지, optimizer 특수문자 처리 개선"
+            "<strong>Rolldown 1.0.0-rc.17</strong> 업데이트 — 핵심 번들러 엔진 최신 RC 탑재, 지속적인 안정화 진행",
+            "<strong>HMR 로그 일관성 수정</strong> — <code>hmrClient.logger.debug/error</code>가 다른 HMR 로그와 다르게 표시되던 스타일 불일치 해결",
+            "<strong>CSS 최소화 경고 파일명 표시</strong> — <code>.css?inline</code> 파일의 CSS 최소화 경고에 파일명을 포함해 디버깅 가시성 향상",
+            "<strong>optimizer transform.target 재정의 허용</strong> — <code>optimizeDeps</code>에서 사용자 지정 <code>transform.target</code>이 기본값을 올바르게 재정의하도록 수정",
+            "<strong>JS 리졸버 포맷 스니핑 제거</strong> — 모듈 해석 시 불필요한 포맷 스니핑 로직 제거로 번들링 정확도 개선"
           ],
           "link": {
-            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.9",
+            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.10",
             "label": "github.com/vitejs/vite →"
           },
-          "bgNum": "9"
+          "bgNum": "10"
         },
         {
-          "id": "tailwind-423",
+          "id": "tailwind-424",
           "category": "release",
           "variant": "third",
           "tag": "RELEASE",
-          "version": "v4.2.3",
+          "version": "v4.2.4",
           "title": "Tailwind CSS",
-          "date": "2026-04-20",
+          "date": "2026-04-21",
           "source": "tailwindlabs/tailwindcss",
           "bullets": [
-            "<strong>Canonicalization 대규모 강화</strong> — <code>tracking-*</code>·<code>border-*</code>·<code>overflow-*</code>·<code>scroll-m/p-*</code> 등 축약 가능한 유틸리티를 자동으로 단축 형태로 병합",
-            "<strong>업그레이드 프로세스 안정성 개선</strong> — 업그레이드 중 파일 비어짐 방지, git 무시 파일 마이그레이션 제외, <code>.env</code> 파일 기본 스캔 제외 추가",
-            "유니코드 범위 초과 문자 크래시 수정 및 <code>@tailwindcss/webpack</code> import 쿼리 파라미터 고유 리소스 처리"
+            "<strong>Vite 별칭 import 해석 오류 수정</strong> — <code>@tailwindcss/vite</code>에서 Vite 별칭 사용 시 <code>@import</code>·<code>@plugin</code> 경로가 올바르게 해석되지 않던 회귀 버그 수정",
+            "<strong>단일 패치 릴리즈</strong> — v4.2.3에서 발견된 별칭 처리 회귀를 단독 수정으로 신속 배포",
+            "<code>npm install tailwindcss@4.2.4</code>로 즉시 업데이트 가능"
           ],
           "link": {
-            "url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.2.3",
+            "url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.2.4",
             "label": "tailwindlabs/tailwindcss →"
           },
-          "bgNum": "3"
+          "bgNum": "4"
         },
         {
           "id": "react-1925",
