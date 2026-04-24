@@ -1,11 +1,13 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 37",
+    "volume": "VOL. 001 / ISSUE 38",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.23 THU",
+    "date": "2026.04.24 FRI",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.119 — /config 영구 저장·--from-pr 멀티 플랫폼·Hooks duration_ms·MCP 병렬 연결 추가",
+    "VERCEL v52.0.0 — 정적 배포에서 설정 파일 자동 제외 (Breaking Change)",
     "CLAUDE CODE v2.1.118 — Vim 비주얼 모드·/usage 통합·커스텀 테마·Hooks MCP 도구 호출 추가",
     "VITE 8.0.10 — Rolldown RC.17 업데이트 및 HMR·CSS·옵티마이저 버그 수정",
     "TAILWIND CSS v4.2.4 — @tailwindcss/vite Vite 별칭 import 해석 오류 수정",
@@ -61,28 +63,28 @@
       "date": "2026.04.23",
       "news": [
         {
-          "id": "claude-code-21118",
+          "id": "claude-code-21119",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.118",
+          "version": "v2.1.119",
           "title": "Claude Code",
           "date": "2026-04-23",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>Vim 비주얼 모드 추가</strong> — <code>v</code>(문자 선택)·<code>V</code>(라인 선택) 모드에 operator·visual feedback 완전 지원, Vim 키바인딩 완성도 대폭 향상",
-            "<strong>/usage 통합</strong> — <code>/cost</code>·<code>/stats</code> 두 명령을 <code>/usage</code>로 통합, 기존 단축키는 각 탭으로 바로가기로 계속 동작",
-            "<strong>커스텀 테마 지원</strong> — <code>/theme</code>에서 이름 있는 테마 생성·전환 가능, <code>~/.claude/themes/</code> JSON 직접 편집 또는 플러그인 <code>themes/</code> 디렉터리로 테마 배포",
-            "<strong>Hooks → MCP 도구 직접 호출</strong> — 훅에서 <code>type: \"mcp_tool\"</code>로 MCP 도구를 직접 실행 가능, 자동화 파이프라인 확장성 크게 향상",
-            "<strong>DISABLE_UPDATES 환경변수</strong> — 모든 업데이트 경로(자동·수동 <code>claude update</code> 포함)를 완전 차단, <code>DISABLE_AUTOUPDATER</code>보다 엄격한 잠금 옵션",
-            "<strong>Auto 모드 <code>\"$defaults\"</code> 병합 지원</strong> — <code>autoMode.allow</code> 등에 <code>\"$defaults\"</code> 포함 시 기본 규칙 대체 없이 커스텀 규칙 추가, WSL Windows 정책 상속(<code>wslInheritsWindowsSettings</code>) 추가",
-            "<strong>플러그인·세션 개선</strong> — <code>claude plugin tag</code> 버전 검증 릴리즈 태그 생성, <code>--continue/--resume</code>이 <code>/add-dir</code>로 추가한 디렉터리 세션 탐색, <code>/color</code>가 claude.ai/code 악센트 색상과 자동 동기화"
+            "<strong>/config 설정 영구 저장</strong> — 테마·에디터 모드·verbose 등 설정이 <code>~/.claude/settings.json</code>에 저장되고 프로젝트/로컬/정책 우선순위에 완전히 참여",
+            "<strong>--from-pr 멀티 플랫폼 확장</strong> — GitLab MR·Bitbucket PR·GitHub Enterprise PR URL을 모두 허용, GitHub 전용에서 범용 플랫폼 지원으로 확장",
+            "<strong>에이전트 프론트매터 권한 적용</strong> — <code>--agent &lt;name&gt;</code> 실행 시 <code>permissionMode</code>가 내장 에이전트에 적용, <code>--print</code> 모드에서 <code>tools:</code>·<code>disallowedTools:</code> 프론트매터 존중",
+            "<strong>Hooks <code>duration_ms</code> 필드 추가</strong> — <code>PostToolUse</code>·<code>PostToolUseFailure</code> 훅 입력에 도구 실행 시간(ms) 포함, 퍼미션 프롬프트 및 PreToolUse 대기 시간 제외",
+            "<strong>MCP 서버 병렬 재연결</strong> — 서브에이전트·SDK MCP 서버 재구성 시 직렬→병렬 전환으로 멀티 서버 초기화 성능 향상",
+            "<strong>PowerShell 자동 승인 지원</strong> — PowerShell 도구 명령을 permission mode에서 Bash와 동일하게 자동 승인 가능, <code>prUrlTemplate</code> 설정으로 PR 배지 커스텀 URL 지정 추가",
+            "<strong>40여 개 버그 수정</strong> — CRLF 붙여넣기·풀스크린 스크롤 스냅·슬래시 커맨드 검색 하이라이트·MCP OAuth 오류·<code>${ENV_VAR}</code> 헤더 치환·worktree PR 연결 누락 등 안정성·UX 대규모 개선"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.118",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.119",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "118"
+          "bgNum": "119"
         },
         {
           "id": "nextjs-1624",
@@ -204,20 +206,20 @@
           "variant": "third",
           "tag": "INFRA",
           "title": "Vercel Changelog",
-          "date": "2026-04-20",
+          "date": "2026-04-22",
           "type": "vercel",
           "items": [
             {
-              "title": "env add 기본값 sensitive 전환",
-              "description": "Production·Preview 환경변수 추가 시 자동 암호화 저장, --no-sensitive 옵션으로 기존 동작 유지 가능"
+              "title": "vercel@52.0.0 Breaking: 정적 배포 설정 파일 자동 제외",
+              "description": "vercel.json·next.config.* 등 구성 파일이 정적 배포 아웃풋에서 자동 제외됨, 의도치 않은 설정 파일 노출 방지"
             },
             {
-              "title": "vercel deploy-hooks 명령 추가",
-              "description": "배포 훅 생성·목록·삭제를 CLI에서 직접 관리, vercel connex create 명령도 함께 추가"
+              "title": "vercel connex token 명령 추가",
+              "description": "Connex 클라이언트용 토큰 발급 CLI 명령 추가, 422 오류 발생 시 자동 인증·자동 설치 복구 지원"
             },
             {
-              "title": "vercel flags rollout 프로그레시브 출시",
-              "description": "피처 플래그를 사용자 ID·환경·비율별로 단계적으로 롤아웃, Python 서비스 동적 크론 지원"
+              "title": "vercel env update Development 가드 강화",
+              "description": "vercel env update에 vercel env add와 동일한 Development 환경 검증 적용, env 명령 help에 vercel env run 예시 추가"
             }
           ],
           "link": {
