@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 38",
+    "volume": "VOL. 001 / ISSUE 39",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.24 FRI",
+    "date": "2026.04.28 MON",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.121 — alwaysLoad MCP 옵션·plugin prune·/skills 검색·PostToolUse 전체 도구 출력 교체 추가",
     "CLAUDE CODE v2.1.119 — /config 영구 저장·--from-pr 멀티 플랫폼·Hooks duration_ms·MCP 병렬 연결 추가",
     "VERCEL v52.0.0 — 정적 배포에서 설정 파일 자동 제외 (Breaking Change)",
     "CLAUDE CODE v2.1.118 — Vim 비주얼 모드·/usage 통합·커스텀 테마·Hooks MCP 도구 호출 추가",
@@ -60,31 +61,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.23",
+      "date": "2026.04.28",
       "news": [
         {
-          "id": "claude-code-21119",
+          "id": "claude-code-21121",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.119",
+          "version": "v2.1.121",
           "title": "Claude Code",
-          "date": "2026-04-23",
+          "date": "2026-04-28",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>/config 설정 영구 저장</strong> — 테마·에디터 모드·verbose 등 설정이 <code>~/.claude/settings.json</code>에 저장되고 프로젝트/로컬/정책 우선순위에 완전히 참여",
-            "<strong>--from-pr 멀티 플랫폼 확장</strong> — GitLab MR·Bitbucket PR·GitHub Enterprise PR URL을 모두 허용, GitHub 전용에서 범용 플랫폼 지원으로 확장",
-            "<strong>에이전트 프론트매터 권한 적용</strong> — <code>--agent &lt;name&gt;</code> 실행 시 <code>permissionMode</code>가 내장 에이전트에 적용, <code>--print</code> 모드에서 <code>tools:</code>·<code>disallowedTools:</code> 프론트매터 존중",
-            "<strong>Hooks <code>duration_ms</code> 필드 추가</strong> — <code>PostToolUse</code>·<code>PostToolUseFailure</code> 훅 입력에 도구 실행 시간(ms) 포함, 퍼미션 프롬프트 및 PreToolUse 대기 시간 제외",
-            "<strong>MCP 서버 병렬 재연결</strong> — 서브에이전트·SDK MCP 서버 재구성 시 직렬→병렬 전환으로 멀티 서버 초기화 성능 향상",
-            "<strong>PowerShell 자동 승인 지원</strong> — PowerShell 도구 명령을 permission mode에서 Bash와 동일하게 자동 승인 가능, <code>prUrlTemplate</code> 설정으로 PR 배지 커스텀 URL 지정 추가",
-            "<strong>40여 개 버그 수정</strong> — CRLF 붙여넣기·풀스크린 스크롤 스냅·슬래시 커맨드 검색 하이라이트·MCP OAuth 오류·<code>${ENV_VAR}</code> 헤더 치환·worktree PR 연결 누락 등 안정성·UX 대규모 개선"
+            "<strong>MCP <code>alwaysLoad</code> 옵션 추가</strong> — <code>true</code>로 설정하면 해당 서버의 모든 도구가 tool-search 지연 없이 항상 로드되어 MCP 도구 즉시 사용 가능",
+            "<strong><code>claude plugin prune</code> 명령 추가</strong> — 고아 상태의 자동 설치 플러그인 의존성 제거; <code>plugin uninstall --prune</code>으로 종속 플러그인까지 연쇄 삭제 지원",
+            "<strong>/skills 타입-투-필터 검색창 추가</strong> — 긴 스킬 목록에서 텍스트 입력으로 즉시 필터링, 스크롤 없이 원하는 스킬 빠르게 접근",
+            "<strong>PostToolUse hooks 출력 교체 전체 도구 확장</strong> — <code>hookSpecificOutput.updatedToolOutput</code>으로 모든 도구의 출력 교체 가능 (기존엔 MCP 도구만 지원)",
+            "<strong>풀스크린 모드 스크롤 UX 개선</strong> — 위로 스크롤해 출력을 읽는 중 타이핑 시 화면이 하단으로 점프하지 않고 읽던 위치 유지; 오버플로우 다이얼로그 화살표·PgUp/PgDn·마우스 휠 스크롤 지원",
+            "<strong>메모리 누수 대규모 수정</strong> — 이미지 다수 처리 시 멀티-GB RSS 무한 증가, <code>/usage</code> 트랜스크립트 이력 최대 ~2GB 누수, 장기 실행 도구 진행 이벤트 미수신 시 메모리 누수 동시 해결",
+            "<strong>안정성·호환성 개선 다수</strong> — Bash 도구 시작 디렉터리 삭제 시 영구 비활성화 버그, Bedrock 애플리케이션 추론 프로필 ARN thinking 오류, Microsoft 365 MCP OAuth 중복 파라미터 오류, <code>NO_PROXY</code> 미적용 등 30여 개 버그 수정"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.119",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.121",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "119"
+          "bgNum": "121"
         },
         {
           "id": "nextjs-1624",
