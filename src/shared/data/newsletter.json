@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 40",
+    "volume": "VOL. 001 / ISSUE 41",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.04.29 WED",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.123 — CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1 설정 시 OAuth 401 무한 재시도 루프 긴급 수정",
     "CLAUDE CODE v2.1.122 — Bedrock 서비스 티어 선택·/resume PR URL 검색·OpenTelemetry 타입 수정 및 다수 버그 수정",
     "CLAUDE CODE v2.1.121 — alwaysLoad MCP 옵션·plugin prune·/skills 검색·PostToolUse 전체 도구 출력 교체 추가",
     "CLAUDE CODE v2.1.119 — /config 영구 저장·--from-pr 멀티 플랫폼·Hooks duration_ms·MCP 병렬 연결 추가",
@@ -65,28 +66,28 @@
       "date": "2026.04.29",
       "news": [
         {
-          "id": "claude-code-21122",
+          "id": "claude-code-21123",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.122",
+          "version": "v2.1.123",
           "title": "Claude Code",
           "date": "2026-04-29",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>ANTHROPIC_BEDROCK_SERVICE_TIER 환경변수 추가</strong> — <code>default</code>·<code>flex</code>·<code>priority</code> 중 Bedrock 서비스 티어 직접 선택 가능, <code>X-Amzn-Bedrock-Service-Tier</code> 헤더로 전달",
-            "<strong>/resume 검색창 PR URL 지원</strong> — GitHub·GitHub Enterprise·GitLab·Bitbucket PR URL을 직접 붙여넣어 해당 PR을 생성한 세션을 자동으로 탐색",
-            "<strong>/mcp 중복 서버 감지 개선</strong> — 수동 추가 서버와 동일한 URL의 claude.ai 커넥터가 숨겨질 때 표시하고 중복 제거 힌트 제공; 브라우저 로그인 후에도 미인증 상태일 때 메시지 명확화",
-            "<strong>OpenTelemetry 개선 2종</strong> — <code>api_request</code>/<code>api_error</code> 이벤트의 숫자 속성을 문자열 대신 정수로 올바르게 전송; <code>claude_code.at_mention</code> 로그 이벤트 추가",
-            "<strong>Vertex AI·Bedrock 오류 수정</strong> — 세션 타이틀 생성 시 <code>output_config: Extra inputs are not permitted</code> 오류, 프록시 게이트웨이 경유 <code>count_tokens</code> 400 오류, 이미지 리사이즈 2576px→2000px 버그 일괄 수정",
-            "<strong>/branch 포크 버그 수정</strong> — 되감기 타임라인 항목이 포함된 세션에서 <code>/branch</code> 사용 시 <code>tool_use ids were found without tool_result blocks</code> 오류 해결",
-            "<strong>다수 안정성 패치</strong> — <code>spinnerTipsOverride.excludeDefault</code> 미작동, 비블록킹 모드 ToolSearch MCP 도구 누락, <code>!exit</code>/<code>!quit</code> CLI 비정상 종료, 세션 블랭크 메시지, hooks 파싱 오류, tmux 제어 파이프 오버플로우 등 다수 수정"
+            "<strong>OAuth 401 무한 재시도 루프 수정</strong> — <code>CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1</code> 환경변수 설정 시 401 오류가 반복되며 인증 자체가 불가능해지던 핵심 버그 해결",
+            "<strong>베타 비활성화 환경 인증 복원</strong> — 실험적 기능을 비활성화한 엔터프라이즈·보안 제한 환경에서 OAuth 정상 흐름이 완전히 복원됨",
+            "<strong>재시도 감지 로직 개선</strong> — 401 응답 수신 시 <code>DISABLE_EXPERIMENTAL_BETAS</code> 플래그를 올바르게 참조해 불필요한 루프를 즉시 차단",
+            "<strong>v2.1.122 회귀 핫픽스</strong> — Bedrock 서비스 티어·/resume PR URL 등을 추가한 직전 버전에서 해당 환경변수 처리 경로가 누락되어 발생한 회귀를 단일 패치로 해결",
+            "<strong>OAuth 토큰 갱신 안정성 강화</strong> — 베타 비활성화 플래그 유무와 무관하게 일관된 토큰 갱신 경로를 보장해 인증 격리 신뢰성 향상",
+            "<strong>환경변수 처리 신뢰성 향상</strong> — <code>CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS</code>가 모든 인증 분기에서 일관되게 참조되도록 내부 로직 정비",
+            "<strong>단일 핫픽스 릴리즈</strong> — v2.1.122 대비 이 한 가지 수정만 포함, 해당 환경변수 사용 시 즉시 업데이트 권장"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.122",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.123",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "122"
+          "bgNum": "123"
         },
         {
           "id": "nextjs-1624",
