@@ -1,11 +1,13 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 41",
+    "volume": "VOL. 001 / ISSUE 42",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.29 WED",
+    "date": "2026.04.30 THU",
     "sourceCount": 8
   },
   "ticker": [
+    "VERCEL v52.2.1 — OS 키체인 저장 롤백 및 vc whoami 팀 정보 표시 개선",
+    "VERCEL v52.2.0 — keyring 기반 인증 토큰 영구 저장소 및 파일 폴백 지원 추가",
     "CLAUDE CODE v2.1.123 — CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1 설정 시 OAuth 401 무한 재시도 루프 긴급 수정",
     "CLAUDE CODE v2.1.122 — Bedrock 서비스 티어 선택·/resume PR URL 검색·OpenTelemetry 타입 수정 및 다수 버그 수정",
     "CLAUDE CODE v2.1.121 — alwaysLoad MCP 옵션·plugin prune·/skills 검색·PostToolUse 전체 도구 출력 교체 추가",
@@ -118,7 +120,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.04.08 ~ 2026.04.23",
+      "date": "2026.04.08 ~ 2026.04.30",
       "news": [
         {
           "id": "typescript-603",
@@ -209,20 +211,20 @@
           "variant": "third",
           "tag": "INFRA",
           "title": "Vercel Changelog",
-          "date": "2026-04-22",
+          "date": "2026-04-30",
           "type": "vercel",
           "items": [
             {
+              "title": "vercel@52.2.1: OS 키체인 저장 롤백 및 vc whoami 개선",
+              "description": "보안 우려로 OS 키체인 자격증명 저장 기능을 롤백, vc whoami가 로그인 사용자와 활성 팀을 함께 표시하며 로컬 프로젝트 링크 여부도 구분 가능"
+            },
+            {
+              "title": "vercel@52.2.0: keyring 기반 인증 토큰 저장소 추가",
+              "description": "configurable 인증 토큰 저장소 도입, keyring 백업 및 파일 폴백 지원으로 CLI 자격증명 관리 강화"
+            },
+            {
               "title": "vercel@52.0.0 Breaking: 정적 배포 설정 파일 자동 제외",
               "description": "vercel.json·next.config.* 등 구성 파일이 정적 배포 아웃풋에서 자동 제외됨, 의도치 않은 설정 파일 노출 방지"
-            },
-            {
-              "title": "vercel connex token 명령 추가",
-              "description": "Connex 클라이언트용 토큰 발급 CLI 명령 추가, 422 오류 발생 시 자동 인증·자동 설치 복구 지원"
-            },
-            {
-              "title": "vercel env update Development 가드 강화",
-              "description": "vercel env update에 vercel env add와 동일한 Development 환경 검증 적용, env 명령 help에 vercel env run 예시 추가"
             }
           ],
           "link": {
