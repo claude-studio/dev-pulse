@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 001 / ISSUE 42",
+    "volume": "VOL. 002 / ISSUE 01",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.04.30 THU",
+    "date": "2026.05.01 FRI",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.126 — project purge 명령·게이트웨이 모델 피커·WSL2 OAuth 로그인·Windows PowerShell 개선",
     "VERCEL v52.2.1 — OS 키체인 저장 롤백 및 vc whoami 팀 정보 표시 개선",
     "VERCEL v52.2.0 — keyring 기반 인증 토큰 영구 저장소 및 파일 폴백 지원 추가",
     "CLAUDE CODE v2.1.123 — CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1 설정 시 OAuth 401 무한 재시도 루프 긴급 수정",
@@ -65,31 +66,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.04.29",
+      "date": "2026.05.01",
       "news": [
         {
-          "id": "claude-code-21123",
+          "id": "claude-code-21126",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.123",
+          "version": "v2.1.126",
           "title": "Claude Code",
-          "date": "2026-04-29",
+          "date": "2026-05-01",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>OAuth 401 무한 재시도 루프 수정</strong> — <code>CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1</code> 환경변수 설정 시 401 오류가 반복되며 인증 자체가 불가능해지던 핵심 버그 해결",
-            "<strong>베타 비활성화 환경 인증 복원</strong> — 실험적 기능을 비활성화한 엔터프라이즈·보안 제한 환경에서 OAuth 정상 흐름이 완전히 복원됨",
-            "<strong>재시도 감지 로직 개선</strong> — 401 응답 수신 시 <code>DISABLE_EXPERIMENTAL_BETAS</code> 플래그를 올바르게 참조해 불필요한 루프를 즉시 차단",
-            "<strong>v2.1.122 회귀 핫픽스</strong> — Bedrock 서비스 티어·/resume PR URL 등을 추가한 직전 버전에서 해당 환경변수 처리 경로가 누락되어 발생한 회귀를 단일 패치로 해결",
-            "<strong>OAuth 토큰 갱신 안정성 강화</strong> — 베타 비활성화 플래그 유무와 무관하게 일관된 토큰 갱신 경로를 보장해 인증 격리 신뢰성 향상",
-            "<strong>환경변수 처리 신뢰성 향상</strong> — <code>CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS</code>가 모든 인증 분기에서 일관되게 참조되도록 내부 로직 정비",
-            "<strong>단일 핫픽스 릴리즈</strong> — v2.1.122 대비 이 한 가지 수정만 포함, 해당 환경변수 사용 시 즉시 업데이트 권장"
+            "<strong>claude project purge</strong> 명령 추가 — 프로젝트의 전사록·태스크·파일 히스토리·설정 항목을 일괄 삭제, <code>--dry-run</code>·<code>-y/--yes</code>·<code>-i/--interactive</code>·<code>--all</code> 옵션 지원",
+            "<strong>--dangerously-skip-permissions</strong> 보호 경로 범위 확장 — <code>.claude/</code>·<code>.git/</code>·<code>.vscode/</code>·쉘 설정 파일 등 기존 보호 경로 쓰기 프롬프트 우회 가능, 치명적 삭제 명령은 안전망으로 유지",
+            "<strong>claude auth login</strong> 터미널 코드 붙여넣기 지원 — 브라우저 콜백이 localhost에 도달하지 못하는 WSL2·SSH·컨테이너 환경에서 OAuth 코드 직접 입력으로 로그인 가능",
+            "<strong>/model 피커</strong> 게이트웨이 모델 목록 지원 — <code>ANTHROPIC_BASE_URL</code>이 호환 게이트웨이를 가리킬 때 <code>/v1/models</code> 엔드포인트 기반으로 모델 목록 자동 표시",
+            "<strong>Security:</strong> <code>allowManagedDomainsOnly</code>·<code>allowManagedReadPathsOnly</code> 정책 무시 버그 수정 — 상위 우선순위 관리 설정 소스에 <code>sandbox</code> 블록이 없을 때 정책이 우회되던 취약점 해결",
+            "<strong>Auto 모드 스피너 빨간색 전환</strong> — 권한 확인 중 대기 상태 시 스피너가 빨간색으로 변해 도구 실행 중 상태와 명확히 구분",
+            "<strong>Windows 다수 개선</strong> — PowerShell 7 Store·MSI·.NET 글로벌 도구 경로 자동 검출, PowerShell 기본 쉘 전환, 클립보드 EDR/SIEM 노출 방지, 한중일 문자 깨짐(no-flicker) 수정"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.123",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.126",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "123"
+          "bgNum": "126"
         },
         {
           "id": "nextjs-1624",
