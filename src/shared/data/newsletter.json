@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 02",
+    "volume": "VOL. 002 / ISSUE 03",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.01 FRI",
+    "date": "2026.05.02 SAT",
     "sourceCount": 8
   },
   "ticker": [
+    "VERCEL v53.1.0 — 로컬 dev 서비스 오케스트레이터 도입·민감 변수 팀 환경 변수 추가 허용",
     "VERCEL v53.0.1 — 런타임 패키지 대규모 의존성 업데이트 (Node·Elysia·Express·Fastify·H3·Hono·Koa·NestJS)",
     "CLAUDE CODE v2.1.126 — project purge 명령·게이트웨이 모델 피커·WSL2 OAuth 로그인·Windows PowerShell 개선",
     "VERCEL v52.2.1 — OS 키체인 저장 롤백 및 vc whoami 팀 정보 표시 개선",
@@ -122,7 +123,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.04.08 ~ 2026.04.30",
+      "date": "2026.04.08 ~ 2026.05.01",
       "news": [
         {
           "id": "typescript-603",
@@ -213,9 +214,13 @@
           "variant": "third",
           "tag": "INFRA",
           "title": "Vercel Changelog",
-          "date": "2026-04-30",
+          "date": "2026-05-01",
           "type": "vercel",
           "items": [
+            {
+              "title": "vercel@53.1.0: 로컬 dev 서비스 오케스트레이터 도입",
+              "description": "단일 웹 서비스 로컬 개발 환경에 서비스 오케스트레이터 적용, 민감 환경 변수 정책을 적용한 팀에서도 개발 환경 변수 추가 가능하도록 허용"
+            },
             {
               "title": "vercel@53.0.1: 런타임 패키지 대규모 의존성 업데이트",
               "description": "@vercel/node·@vercel/elysia·@vercel/express·@vercel/fastify·@vercel/h3·@vercel/hono·@vercel/koa·@vercel/nestjs 런타임 패키지 일괄 업데이트 — v53 메이저 버전 첫 패치 릴리즈"
@@ -223,10 +228,6 @@
             {
               "title": "vercel@52.2.1: OS 키체인 저장 롤백 및 vc whoami 개선",
               "description": "보안 우려로 OS 키체인 자격증명 저장 기능을 롤백, vc whoami가 로그인 사용자와 활성 팀을 함께 표시하며 로컬 프로젝트 링크 여부도 구분 가능"
-            },
-            {
-              "title": "vercel@52.2.0: keyring 기반 인증 토큰 저장소 추가",
-              "description": "configurable 인증 토큰 저장소 도입, keyring 백업 및 파일 폴백 지원으로 CLI 자격증명 관리 강화"
             }
           ],
           "link": {
