@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 03",
+    "volume": "VOL. 002 / ISSUE 04",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.02 SAT",
+    "date": "2026.05.04 MON",
     "sourceCount": 8
   },
   "ticker": [
+    "VERCEL v53.1.1 — vc env update 민감 변수 수정·SdkKey 타입 강화·SPA 폴백 라우팅 개선",
     "VERCEL v53.1.0 — 로컬 dev 서비스 오케스트레이터 도입·민감 변수 팀 환경 변수 추가 허용",
     "VERCEL v53.0.1 — 런타임 패키지 대규모 의존성 업데이트 (Node·Elysia·Express·Fastify·H3·Hono·Koa·NestJS)",
     "CLAUDE CODE v2.1.126 — project purge 명령·게이트웨이 모델 피커·WSL2 OAuth 로그인·Windows PowerShell 개선",
@@ -123,7 +124,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.04.08 ~ 2026.05.01",
+      "date": "2026.04.08 ~ 2026.05.04",
       "news": [
         {
           "id": "typescript-603",
@@ -214,9 +215,13 @@
           "variant": "third",
           "tag": "INFRA",
           "title": "Vercel Changelog",
-          "date": "2026-05-01",
+          "date": "2026-05-04",
           "type": "vercel",
           "items": [
+            {
+              "title": "vercel@53.1.1: vc env update 민감 변수 수정·SdkKey 타입 강화",
+              "description": "민감 환경 변수 업데이트 시 실패하던 vc env update 버그 수정, SdkKey 타입을 분리해 목록 응답에서 평문 키값 노출 방지, SPA 폴백 라우팅이 빌더 라우트 뒤에 병합되도록 수정 및 Claude Code Vercel 플러그인 마이그레이션 처리 개선"
+            },
             {
               "title": "vercel@53.1.0: 로컬 dev 서비스 오케스트레이터 도입",
               "description": "단일 웹 서비스 로컬 개발 환경에 서비스 오케스트레이터 적용, 민감 환경 변수 정책을 적용한 팀에서도 개발 환경 변수 추가 가능하도록 허용"
@@ -224,10 +229,6 @@
             {
               "title": "vercel@53.0.1: 런타임 패키지 대규모 의존성 업데이트",
               "description": "@vercel/node·@vercel/elysia·@vercel/express·@vercel/fastify·@vercel/h3·@vercel/hono·@vercel/koa·@vercel/nestjs 런타임 패키지 일괄 업데이트 — v53 메이저 버전 첫 패치 릴리즈"
-            },
-            {
-              "title": "vercel@52.2.1: OS 키체인 저장 롤백 및 vc whoami 개선",
-              "description": "보안 우려로 OS 키체인 자격증명 저장 기능을 롤백, vc whoami가 로그인 사용자와 활성 팀을 함께 표시하며 로컬 프로젝트 링크 여부도 구분 가능"
             }
           ],
           "link": {
