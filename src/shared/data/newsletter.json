@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 04",
+    "volume": "VOL. 002 / ISSUE 05",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.04 MON",
+    "date": "2026.05.05 TUE",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.128 — /color 랜덤 색상·ZIP 플러그인·OTEL 격리·MCP workspace 예약어 추가",
     "VERCEL v53.1.1 — vc env update 민감 변수 수정·SdkKey 타입 강화·SPA 폴백 라우팅 개선",
     "VERCEL v53.1.0 — 로컬 dev 서비스 오케스트레이터 도입·민감 변수 팀 환경 변수 추가 허용",
     "VERCEL v53.0.1 — 런타임 패키지 대규모 의존성 업데이트 (Node·Elysia·Express·Fastify·H3·Hono·Koa·NestJS)",
@@ -69,31 +70,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.05.01",
+      "date": "2026.05.04",
       "news": [
         {
-          "id": "claude-code-21126",
+          "id": "claude-code-21128",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.126",
+          "version": "v2.1.128",
           "title": "Claude Code",
-          "date": "2026-05-01",
+          "date": "2026-05-04",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>claude project purge</strong> 명령 추가 — 프로젝트의 전사록·태스크·파일 히스토리·설정 항목을 일괄 삭제, <code>--dry-run</code>·<code>-y/--yes</code>·<code>-i/--interactive</code>·<code>--all</code> 옵션 지원",
-            "<strong>--dangerously-skip-permissions</strong> 보호 경로 범위 확장 — <code>.claude/</code>·<code>.git/</code>·<code>.vscode/</code>·쉘 설정 파일 등 기존 보호 경로 쓰기 프롬프트 우회 가능, 치명적 삭제 명령은 안전망으로 유지",
-            "<strong>claude auth login</strong> 터미널 코드 붙여넣기 지원 — 브라우저 콜백이 localhost에 도달하지 못하는 WSL2·SSH·컨테이너 환경에서 OAuth 코드 직접 입력으로 로그인 가능",
-            "<strong>/model 피커</strong> 게이트웨이 모델 목록 지원 — <code>ANTHROPIC_BASE_URL</code>이 호환 게이트웨이를 가리킬 때 <code>/v1/models</code> 엔드포인트 기반으로 모델 목록 자동 표시",
-            "<strong>Security:</strong> <code>allowManagedDomainsOnly</code>·<code>allowManagedReadPathsOnly</code> 정책 무시 버그 수정 — 상위 우선순위 관리 설정 소스에 <code>sandbox</code> 블록이 없을 때 정책이 우회되던 취약점 해결",
-            "<strong>Auto 모드 스피너 빨간색 전환</strong> — 권한 확인 중 대기 상태 시 스피너가 빨간색으로 변해 도구 실행 중 상태와 명확히 구분",
-            "<strong>Windows 다수 개선</strong> — PowerShell 7 Store·MSI·.NET 글로벌 도구 경로 자동 검출, PowerShell 기본 쉘 전환, 클립보드 EDR/SIEM 노출 방지, 한중일 문자 깨짐(no-flicker) 수정"
+            "<strong>/color</strong> 단독 실행 시 랜덤 세션 색상 자동 배정 — 인수 없이 실행하면 매번 무작위 색상이 선택되어 세션 구분 편의성 향상",
+            "<strong>/mcp</strong> 서버별 도구 수 표시 및 0개 서버 경고 — 연결된 MCP 서버의 등록 도구 개수를 실시간으로 표시하고, 도구 0개인 서버는 별도 플래그로 표시",
+            "<strong>--plugin-dir</strong>에서 <code>.zip</code> 아카이브 직접 로드 지원 — 디렉토리 외 ZIP 형식 플러그인 파일을 압축 해제 없이 바로 지정 가능",
+            "<strong>--channels</strong> 콘솔(API 키) 인증 지원 — 콘솔 조직이 <code>channelsEnabled: true</code>를 설정하면 관리형 설정 조직에서도 채널 기능 사용 가능",
+            "<strong>/model 피커</strong> Opus 4.7 중복 항목 정리 — 중복된 Opus 4.7 항목 통합, 현재 Opus는 \"Opus\"로 표시하여 모델 선택 UX 개선",
+            "<strong>OTEL_* 환경변수 격리</strong> — Bash·훅·MCP·LSP 서브프로세스가 CLI의 자체 OTLP 엔드포인트를 상속하지 않아 OTEL 계측 앱 실행 시 충돌 완전 차단",
+            "<strong>MCP <code>workspace</code> 예약어 지정</strong> 및 재연결 로그 개선 — 동일 이름 서버 경고 처리, 재연결 시 전체 도구 목록 범람 방지 (서버 프리픽스 요약 방식으로 변경)"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.126",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.128",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "126"
+          "bgNum": "128"
         },
         {
           "id": "nextjs-1624",
