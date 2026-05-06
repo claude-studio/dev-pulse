@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 07",
+    "volume": "VOL. 002 / ISSUE 08",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.05.06 WED",
     "sourceCount": 8
   },
   "ticker": [
+    "REACT v19.2.6 — Server Components 타입 강화 및 성능 개선",
     "CLAUDE CODE v2.1.131 — VS Code Windows 활성화·Mantle x-api-key 헤더 누락 긴급 수정",
     "CLAUDE CODE v2.1.129 — --plugin-url 플래그·패키지 매니저 자동 업그레이드·Ctrl+R 전체 히스토리 기본 검색 복구",
     "CLAUDE CODE v2.1.128 — /color 랜덤 색상·ZIP 플러그인·OTEL 격리·MCP workspace 예약어 추가",
@@ -127,7 +128,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.04.08 ~ 2026.05.04",
+      "date": "2026.04.16 ~ 2026.05.06",
       "news": [
         {
           "id": "typescript-603",
@@ -194,21 +195,21 @@
           "bgNum": "4"
         },
         {
-          "id": "react-1925",
+          "id": "react-1926",
           "category": "release",
           "variant": "third",
           "tag": "RELEASE",
-          "version": "v19.2.5",
+          "version": "v19.2.6",
           "title": "React",
-          "date": "2026-04-08",
+          "date": "2026-05-06",
           "source": "facebook/react",
           "bullets": [
-            "<strong>React Server Components</strong> 순환 참조 보호 강화 — 컴포넌트 트리 내 무한 순환 검출 로직 추가",
-            "<strong>Server Components</strong> 렌더링 안정성 개선",
-            "v19.x 전체 브랜치 적용 패치"
+            "<strong>React Server Components 타입 강화</strong> — 서버 컴포넌트 타입 정의를 더욱 엄격하게 보완하여 타입 추론 정확도 및 안전성 향상",
+            "<strong>성능 개선</strong> — Server Components 렌더링 경로 최적화로 런타임 효율 향상",
+            "<code>npm install react@19.2.6 react-dom@19.2.6</code>으로 즉시 업데이트 가능"
           ],
           "link": {
-            "url": "https://github.com/facebook/react/releases/tag/v19.2.5",
+            "url": "https://github.com/facebook/react/releases/tag/v19.2.6",
             "label": "github.com/facebook/react →"
           }
         },
