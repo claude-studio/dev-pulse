@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 05",
+    "volume": "VOL. 002 / ISSUE 06",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.05 TUE",
+    "date": "2026.05.06 WED",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.129 — --plugin-url 플래그·패키지 매니저 자동 업그레이드·Ctrl+R 전체 히스토리 기본 검색 복구",
     "CLAUDE CODE v2.1.128 — /color 랜덤 색상·ZIP 플러그인·OTEL 격리·MCP workspace 예약어 추가",
     "VERCEL v53.1.1 — vc env update 민감 변수 수정·SdkKey 타입 강화·SPA 폴백 라우팅 개선",
     "VERCEL v53.1.0 — 로컬 dev 서비스 오케스트레이터 도입·민감 변수 팀 환경 변수 추가 허용",
@@ -70,31 +71,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.05.04",
+      "date": "2026.05.06",
       "news": [
         {
-          "id": "claude-code-21128",
+          "id": "claude-code-21129",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.128",
+          "version": "v2.1.129",
           "title": "Claude Code",
-          "date": "2026-05-04",
+          "date": "2026-05-06",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>/color</strong> 단독 실행 시 랜덤 세션 색상 자동 배정 — 인수 없이 실행하면 매번 무작위 색상이 선택되어 세션 구분 편의성 향상",
-            "<strong>/mcp</strong> 서버별 도구 수 표시 및 0개 서버 경고 — 연결된 MCP 서버의 등록 도구 개수를 실시간으로 표시하고, 도구 0개인 서버는 별도 플래그로 표시",
-            "<strong>--plugin-dir</strong>에서 <code>.zip</code> 아카이브 직접 로드 지원 — 디렉토리 외 ZIP 형식 플러그인 파일을 압축 해제 없이 바로 지정 가능",
-            "<strong>--channels</strong> 콘솔(API 키) 인증 지원 — 콘솔 조직이 <code>channelsEnabled: true</code>를 설정하면 관리형 설정 조직에서도 채널 기능 사용 가능",
-            "<strong>/model 피커</strong> Opus 4.7 중복 항목 정리 — 중복된 Opus 4.7 항목 통합, 현재 Opus는 \"Opus\"로 표시하여 모델 선택 UX 개선",
-            "<strong>OTEL_* 환경변수 격리</strong> — Bash·훅·MCP·LSP 서브프로세스가 CLI의 자체 OTLP 엔드포인트를 상속하지 않아 OTEL 계측 앱 실행 시 충돌 완전 차단",
-            "<strong>MCP <code>workspace</code> 예약어 지정</strong> 및 재연결 로그 개선 — 동일 이름 서버 경고 처리, 재연결 시 전체 도구 목록 범람 방지 (서버 프리픽스 요약 방식으로 변경)"
+            "<strong>--plugin-url &lt;url&gt;</strong> 플래그 추가 — URL에서 플러그인 <code>.zip</code> 아카이브를 직접 가져와 현재 세션에 즉시 적용, 별도 설치 없이 원격 플러그인 사용 가능",
+            "<strong>CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE</strong> 환경변수 추가 — Homebrew·WinGet 설치에서 백그라운드로 업그레이드 자동 실행 후 재시작 안내 프롬프트 표시",
+            "<strong>CLAUDE_CODE_FORCE_SYNC_OUTPUT=1</strong> 환경변수 추가 — Emacs <code>eat</code> 등 자동 감지에서 누락된 터미널에서 동기화 출력을 강제 활성화하여 렌더링 일관성 확보",
+            "<strong>플러그인 매니페스트 실험 키 이동</strong> — <code>themes</code>·<code>monitors</code>를 <code>\"experimental\": { ... }</code> 블록 아래에 선언하도록 변경; 최상위 선언은 동작하나 <code>claude plugin validate</code>에서 경고 표시",
+            "<strong>Gateway 모델 디스커버리 옵트인 전환</strong> — <code>CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1</code>로 명시적 활성화 필요; v2.1.126–v2.1.128에서 자동 실행되던 방식 철회",
+            "<strong>Ctrl+R 히스토리 피커</strong> 기본값 전체 프로젝트 검색으로 복구 — pre-2.1.124 이전 동작 복원; <kbd>Ctrl+S</kbd>로 현재 프로젝트·세션 범위 좁히기 가능",
+            "<strong>서드파티 배포 환경 스피너 팁 제거</strong> — Bedrock·Vertex·Foundry·게이트웨이 사용자에게 Anthropic 퍼스트파티 안내 메시지가 표시되지 않도록 차단; <code>skillOverrides</code> <code>off</code>·<code>user-invocable-only</code> 설정 동작 수정"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.128",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.129",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "128"
+          "bgNum": "129"
         },
         {
           "id": "nextjs-1624",
