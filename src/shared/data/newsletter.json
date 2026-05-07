@@ -1,11 +1,13 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 08",
+    "volume": "VOL. 002 / ISSUE 09",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.06 WED",
+    "date": "2026.05.07 THU",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.132 — 외부 SIGINT 우아한 종료·MCP 메모리 누수·이모지 분리 다수 수정",
+    "NEXT.JS 16.2.5 — 고위험 6건·중위험 1건 보안 취약점 긴급 패치",
     "REACT v19.2.6 — Server Components 타입 강화 및 성능 개선",
     "CLAUDE CODE v2.1.131 — VS Code Windows 활성화·Mantle x-api-key 헤더 누락 긴급 수정",
     "CLAUDE CODE v2.1.129 — --plugin-url 플래그·패키지 매니저 자동 업그레이드·Ctrl+R 전체 히스토리 기본 검색 복구",
@@ -76,50 +78,50 @@
       "date": "2026.05.06",
       "news": [
         {
-          "id": "claude-code-21131",
+          "id": "claude-code-21132",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.131",
+          "version": "v2.1.132",
           "title": "Claude Code",
           "date": "2026-05-06",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>긴급 핫픽스 릴리즈</strong> — v2.1.129 이후 Windows 환경과 Mantle 인증에서 발생한 회귀 버그를 집중 수정한 패치; 해당 환경 사용자는 즉시 업데이트 권장",
-            "<strong>VS Code Windows 활성화 오류 수정</strong> — 번들 SDK에 하드코딩된 빌드 경로로 인해 <code>createRequire</code> 폴리필이 로드 실패하여 확장이 활성화되지 않던 문제 해결",
-            "<strong>createRequire 폴리필 경로 버그 근본 수정</strong> — SDK 번들링 과정에서 플랫폼 독립적 경로 해석이 되지 않던 구조적 결함을 수정, Windows 경로 규칙(<code>\\</code>)에서도 정상 동작",
-            "<strong>Mantle 엔드포인트 인증 헤더 수정</strong> — <code>x-api-key</code> 헤더가 요청에서 누락되어 Mantle 엔드포인트 인증이 실패하던 회귀 버그를 해결",
-            "<strong>엔터프라이즈 Mantle 배포 완전 복구</strong> — Mantle 엔드포인트를 통해 Claude Code를 배포 중인 팀에서 인증 실패가 완전히 해소되어 정상 운영 재개",
-            "<strong>Windows ARM64 · x64 전 환경 적용</strong> — VS Code 확장이 동작하지 않던 Windows 사용자 전체에 즉시 적용; 재설치 없이 확장 업데이트만으로 해결",
-            "<strong>즉시 업데이트 가능</strong> — <code>npm update -g @anthropic-ai/claude-code</code> 또는 Homebrew·WinGet 패키지 매니저 자동 업그레이드로 적용"
+            "<strong>CLAUDE_CODE_SESSION_ID</strong> 환경 변수 추가 — Bash 도구 하위 프로세스에 세션 ID가 자동 주입되어 훅의 <code>session_id</code>와 동일한 값을 활용 가능",
+            "<strong>CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1</strong> 옵트아웃 환경 변수 추가 — 전체화면 대체 스크린 렌더러를 비활성화하고 터미널 기본 스크롤백에서 대화 유지",
+            "<strong>외부 SIGINT 우아한 종료 수정</strong> — IDE 중지 버튼·<code>kill -INT</code> 신호 수신 시 터미널 모드 복원 및 <code>--resume</code> 힌트 출력 (기존: 강제 종료)",
+            "<strong>MCP stdio 서버 메모리 누수 수정</strong> — stdio MCP 서버가 비프로토콜 데이터를 stdout에 쓸 때 발생하던 무제한 메모리 증가(10GB+ RSS) 버그 해결",
+            "<strong>MCP tools/list 실패 처리 개선</strong> — 연결 성공 후 <code>tools/list</code>가 실패하는 서버가 0개로 표시되던 문제 수정; 한 번 재시도 후 <code>/mcp</code>에 \"connected · tools fetch failed\" 표시",
+            "<strong>--resume 이모지 분리 오류 수정</strong> — 도구 오류 트런케이션이 이모지를 분리해 <code>no low surrogate in string</code> 예외가 발생하던 버그 수정, 손상된 세션 자동 정리",
+            "<strong>슬래시 커맨드·상태표시줄·키보드 입력 다수 수정</strong> — 자동완성 팝업 크기 제한·<code>context_window</code> 누적 카운트·Windows 배경 세션 키보드 불능 등 UX 회귀 버그 일괄 수정"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.131",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.132",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "131"
+          "bgNum": "132"
         },
         {
-          "id": "nextjs-1624",
+          "id": "nextjs-1625",
           "category": "release",
           "variant": "tall",
           "tag": "RELEASE",
-          "version": "16.2.4",
+          "version": "16.2.5",
           "title": "Next.js",
-          "date": "2026-04-15",
+          "date": "2026-05-06",
           "source": "vercel/next.js",
           "bullets": [
-            "<strong>버그 수정 전용 백포트 릴리즈</strong> — 신규 기능 없이 안정성 집중, canary 기능 미포함",
-            "<strong>reqwest 0.13.2 업데이트</strong> — Windows ARM64 환경에서 Turbopack Google Fonts 로드 오류 수정",
-            "<strong>Turbopack 파일시스템 워처 수정</strong> — <code>follow_symlinks(false)</code> 설정이 적용되지 않던 버그 해결",
-            "<strong>Safari 캐시버스터 범위 제한</strong> — <code>?ts=</code> 파라미터를 CSS·폰트 에셋에만 적용 (Pages Router), 불필요한 캐시 우회 방지",
-            "<strong>next.config defines 원시값 지원</strong> — Compiler에서 boolean·number 타입을 defines에서 직접 사용 가능",
-            "<strong>turbo-tasks 재계산 루프 수정</strong> — 오류 발생 시 셀 정리 로직으로 무한 재계산 방지",
-            "<strong>Turbopack 오류 메시지 단축</strong> — <code>ChunkGroupInfo::get_index_of</code>, <code>ModuleBatchesGraph::get_entry_index</code> 두 곳의 지나치게 긴 오류 메시지 개선",
-            "<strong>'initialize project' 트레이스 강화</strong> — 시스템 정보를 트레이스에 추가하여 디버깅 가시성 향상"
+            "<strong>긴급 보안 전용 릴리즈</strong> — 신규 기능 없이 고위험 6건·중위험 1건 보안 취약점만 수정; App Router·Pages Router·Cache Components·WebSocket 전 영역 영향",
+            "<strong>Server Components DoS 수정</strong> (GHSA-8h8q-6873-q5fj) — Server Components를 사용하는 App Router 앱에서 서비스 거부 공격이 가능하던 고위험 취약점 패치",
+            "<strong>Cache Components 연결 소진 DoS 수정</strong> (GHSA-mg66-mrh9-m8jx) — Cache Components를 사용하는 애플리케이션에서 연결 소진을 통한 서비스 거부 공격 경로 차단",
+            "<strong>App Router segment-prefetch Middleware 우회 수정</strong> (GHSA-267c-6grr-h53f) — segment-prefetch 라우트를 통해 Middleware·Proxy를 우회할 수 있던 고위험 취약점 제거",
+            "<strong>동적 라우트 파라미터 인젝션 우회 수정</strong> (GHSA-492v-c6pp-mqqv) — 동적 라우트 파라미터 조작으로 Middleware·Proxy를 우회하는 공격 경로 패치",
+            "<strong>WebSocket 업그레이드 SSRF 수정</strong> (GHSA-c4j6-fc7j-m34r) — WebSocket 업그레이드를 사용하는 앱에서 서버 사이드 요청 위조가 가능하던 고위험 취약점 해결",
+            "<strong>Pages Router i18n Middleware 우회 수정</strong> (GHSA-36qx-fr4f-26g5) — i18n 설정을 사용하는 Pages Router 앱에서 Middleware·Proxy 우회가 가능하던 취약점 제거",
+            "<strong>CSP 논스 XSS 수정</strong> (GHSA-ffhc-5mcf-pf4q, 중위험) — CSP 논스를 사용하는 App Router 앱에서 크로스 사이트 스크립팅 가능성 수정; <code>npm install next@16.2.5</code>로 즉시 업데이트 권장"
           ],
           "link": {
-            "url": "https://github.com/vercel/next.js/releases/tag/v16.2.4",
+            "url": "https://github.com/vercel/next.js/releases/tag/v16.2.5",
             "label": "github.com/vercel/next.js →"
           },
           "bgNum": "16"
