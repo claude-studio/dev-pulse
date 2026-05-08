@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 11",
+    "volume": "VOL. 002 / ISSUE 12",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.05.08 FRI",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.136 — autoMode.hard_deny 차단 규칙·MCP /clear 소멸·OAuth 동시 갱신 refresh token 소멸 버그 수정",
     "NEXT.JS 16.2.6 — 고위험 7건·중위험 4건 보안 취약점 추가 패치",
     "CLAUDE CODE v2.1.133 — worktree.baseRef 설정·Hooks effort 레벨·병렬 세션 401 경쟁 조건 수정",
     "VITE 8.0.11 — Rolldown RC.18 업데이트 및 환경별 객체 인스턴스 분리 버그 수정",
@@ -78,31 +79,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.05.07",
+      "date": "2026.05.08",
       "news": [
         {
-          "id": "claude-code-21133",
+          "id": "claude-code-21136",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.133",
+          "version": "v2.1.136",
           "title": "Claude Code",
-          "date": "2026-05-07",
+          "date": "2026-05-08",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>worktree.baseRef</strong> 설정 추가 — <code>fresh</code>|<code>head</code> 선택으로 <code>--worktree</code>·<code>EnterWorktree</code>·에이전트 격리 워크트리의 기준 브랜치를 <code>origin/&lt;default&gt;</code> 또는 로컬 <code>HEAD</code>로 지정 가능 (기본값 <code>fresh</code>로 2.1.128 이전 동작 복원)",
-            "<strong>sandbox.bwrapPath / sandbox.socatPath</strong> 관리 설정 추가 — Linux·WSL 환경에서 bubblewrap·socat 바이너리의 커스텀 경로를 managedSettings로 지정 가능",
-            "<strong>parentSettingsBehavior</strong> 관리자 티어 키 추가 — SDK <code>managedSettings</code>(부모 티어)의 정책 병합 전략을 <code>first-wins</code> 또는 <code>merge</code>로 선택해 다중 정책 적용 제어",
-            "<strong>Hooks effort.level / $CLAUDE_EFFORT</strong> 환경 변수 지원 — 훅 JSON 입력 필드와 Bash 도구 환경 변수로 현재 활성 effort 레벨을 읽어 조건부 훅 로직 구현 가능",
-            "<strong>포커스 모드 동작 개선</strong> — 포커스 뷰 전환 안정성 향상 및 warm-spare 백그라운드 워커를 메모리 압력 감지 시 자동 해제해 메모리 사용량 최적화",
-            "<strong>병렬 세션 401 경쟁 조건 수정</strong> — refresh-token 레이스로 공유 자격증명이 소멸될 때 모든 병렬 세션이 동시에 401 오류로 종료되던 버그 해결",
-            "<strong>Edit/Write 허용 규칙 드라이브 루트 매칭 오류 수정</strong> — <code>C:\\</code> 또는 POSIX <code>/</code> 범위로 지정된 allow 규칙이 의도치 않게 항상 일치하거나 잘못 평가되던 보안 회귀 버그 수정"
+            "<strong>CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL</strong> 환경 변수 추가 — OpenTelemetry로 응답을 수집하는 엔터프라이즈 환경에서 세션 품질 설문을 다시 활성화할 수 있는 새 환경 변수 제공",
+            "<strong>settings.autoMode.hard_deny</strong> 자동 모드 분류 규칙 추가 — 사용자 의도나 허용 예외와 무관하게 auto mode 분류기를 무조건 차단하는 규칙을 관리 설정으로 지정 가능",
+            "<strong>/clear 후 MCP 서버 소멸 버그 수정</strong> — VS Code 확장·JetBrains 플러그인·Agent SDK에서 <code>/clear</code> 명령 이후 <code>.mcp.json</code>·플러그인·claude.ai 커넥터로 설정된 MCP 서버가 무음으로 사라지던 문제 해결",
+            "<strong>OAuth 토큰 동시 쓰기 로그인 루프 버그 수정</strong> — 동시 자격증명 쓰기로 새로 교체된 OAuth 토큰이 덮어씌워져 강제 재로그인이 필요하던 드문 경쟁 조건 버그 수정",
+            "<strong>MCP OAuth 동시 갱신 시 refresh token 소멸 버그 수정</strong> — 여러 원격 MCP 서버가 동시에 refresh할 때 토큰이 유실되어 매일 재인증이 필요하던 문제 해결; 다중 원격 MCP 서버 사용자에게 즉각 혜택",
+            "<strong>plan mode 파일 쓰기 차단 누락·--resume 경로 탐색 실패 수정</strong> — <code>Edit(...)</code> 허용 규칙 존재 시 plan mode 파일 쓰기가 차단되지 않던 버그, 프로젝트 경로에 밑줄 포함 시 <code>--resume</code>·<code>--continue</code> 세션 탐색 실패, extended thinking redacted 블록 후 도구 호출 시 API 400 오류 통합 수정",
+            "<strong>WSL2 Windows 클립보드 이미지 붙여넣기 지원</strong> — xclip·wl-paste로 이미지 데이터를 읽을 수 없는 환경에서 PowerShell 폴백을 통해 Windows 클립보드 이미지 붙여넣기 가능"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.133",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.136",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "133"
+          "bgNum": "136"
         },
         {
           "id": "nextjs-1626",
