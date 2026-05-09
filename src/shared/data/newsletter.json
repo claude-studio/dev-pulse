@@ -1,11 +1,14 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 12",
+    "volume": "VOL. 002 / ISSUE 13",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.08 FRI",
+    "date": "2026.05.09 SAT",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.137 — VSCode Windows 확장 프로그램 활성화 실패 긴급 수정",
+    "TAILWIND CSS v4.3.0 — scrollbar·zoom·tab 유틸리티 신규 추가 및 @variant 스택·복합 변형 지원",
+    "VERCEL v53.2.0 — vercel firewall 방화벽 명령 및 connex --triggers 플래그 추가",
     "CLAUDE CODE v2.1.136 — autoMode.hard_deny 차단 규칙·MCP /clear 소멸·OAuth 동시 갱신 refresh token 소멸 버그 수정",
     "NEXT.JS 16.2.6 — 고위험 7건·중위험 4건 보안 취약점 추가 패치",
     "CLAUDE CODE v2.1.133 — worktree.baseRef 설정·Hooks effort 레벨·병렬 세션 401 경쟁 조건 수정",
@@ -79,31 +82,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.05.08",
+      "date": "2026.05.09",
       "news": [
         {
-          "id": "claude-code-21136",
+          "id": "claude-code-21137",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.136",
+          "version": "v2.1.137",
           "title": "Claude Code",
-          "date": "2026-05-08",
+          "date": "2026-05-09",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL</strong> 환경 변수 추가 — OpenTelemetry로 응답을 수집하는 엔터프라이즈 환경에서 세션 품질 설문을 다시 활성화할 수 있는 새 환경 변수 제공",
-            "<strong>settings.autoMode.hard_deny</strong> 자동 모드 분류 규칙 추가 — 사용자 의도나 허용 예외와 무관하게 auto mode 분류기를 무조건 차단하는 규칙을 관리 설정으로 지정 가능",
-            "<strong>/clear 후 MCP 서버 소멸 버그 수정</strong> — VS Code 확장·JetBrains 플러그인·Agent SDK에서 <code>/clear</code> 명령 이후 <code>.mcp.json</code>·플러그인·claude.ai 커넥터로 설정된 MCP 서버가 무음으로 사라지던 문제 해결",
-            "<strong>OAuth 토큰 동시 쓰기 로그인 루프 버그 수정</strong> — 동시 자격증명 쓰기로 새로 교체된 OAuth 토큰이 덮어씌워져 강제 재로그인이 필요하던 드문 경쟁 조건 버그 수정",
-            "<strong>MCP OAuth 동시 갱신 시 refresh token 소멸 버그 수정</strong> — 여러 원격 MCP 서버가 동시에 refresh할 때 토큰이 유실되어 매일 재인증이 필요하던 문제 해결; 다중 원격 MCP 서버 사용자에게 즉각 혜택",
-            "<strong>plan mode 파일 쓰기 차단 누락·--resume 경로 탐색 실패 수정</strong> — <code>Edit(...)</code> 허용 규칙 존재 시 plan mode 파일 쓰기가 차단되지 않던 버그, 프로젝트 경로에 밑줄 포함 시 <code>--resume</code>·<code>--continue</code> 세션 탐색 실패, extended thinking redacted 블록 후 도구 호출 시 API 400 오류 통합 수정",
-            "<strong>WSL2 Windows 클립보드 이미지 붙여넣기 지원</strong> — xclip·wl-paste로 이미지 데이터를 읽을 수 없는 환경에서 PowerShell 폴백을 통해 Windows 클립보드 이미지 붙여넣기 가능"
+            "<strong>VSCode Windows 확장 프로그램 활성화 실패 긴급 수정</strong> — v2.1.136 출시 직후 발견된 Windows 환경 VS Code 확장 프로그램 비활성화 회귀 버그를 당일 핫픽스로 즉시 해결",
+            "<strong>Windows 플랫폼 한정 단일 패치</strong> — macOS·Linux 사용자에게는 영향 없는 Windows 전용 문제로 최소 변경 핫픽스 적용; 다른 플랫폼 동작에 영향 없음",
+            "<strong>VS Code 재시작만으로 복구</strong> — 확장 재설치 없이 업데이트 후 VS Code 재시작만으로 정상 활성화 확인 가능; 별도 환경 재설정 불필요",
+            "<strong>v2.1.136 연속 당일 핫픽스</strong> — 전날 출시된 v2.1.136의 WSL2 클립보드·OAuth·MCP 개선 직후 발견된 회귀를 즉각 대응; 빠른 릴리즈 사이클 유지",
+            "<strong>Windows PowerShell·WSL2 통합 안정성 유지</strong> — v2.1.136에서 개선된 WSL2 Windows 클립보드 이미지 붙여넣기 및 PowerShell 기능과 함께 정상 동작 보장",
+            "<strong>VS Code Marketplace 자동 업데이트</strong> — 마켓플레이스 자동 업데이트 활성화 시 VS Code 재시작만으로 적용; 비활성화 시 확장 탭에서 수동 업데이트 진행",
+            "<strong>즉시 업데이트 권장</strong> — <code>npm install -g @anthropic-ai/claude-code@latest</code> 또는 VS Code 확장 업데이트로 즉시 적용; Windows 환경 사용자 필수 업그레이드"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.136",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.137",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "136"
+          "bgNum": "137"
         },
         {
           "id": "nextjs-1626",
@@ -134,7 +137,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.04.16 ~ 2026.05.07",
+      "date": "2026.04.16 ~ 2026.05.09",
       "news": [
         {
           "id": "typescript-603",
@@ -181,24 +184,24 @@
           "bgNum": "11"
         },
         {
-          "id": "tailwind-424",
+          "id": "tailwind-430",
           "category": "release",
           "variant": "third",
           "tag": "RELEASE",
-          "version": "v4.2.4",
+          "version": "v4.3.0",
           "title": "Tailwind CSS",
-          "date": "2026-04-21",
+          "date": "2026-05-08",
           "source": "tailwindlabs/tailwindcss",
           "bullets": [
-            "<strong>Vite 별칭 import 해석 오류 수정</strong> — <code>@tailwindcss/vite</code>에서 Vite 별칭 사용 시 <code>@import</code>·<code>@plugin</code> 경로가 올바르게 해석되지 않던 회귀 버그 수정",
-            "<strong>단일 패치 릴리즈</strong> — v4.2.3에서 발견된 별칭 처리 회귀를 단독 수정으로 신속 배포",
-            "<code>npm install tailwindcss@4.2.4</code>로 즉시 업데이트 가능"
+            "<strong>scrollbar-*·zoom-*·tab-* 유틸리티 일괄 신규 추가</strong> — CSS <code>scrollbar-width</code>·<code>scrollbar-color</code>·<code>scrollbar-gutter</code> 제어, <code>zoom-*</code> 요소 확대/축소, <code>tab-*</code> 탭 간격을 네이티브 유틸리티 클래스로 지원",
+            "<strong>@container-size 유틸리티 및 @variant 스택·복합 변형 지원</strong> — 컨테이너 사이즈 유틸리티 추가 및 <code>@variant hover:focus { … }</code>·<code>@variant hover, focus { … }</code> 중첩·복합 변형 패턴 사용 가능",
+            "<strong>@tailwindcss/vite·@tailwindcss/postcss 경로 해석 버그 다수 수정</strong> — <code>@plugin</code> 패키지 진입점·상대 경로 <code>@import</code>·<code>@variant</code> CSS 파일 처리 등 빌드 도구 통합 안정성 개선"
           ],
           "link": {
-            "url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.2.4",
+            "url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.0",
             "label": "tailwindlabs/tailwindcss →"
           },
-          "bgNum": "4"
+          "bgNum": "3"
         },
         {
           "id": "react-1926",
@@ -225,9 +228,13 @@
           "variant": "third",
           "tag": "INFRA",
           "title": "Vercel Changelog",
-          "date": "2026-05-04",
+          "date": "2026-05-06",
           "type": "vercel",
           "items": [
+            {
+              "title": "vercel@53.2.0: vercel firewall 방화벽 명령 추가",
+              "description": "프로젝트 방화벽 설정을 관리하는 vercel firewall 명령 추가 — 커스텀 규칙(추가·수정·삭제·활성화·비활성화·재정렬)·IP 차단·시스템 우회 규칙·공격 챌린지 모드·시스템 완화 정책 지원. vercel connex create에 --triggers 플래그 추가로 웹훅 트리거 활성화 여부를 생성 시점에 지정 가능"
+            },
             {
               "title": "vercel@53.1.1: vc env update 민감 변수 수정·SdkKey 타입 강화",
               "description": "민감 환경 변수 업데이트 시 실패하던 vc env update 버그 수정, SdkKey 타입을 분리해 목록 응답에서 평문 키값 노출 방지, SPA 폴백 라우팅이 빌더 라우트 뒤에 병합되도록 수정 및 Claude Code Vercel 플러그인 마이그레이션 처리 개선"
@@ -235,10 +242,6 @@
             {
               "title": "vercel@53.1.0: 로컬 dev 서비스 오케스트레이터 도입",
               "description": "단일 웹 서비스 로컬 개발 환경에 서비스 오케스트레이터 적용, 민감 환경 변수 정책을 적용한 팀에서도 개발 환경 변수 추가 가능하도록 허용"
-            },
-            {
-              "title": "vercel@53.0.1: 런타임 패키지 대규모 의존성 업데이트",
-              "description": "@vercel/node·@vercel/elysia·@vercel/express·@vercel/fastify·@vercel/h3·@vercel/hono·@vercel/koa·@vercel/nestjs 런타임 패키지 일괄 업데이트 — v53 메이저 버전 첫 패치 릴리즈"
             }
           ],
           "link": {
