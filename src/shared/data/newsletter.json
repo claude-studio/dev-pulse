@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 14",
+    "volume": "VOL. 002 / ISSUE 15",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.09 SAT",
+    "date": "2026.05.11 MON",
     "sourceCount": 8
   },
   "ticker": [
+    "VITE 8.0.12 — Rolldown 1.0.0 정식 출시 및 Worker 번들 처리 개선",
     "CLAUDE CODE v2.1.138 — 내부 코드베이스 안정성 강화 및 핵심 수정 패치",
     "CLAUDE CODE v2.1.137 — VSCode Windows 확장 프로그램 활성화 실패 긴급 수정",
     "TAILWIND CSS v4.3.0 — scrollbar·zoom·tab 유틸리티 신규 추가 및 @variant 스택·복합 변형 지원",
@@ -138,7 +139,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.04.16 ~ 2026.05.09",
+      "date": "2026.04.16 ~ 2026.05.11",
       "news": [
         {
           "id": "typescript-603",
@@ -163,26 +164,26 @@
           "bgNum": "6"
         },
         {
-          "id": "vite-8011",
+          "id": "vite-8012",
           "category": "release",
           "variant": "wide",
           "tag": "TOOL",
-          "version": "Vite 8.0.11",
-          "title": "Vite 8.0.11",
-          "date": "2026-05-07",
+          "version": "Vite 8.0.12",
+          "title": "Vite 8.0.12",
+          "date": "2026-05-11",
           "source": "vitejs/vite",
           "bullets": [
-            "<strong>Rolldown 1.0.0-rc.18</strong> 업데이트 — 핵심 번들러 엔진 최신 RC 탑재, RC.17 대비 지속적인 안정화 및 성능 개선 진행",
-            "<strong>환경별 독립 객체 인스턴스 보장</strong> — 각 환경마다 별도 객체 인스턴스를 생성하여 환경 간 상태 공유로 인한 예기치 않은 버그 수정",
-            "<strong>glob HMR matcher 옵션 정렬 수정</strong> — HMR 매처 옵션이 glob 열거 방식과 일관되지 않게 동작하던 문제 해결",
-            "<strong>devtools 통합 리팩토링</strong> — 개발자 도구 통합 코드를 재구성하여 내부 구조 및 유지보수성 개선",
-            "<strong>비주요 의존성 일괄 업데이트</strong> — 보안 및 호환성 향상을 위한 npm audit 경고 해소 포함 패키지 최신화"
+            "<strong>Rolldown 1.0.0 정식 출시</strong> — RC 딱지를 뗀 Rolldown 1.0.0 안정 버전 탑재; Vite 8의 핵심 번들러 엔진이 공식 GA 상태로 전환",
+            "<strong>rolldownOptions</strong> 메시지 전환 — deprecated <code>rollupOptions</code> 참조 경고 메시지를 <code>rolldownOptions</code>로 전면 교체하여 마이그레이션 가이드 명확화",
+            "<strong>module-runner 병렬 import 경쟁 조건 수정</strong> — 무효화된 re-export 체인의 in-flight 모듈을 동시 import 시 발생하던 partial-exports 경쟁 조건 버그 해결",
+            "<strong>Worker 번들 build.target·define 전달 수정</strong> — Worker 번들 빌드 시 <code>build.target</code> 설정 및 <code>define</code> 옵션이 전달되지 않던 두 가지 버그 동시 수정",
+            "<strong>create-vite TanStack CLI 연동 개선</strong> — TanStack CLI 호출 시 react 프레임워크 정보가 누락되던 문제 수정 및 비주요 의존성 일괄 업데이트"
           ],
           "link": {
-            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.11",
+            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.12",
             "label": "github.com/vitejs/vite →"
           },
-          "bgNum": "11"
+          "bgNum": "12"
         },
         {
           "id": "tailwind-430",
