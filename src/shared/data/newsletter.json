@@ -1,11 +1,13 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 16",
+    "volume": "VOL. 002 / ISSUE 17",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.11 MON",
+    "date": "2026.05.12 TUE",
     "sourceCount": 8
   },
   "ticker": [
+    "VERCEL v53.4.0 — connex attach 명령 신규 추가·vercel dev에서 VERCEL_PROJECT_ID·VERCEL_ORG_ID 자동 노출",
+    "VERCEL v53.3.0 — connex list 현재 프로젝트 기본 표시·project token --format=json 지원·@vercel/cli-config 패키지 분리",
     "CLAUDE CODE v2.1.139 — Agent View Research Preview·/goal 자동 완료 조건·Hook args 배열 직접 실행 추가",
     "VITE 8.0.12 — Rolldown 1.0.0 정식 출시 및 Worker 번들 처리 개선",
     "CLAUDE CODE v2.1.138 — 내부 코드베이스 안정성 강화 및 핵심 수정 패치",
@@ -231,20 +233,20 @@
           "variant": "third",
           "tag": "INFRA",
           "title": "Vercel Changelog",
-          "date": "2026-05-06",
+          "date": "2026-05-11",
           "type": "vercel",
           "items": [
             {
-              "title": "vercel@53.2.0: vercel firewall 방화벽 명령 추가",
-              "description": "프로젝트 방화벽 설정을 관리하는 vercel firewall 명령 추가 — 커스텀 규칙(추가·수정·삭제·활성화·비활성화·재정렬)·IP 차단·시스템 우회 규칙·공격 챌린지 모드·시스템 완화 정책 지원. vercel connex create에 --triggers 플래그 추가로 웹훅 트리거 활성화 여부를 생성 시점에 지정 가능"
+              "title": "vercel@53.4.0: connex attach 명령 추가·vercel dev 환경 변수 노출",
+              "description": "vercel connex attach <client>로 프로젝트를 Connex 클라이언트에 환경별 연결(-e/--environment, -p/--project, --yes/--format=json 지원). vercel dev가 .vercel/project.json의 VERCEL_PROJECT_ID·VERCEL_ORG_ID를 로컬 프로세스에 자동 노출(기존 .env 값 우선). rootDirectory 이중 경로 버그 및 experimentalServices 프로세스 종료 문제 수정"
             },
             {
-              "title": "vercel@53.1.1: vc env update 민감 변수 수정·SdkKey 타입 강화",
-              "description": "민감 환경 변수 업데이트 시 실패하던 vc env update 버그 수정, SdkKey 타입을 분리해 목록 응답에서 평문 키값 노출 방지, SPA 폴백 라우팅이 빌더 라우트 뒤에 병합되도록 수정 및 Claude Code Vercel 플러그인 마이그레이션 처리 개선"
+              "title": "vercel@53.3.0: connex list 프로젝트 기본값·project token JSON 포맷",
+              "description": "vercel connex list가 현재 연결된 프로젝트를 기본으로 표시(--all-projects로 팀 전체 보기 전환 가능). vercel project token에 --format=json 플래그 추가로 토큰을 stdout에 직접 출력. CLI 전역 설정·인증 헬퍼를 @vercel/cli-config 패키지로 분리하여 모듈 구조 개선"
             },
             {
-              "title": "vercel@53.1.0: 로컬 dev 서비스 오케스트레이터 도입",
-              "description": "단일 웹 서비스 로컬 개발 환경에 서비스 오케스트레이터 적용, 민감 환경 변수 정책을 적용한 팀에서도 개발 환경 변수 추가 가능하도록 허용"
+              "title": "vercel@53.3.2: 전체 런타임 빌더 패키지 일괄 업데이트",
+              "description": "Node·Go·Python·Ruby·Rust·Elysia·Express·Fastify·H3·Hono·Koa·NestJS 등 @vercel/ 런타임 빌더 패키지 전반 의존성 일괄 업데이트 (@vercel/build-utils@13.22.1·@vercel/go@3.6.0·@vercel/rust@1.2.0 포함)"
             }
           ],
           "link": {
