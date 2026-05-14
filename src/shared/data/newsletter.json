@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 19",
+    "volume": "VOL. 002 / ISSUE 20",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.05.14 THU",
     "sourceCount": 8
   },
   "ticker": [
+    "VITE 8.0.13 — Rolldown 1.0.1 탑재·지연 번들링 지원·esbuild 컨버터 개선 및 CSS·SSR 다수 버그 수정",
     "CLAUDE CODE v2.1.141 — terminalSequence 훅 출력·agents --cwd·Rewind 요약·백그라운드 권한 보존 등 30건 이상 수정",
     "VERCEL v54.0.0 — vercel logs --follow 필수화·서비스 간 env 주입·Connex connector 명칭 통일",
     "CLAUDE CODE v2.1.140 — subagent_type 대소문자·구분자 무관 매칭·/goal 무한 대기·Windows 이벤트 루프 등 13건 수정",
@@ -145,7 +146,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.04.16 ~ 2026.05.13",
+      "date": "2026.04.16 ~ 2026.05.14",
       "news": [
         {
           "id": "typescript-603",
@@ -170,26 +171,26 @@
           "bgNum": "6"
         },
         {
-          "id": "vite-8012",
+          "id": "vite-8013",
           "category": "release",
           "variant": "wide",
           "tag": "TOOL",
-          "version": "Vite 8.0.12",
-          "title": "Vite 8.0.12",
-          "date": "2026-05-11",
+          "version": "Vite 8.0.13",
+          "title": "Vite 8.0.13",
+          "date": "2026-05-14",
           "source": "vitejs/vite",
           "bullets": [
-            "<strong>Rolldown 1.0.0 정식 출시</strong> — RC 딱지를 뗀 Rolldown 1.0.0 안정 버전 탑재; Vite 8의 핵심 번들러 엔진이 공식 GA 상태로 전환",
-            "<strong>rolldownOptions</strong> 메시지 전환 — deprecated <code>rollupOptions</code> 참조 경고 메시지를 <code>rolldownOptions</code>로 전면 교체하여 마이그레이션 가이드 명확화",
-            "<strong>module-runner 병렬 import 경쟁 조건 수정</strong> — 무효화된 re-export 체인의 in-flight 모듈을 동시 import 시 발생하던 partial-exports 경쟁 조건 버그 해결",
-            "<strong>Worker 번들 build.target·define 전달 수정</strong> — Worker 번들 빌드 시 <code>build.target</code> 설정 및 <code>define</code> 옵션이 전달되지 않던 두 가지 버그 동시 수정",
-            "<strong>create-vite TanStack CLI 연동 개선</strong> — TanStack CLI 호출 시 react 프레임워크 정보가 누락되던 문제 수정 및 비주요 의존성 일괄 업데이트"
+            "<strong>Rolldown 1.0.1 업데이트</strong> — 정식 출시 직후 첫 안정화 패치 탑재; 번들러 엔진 신뢰성 추가 강화",
+            "<strong>번들드 개발 환경 지연 번들링(Lazy Bundling) 지원 추가</strong> — 초기 dev 서버 시작 시 실제 요청이 발생한 모듈만 번들링하여 콜드 스타트 시간 단축",
+            "<strong>esbuild 플러그인 컨버터 개선</strong> — 빌드 결과물의 일부 속성을 <code>onEnd</code> 콜백에 전달하도록 옵티마이저 플러그인 컨버터 강화",
+            "<strong><code>isBundled</code> 환경별 독립 분리</strong> — 다중 환경 빌드에서 번들 상태가 환경마다 독립적으로 추적·적용되도록 수정",
+            "<strong>CSS·SSR·빌드 파이프라인 버그 수정 다수</strong> — Sass/Less/Stylus 워커 해제 비동기 처리·SSR 레이블-import 충돌·public 디렉터리 복사 순서·CSS deprecated 필드 유지 문제 일괄 수정"
           ],
           "link": {
-            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.12",
+            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.13",
             "label": "github.com/vitejs/vite →"
           },
-          "bgNum": "12"
+          "bgNum": "13"
         },
         {
           "id": "tailwind-430",
