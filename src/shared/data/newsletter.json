@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 22",
+    "volume": "VOL. 002 / ISSUE 23",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.15 FRI",
+    "date": "2026.05.16 SAT",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.143 — 플러그인 의존성 강제·agents 플래그 확장·백그라운드 세션 설정 완전 보존",
     "VERCEL v54.1.0 — connect 명령 기본 활성화·detach 신규 추가·트리거 플래그 지원",
     "CLAUDE CODE v2.1.142 — agents 플래그 대폭 확장·Fast 모드 Opus 4.7 기본 전환·루트 SKILL.md 플러그인 자동 스킬화",
     "VITE 8.0.13 — Rolldown 1.0.1 탑재·지연 번들링 지원·esbuild 컨버터 개선 및 CSS·SSR 다수 버그 수정",
@@ -93,31 +94,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.05.14",
+      "date": "2026.05.15",
       "news": [
         {
-          "id": "claude-code-21142",
+          "id": "claude-code-21143",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.142",
+          "version": "v2.1.143",
           "title": "Claude Code",
-          "date": "2026-05-14",
+          "date": "2026-05-15",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong><code>claude agents</code> 플래그 대폭 확장</strong> — <code>--add-dir</code>·<code>--settings</code>·<code>--mcp-config</code>·<code>--plugin-dir</code>·<code>--permission-mode</code>·<code>--model</code>·<code>--effort</code>·<code>--dangerously-skip-permissions</code> 8종 신규 추가로 디스패치된 백그라운드 세션을 완전 제어 가능",
-            "<strong>Fast 모드 기본 모델 Opus 4.7 전환</strong> — 기존 Opus 4.6 대신 최신 Opus 4.7이 Fast 모드 기본값으로 적용; <code>CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=1</code> 환경변수로 4.6 고정 유지 가능",
-            "<strong>루트 레벨 <code>SKILL.md</code> 플러그인 자동 스킬화</strong> — <code>skills/</code> 하위 디렉터리 없이도 플러그인 루트에 <code>SKILL.md</code>만 있으면 스킬로 자동 노출; 단일 파일 플러그인 구성 지원",
-            "<strong><code>/plugin</code> 상세 패널 및 <code>claude plugin details</code>에서 LSP 서버 목록 표시</strong> — 플러그인이 제공하는 Language Server Protocol 서버 정보를 UI와 CLI 양쪽에서 확인 가능",
-            "<strong><code>/web-setup</code> 기존 GitHub App 연결 교체 전 경고 추가</strong> — 이미 연결된 GitHub App이 있을 때 덮어쓰기 전 확인 절차 삽입으로 의도치 않은 재설정 방지",
-            "<strong><code>MCP_TOOL_TIMEOUT</code> 미적용 버그 수정</strong> — 원격 HTTP·SSE MCP 서버에서 설정값과 무관하게 60초로 고정되던 도구 호출 타임아웃 문제 해소; 장시간 도구 실행 환경에서 신뢰성 향상",
-            "<strong>백그라운드 세션 안정성 다수 개선</strong> — 기존 git worktree 미인식으로 Edit 차단·macOS 수면/깨어남 후 데몬 재연결 실패(클럭 점프 감지로 해결)·바이너리 업그레이드 후 데몬 미종료 버그 일괄 수정"
+            "<strong>플러그인 의존성 강제 적용</strong> — <code>claude plugin disable</code>이 다른 활성 플러그인이 해당 플러그인에 의존할 경우 비활성화를 거부(비활성화 체인 힌트 복사 제공); <code>claude plugin enable</code>은 전이 의존성을 자동으로 활성화",
+            "<strong><code>/plugin</code> 마켓플레이스 컨텍스트 비용 예측 추가</strong> — 브라우즈 패널에서 플러그인별 턴당·호출당 토큰 비용 추정값을 사전 확인; 플러그인 도입 전 비용 영향 판단 가능",
+            "<strong><code>worktree.bgIsolation: \"none\"</code> 설정 신규</strong> — worktree가 비현실적인 저장소에서 백그라운드 세션이 <code>EnterWorktree</code> 없이 작업 복사본을 직접 편집하도록 허용하는 격리 해제 옵션 추가",
+            "<strong><code>claude agents</code> 플래그 대폭 확장</strong> — <code>--add-dir</code>·<code>--settings</code>·<code>--mcp-config</code>·<code>--plugin-dir</code>·<code>--permission-mode</code>·<code>--model</code>·<code>--effort</code>·<code>--dangerously-skip-permissions</code> 추가로 대시보드 및 디스패치 세션 완전 제어 가능",
+            "<strong>백그라운드 세션 설정 보존 범위 대폭 확장</strong> — <code>/bg</code>·<code>←</code> detach 시 <code>--mcp-config</code>·<code>--settings</code>·<code>--fallback-model</code>·<code>--dangerously-skip-permissions</code>·<code>--add-dir</code>·<code>--plugin-dir</code> 완전 보존; 유휴 재개 후 모델·effort 레벨도 유지",
+            "<strong>PowerShell 도구 기본값 개선</strong> — <code>-ExecutionPolicy Bypass</code> 기본 전달로 실행 정책 제한 없이 스크립트 실행; Bedrock·Vertex·Foundry 사용자에게도 기본 활성화(<code>CLAUDE_CODE_USE_POWERSHELL_TOOL=0</code>으로 비활성화 가능)",
+            "<strong>버그 수정 15건 이상</strong> — <code>.credentials.json</code> 비배열 scopes로 CLI 시작 멈춤 해결·스톱 훅 연속 8회 블록 시 무한 루프 종료(<code>CLAUDE_CODE_STOP_HOOK_BLOCK_CAP</code> 조절)·macOS <code>~/Documents</code>·<code>~/Desktop</code>·<code>~/Downloads</code> 파일 접근 오류·Windows <code>claude agents</code> 키입력 멈춤·gitignored 파일 <code>rm -rf</code> 방지 등"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.142",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.143",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "142"
+          "bgNum": "143"
         },
         {
           "id": "nextjs-1626",
