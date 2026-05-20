@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 24",
+    "volume": "VOL. 002 / ISSUE 25",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.19 TUE",
+    "date": "2026.05.20 WED",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.145 — agents --json 스크립팅·OTEL 트레이스 수정·Bash 환경 변수 권한 우회 패치",
     "CLAUDE CODE v2.1.144 — /resume 백그라운드 세션 지원·터미널 렌더링 버그 3건 수정·API 미접속 시 CLI 시작 지연 해소",
     "CLAUDE CODE v2.1.143 — 플러그인 의존성 강제·agents 플래그 확장·백그라운드 세션 설정 완전 보존",
     "VERCEL v54.1.0 — connect 명령 기본 활성화·detach 신규 추가·트리거 플래그 지원",
@@ -98,28 +99,28 @@
       "date": "2026.05.19",
       "news": [
         {
-          "id": "claude-code-21144",
+          "id": "claude-code-21145",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.144",
+          "version": "v2.1.145",
           "title": "Claude Code",
           "date": "2026-05-19",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>/resume 백그라운드 세션 지원</strong> — <code>claude --bg</code>·에이전트 뷰로 시작한 세션이 <code>bg</code> 표시와 함께 대화형 세션 목록에 표시되어 즉시 이어서 작업 가능",
-            "<strong>백그라운드 서브에이전트 완료 알림에 소요 시간 추가</strong> — \"Agent completed · 3h 2m 5s\" 형식으로 작업 소요 시간 즉시 확인",
-            "<strong>/plugin 패널에 플러그인 최종 업데이트 일자 표시</strong> — browse·discover 패널에서 각 플러그인의 마지막 업데이트 시점 확인으로 유지 관리 현황 파악 가능",
-            "<strong>/model 현재 세션 전용 변경 + 기본값 분리</strong> — <code>/model</code>은 현재 세션만 변경; 모델 피커에서 <code>d</code>를 눌러 새 세션의 기본 모델 별도 지정",
-            "<strong>\"extra usage\" → \"usage credits\" 명칭 통일</strong> — <code>/usage-credits</code> 신규 추가(기존 <code>/extra-usage</code>도 계속 동작); CLI 전반 용어 일관성 개선",
-            "<strong>API 미접속 환경에서 CLI 시작 지연 최대 75초 수정</strong> — 캡티브 포털·방화벽·VPN 환경에서 사이드채널 API 호출 타임아웃을 15초로 제한하여 시작 즉각 복구",
-            "<strong>터미널 렌더링 버그 3건 수정</strong> — VS Code 분할 창 드래그 후 출력 깨짐 자동 복구(Ctrl+L 불필요)·장시간 세션 글자 잔상 해소·VS Code 스피너 색상 최적화로 렌더링 안정화"
+            "<strong>claude agents --json 추가</strong> — 실행 중인 Claude 세션을 JSON으로 출력하여 tmux-resurrect·상태 바·세션 피커 등 외부 스크립팅 도구에서 라이브 세션 목록 프로그래밍적 활용 가능",
+            "<strong>OTEL 스팬에 agent_id·parent_agent_id 속성 추가</strong> — <code>claude_code.tool</code> 스팬에 에이전트 식별자를 포함하고 백그라운드 서브에이전트 스팬이 상위 Agent 도구 스팬 하위에 정확히 중첩되도록 트레이스 부모-자식 관계 수정",
+            "<strong>상태 표시줄 JSON에 GitHub 저장소·PR 정보 추가</strong> — 감지된 경우 현재 브랜치의 GitHub 저장소 및 PR 정보를 Status Line JSON 입력에 포함하여 외부 도구 연동 강화",
+            "<strong>/plugin 설치 전 미리보기 확장</strong> — Discover·Browse 화면에서 설치 전 플러그인이 제공하는 명령·에이전트·스킬·훅·MCP/LSP 서버 전체 목록을 사전 확인 가능",
+            "<strong>claude agents 터미널 탭 타이틀에 입력 대기 수 표시</strong> — alt-tab으로 다른 창에 있어도 에이전트가 입력을 기다리는 수를 탭 타이틀로 즉시 파악",
+            "<strong>슬래시 명령·@-멘션 목록 마우스 hover·클릭 지원</strong> — 전체화면 모드에서 슬래시 명령 및 @-멘션 제안 목록에 마우스 인터랙션 지원 추가",
+            "<strong>Bash 환경 변수 권한 우회 버그 수정</strong> — 비허용 환경 변수에 대한 단순 대입 명령이 자동 승인되던 권한 우회 취약점 패치; MCP 슬래시 명령 필수 인자 누락 시 오류 메시지 누락 인자명·예상 사용법 명확화"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.144",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.145",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "144"
+          "bgNum": "145"
         },
         {
           "id": "nextjs-1626",
