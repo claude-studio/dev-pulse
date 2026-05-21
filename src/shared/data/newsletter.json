@@ -1,12 +1,13 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 27",
+    "volume": "VOL. 002 / ISSUE 28",
     "topic": "CLAUDE CODE + FRONTEND",
     "date": "2026.05.21 THU",
     "sourceCount": 8
   },
   "ticker": [
     "CLAUDE CODE v2.1.146 — /code-review 명령 신설·AskUserQuestion 억제 해소·MCP 페이지네이션·백그라운드 권한 재요청 버그 다수 수정",
+    "VITE 8.0.14 — Rolldown 1.0.2 탑재·dev 서버 오류 핸들링·HTML trailing slash 처리 수정",
     "VERCEL v54.2.0 — connect update 명령 신규·커넥터 브랜딩(아이콘·색상) 커스터마이징 지원",
     "CLAUDE CODE v2.1.145 — agents --json 스크립팅·OTEL 트레이스 수정·Bash 환경 변수 권한 우회 패치",
     "CLAUDE CODE v2.1.144 — /resume 백그라운드 세션 지원·터미널 렌더링 버그 3건 수정·API 미접속 시 CLI 시작 지연 해소",
@@ -153,7 +154,7 @@
     },
     {
       "label": "⚛️ Frontend",
-      "date": "2026.04.16 ~ 2026.05.19",
+      "date": "2026.04.16 ~ 2026.05.21",
       "news": [
         {
           "id": "typescript-603",
@@ -178,26 +179,26 @@
           "bgNum": "6"
         },
         {
-          "id": "vite-8013",
+          "id": "vite-8014",
           "category": "release",
           "variant": "wide",
           "tag": "TOOL",
-          "version": "Vite 8.0.13",
-          "title": "Vite 8.0.13",
-          "date": "2026-05-14",
+          "version": "Vite 8.0.14",
+          "title": "Vite 8.0.14",
+          "date": "2026-05-21",
           "source": "vitejs/vite",
           "bullets": [
-            "<strong>Rolldown 1.0.1 업데이트</strong> — 정식 출시 직후 첫 안정화 패치 탑재; 번들러 엔진 신뢰성 추가 강화",
-            "<strong>번들드 개발 환경 지연 번들링(Lazy Bundling) 지원 추가</strong> — 초기 dev 서버 시작 시 실제 요청이 발생한 모듈만 번들링하여 콜드 스타트 시간 단축",
-            "<strong>esbuild 플러그인 컨버터 개선</strong> — 빌드 결과물의 일부 속성을 <code>onEnd</code> 콜백에 전달하도록 옵티마이저 플러그인 컨버터 강화",
-            "<strong><code>isBundled</code> 환경별 독립 분리</strong> — 다중 환경 빌드에서 번들 상태가 환경마다 독립적으로 추적·적용되도록 수정",
-            "<strong>CSS·SSR·빌드 파이프라인 버그 수정 다수</strong> — Sass/Less/Stylus 워커 해제 비동기 처리·SSR 레이블-import 충돌·public 디렉터리 복사 순서·CSS deprecated 필드 유지 문제 일괄 수정"
+            "<strong>Rolldown 1.0.2 업데이트</strong> — 1.0.1 직후 발견된 번들러 엔진 안정성 문제 추가 패치; Rolldown 관련 의존성 전체 동기화로 빌드 신뢰성 강화",
+            "<strong>dev 서버 메시지 전송 오류 핸들링</strong> — Vite dev 서버로 메시지를 전송할 때 발생하는 예외를 적절히 포착·처리하여 서버 비정상 종료 방지",
+            "<strong>HTML trailing slash 경로 처리 수정</strong> — <code>transformIndexHtml</code>에서 후행 슬래시로 끝나는 경로를 올바르게 처리; SPA 라우팅 엣지 케이스 해소",
+            "<strong>optimizer OXC JSX 옵션 전달 개선</strong> — 의존성 스캔 중 <code>transformSync</code>에 OXC JSX 옵션을 정확히 전달하여 JSX 변환 정확도 향상",
+            "<strong>glob 절대 base 경로 import 재작성 방지</strong> — 절대 경로 base 설정 시 glob import에서 불필요한 경로 재작성을 수행하지 않도록 개선"
           ],
           "link": {
-            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.13",
+            "url": "https://github.com/vitejs/vite/releases/tag/v8.0.14",
             "label": "github.com/vitejs/vite →"
           },
-          "bgNum": "13"
+          "bgNum": "14"
         },
         {
           "id": "tailwind-430",
