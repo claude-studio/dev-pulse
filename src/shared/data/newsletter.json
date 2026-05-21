@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 26",
+    "volume": "VOL. 002 / ISSUE 27",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.20 WED",
+    "date": "2026.05.21 THU",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.146 — /code-review 명령 신설·AskUserQuestion 억제 해소·MCP 페이지네이션·백그라운드 권한 재요청 버그 다수 수정",
     "VERCEL v54.2.0 — connect update 명령 신규·커넥터 브랜딩(아이콘·색상) 커스터마이징 지원",
     "CLAUDE CODE v2.1.145 — agents --json 스크립팅·OTEL 트레이스 수정·Bash 환경 변수 권한 우회 패치",
     "CLAUDE CODE v2.1.144 — /resume 백그라운드 세션 지원·터미널 렌더링 버그 3건 수정·API 미접속 시 CLI 시작 지연 해소",
@@ -97,31 +98,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.05.19",
+      "date": "2026.05.21",
       "news": [
         {
-          "id": "claude-code-21145",
+          "id": "claude-code-21146",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.145",
+          "version": "v2.1.146",
           "title": "Claude Code",
-          "date": "2026-05-19",
+          "date": "2026-05-21",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>claude agents --json 추가</strong> — 실행 중인 Claude 세션을 JSON으로 출력하여 tmux-resurrect·상태 바·세션 피커 등 외부 스크립팅 도구에서 라이브 세션 목록 프로그래밍적 활용 가능",
-            "<strong>OTEL 스팬에 agent_id·parent_agent_id 속성 추가</strong> — <code>claude_code.tool</code> 스팬에 에이전트 식별자를 포함하고 백그라운드 서브에이전트 스팬이 상위 Agent 도구 스팬 하위에 정확히 중첩되도록 트레이스 부모-자식 관계 수정",
-            "<strong>상태 표시줄 JSON에 GitHub 저장소·PR 정보 추가</strong> — 감지된 경우 현재 브랜치의 GitHub 저장소 및 PR 정보를 Status Line JSON 입력에 포함하여 외부 도구 연동 강화",
-            "<strong>/plugin 설치 전 미리보기 확장</strong> — Discover·Browse 화면에서 설치 전 플러그인이 제공하는 명령·에이전트·스킬·훅·MCP/LSP 서버 전체 목록을 사전 확인 가능",
-            "<strong>claude agents 터미널 탭 타이틀에 입력 대기 수 표시</strong> — alt-tab으로 다른 창에 있어도 에이전트가 입력을 기다리는 수를 탭 타이틀로 즉시 파악",
-            "<strong>슬래시 명령·@-멘션 목록 마우스 hover·클릭 지원</strong> — 전체화면 모드에서 슬래시 명령 및 @-멘션 제안 목록에 마우스 인터랙션 지원 추가",
-            "<strong>Bash 환경 변수 권한 우회 버그 수정</strong> — 비허용 환경 변수에 대한 단순 대입 명령이 자동 승인되던 권한 우회 취약점 패치; MCP 슬래시 명령 필수 인자 누락 시 오류 메시지 누락 인자명·예상 사용법 명확화"
+            "<strong>/simplify → /code-review 리네임 및 effort 레벨 파라미터 추가</strong> — 코드 리뷰 명령어를 <code>/code-review</code>로 통일하고 <code>/code-review high</code>처럼 effort 레벨을 직접 지정 가능; 더 명확한 명령어 체계로 코드 품질 워크플로 개선",
+            "<strong>Auto 모드 AskUserQuestion 억제 버그 해소</strong> — 사용자 또는 스킬이 명시적으로 AskUserQuestion에 의존하는 경우에도 Auto 모드에서 해당 도구 호출이 억제되던 버그 수정; 상호작용이 필요한 스킬이 정상 동작",
+            "<strong>MCP 페이지네이션 항목 누락 수정</strong> — <code>resources/list</code>·<code>resources/templates/list</code>·<code>prompts/list</code>가 페이지네이션 서버에서 2페이지 이후 항목을 전부 드롭하던 버그 수정; 대용량 MCP 서버 통합 안정성 향상",
+            "<strong>백그라운드 세션 권한 재요청 버그 수정</strong> — 이미 \"다시 묻지 않기\"로 승인한 도구 권한을 백그라운드 세션 전환 후 다시 요청하던 문제 해소; <code>/background</code>가 스킬·커스텀 슬래시 명령만 입력한 세션도 정상 수락",
+            "<strong>Windows 환경 다수 버그 수정</strong> — winget·MS Store 경유 <code>pwsh</code> 설치 시 PowerShell 도구 \"command line is invalid\" 오류(v2.1.124 회귀)·백그라운드 워크트리 삭제 시 NTFS 정션이 메인 저장소를 따라가던 버그·GNOME Terminal 오른쪽 클릭·가운데 클릭 붙여넣기 미작동 일괄 수정",
+            "<strong>auto-updater 안정성 강화 및 diff 렌더링 성능 향상</strong> — 버전 확인·다운로드 시 일시적 네트워크 오류를 즉시 실패 대신 재시도하도록 개선; 업데이트 실패 시 상태 표시줄에 현재 버전이 표시되지 않던 문제 수정; 대용량 파일 편집 diff 렌더링 속도 개선",
+            "<strong>세션 종료·정책 적용·Subagent 모델 전달 버그 수정</strong> — Agent SDK 스트리밍 세션 종료 시 처리되지 않은 예외 수정; <code>forceLoginOrgUUID</code>·<code>forceLoginMethod</code> 관리형 정책이 서드파티·API 키 세션에 적용되지 않던 버그 수정; <code>CLAUDE_CODE_SUBAGENT_MODEL</code>이 멀티에이전트 자식 프로세스에 전달되지 않던 문제 해소"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.145",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.146",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "145"
+          "bgNum": "146"
         },
         {
           "id": "nextjs-1626",
