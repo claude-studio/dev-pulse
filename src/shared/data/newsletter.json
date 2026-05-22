@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 28",
+    "volume": "VOL. 002 / ISSUE 29",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.21 THU",
+    "date": "2026.05.22 FRI",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.147 — Pinned 백그라운드 세션 상시 유지·/code-review effort 파라미터 추가·auto-updater 재시도 안정화·프롬프트 히스토리 중복 제거",
     "CLAUDE CODE v2.1.146 — /code-review 명령 신설·AskUserQuestion 억제 해소·MCP 페이지네이션·백그라운드 권한 재요청 버그 다수 수정",
     "VITE 8.0.14 — Rolldown 1.0.2 탑재·dev 서버 오류 핸들링·HTML trailing slash 처리 수정",
     "VERCEL v54.2.0 — connect update 명령 신규·커넥터 브랜딩(아이콘·색상) 커스터마이징 지원",
@@ -102,28 +103,28 @@
       "date": "2026.05.21",
       "news": [
         {
-          "id": "claude-code-21146",
+          "id": "claude-code-21147",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.146",
+          "version": "v2.1.147",
           "title": "Claude Code",
           "date": "2026-05-21",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>/simplify → /code-review 리네임 및 effort 레벨 파라미터 추가</strong> — 코드 리뷰 명령어를 <code>/code-review</code>로 통일하고 <code>/code-review high</code>처럼 effort 레벨을 직접 지정 가능; 더 명확한 명령어 체계로 코드 품질 워크플로 개선",
-            "<strong>Auto 모드 AskUserQuestion 억제 버그 해소</strong> — 사용자 또는 스킬이 명시적으로 AskUserQuestion에 의존하는 경우에도 Auto 모드에서 해당 도구 호출이 억제되던 버그 수정; 상호작용이 필요한 스킬이 정상 동작",
-            "<strong>MCP 페이지네이션 항목 누락 수정</strong> — <code>resources/list</code>·<code>resources/templates/list</code>·<code>prompts/list</code>가 페이지네이션 서버에서 2페이지 이후 항목을 전부 드롭하던 버그 수정; 대용량 MCP 서버 통합 안정성 향상",
-            "<strong>백그라운드 세션 권한 재요청 버그 수정</strong> — 이미 \"다시 묻지 않기\"로 승인한 도구 권한을 백그라운드 세션 전환 후 다시 요청하던 문제 해소; <code>/background</code>가 스킬·커스텀 슬래시 명령만 입력한 세션도 정상 수락",
-            "<strong>Windows 환경 다수 버그 수정</strong> — winget·MS Store 경유 <code>pwsh</code> 설치 시 PowerShell 도구 \"command line is invalid\" 오류(v2.1.124 회귀)·백그라운드 워크트리 삭제 시 NTFS 정션이 메인 저장소를 따라가던 버그·GNOME Terminal 오른쪽 클릭·가운데 클릭 붙여넣기 미작동 일괄 수정",
-            "<strong>auto-updater 안정성 강화 및 diff 렌더링 성능 향상</strong> — 버전 확인·다운로드 시 일시적 네트워크 오류를 즉시 실패 대신 재시도하도록 개선; 업데이트 실패 시 상태 표시줄에 현재 버전이 표시되지 않던 문제 수정; 대용량 파일 편집 diff 렌더링 속도 개선",
-            "<strong>세션 종료·정책 적용·Subagent 모델 전달 버그 수정</strong> — Agent SDK 스트리밍 세션 종료 시 처리되지 않은 예외 수정; <code>forceLoginOrgUUID</code>·<code>forceLoginMethod</code> 관리형 정책이 서드파티·API 키 세션에 적용되지 않던 버그 수정; <code>CLAUDE_CODE_SUBAGENT_MODEL</code>이 멀티에이전트 자식 프로세스에 전달되지 않던 문제 해소"
+            "<strong>Pinned 백그라운드 세션 상시 유지</strong> — <code>claude agents</code>에서 <code>Ctrl+T</code>로 고정된 세션이 유휴 상태에서도 종료되지 않고 유지; Claude Code 업데이트 적용 시 제자리에서 자동 재시작되며, 메모리 부족 시에는 비고정 세션보다 나중에 해제",
+            "<strong>/code-review effort 레벨 파라미터 추가</strong> — <code>/code-review high</code>처럼 effort 레벨을 직접 지정해 정확성 버그 탐지 범위 조절; <code>--comment</code> 플래그로 발견 사항을 GitHub PR 인라인 코멘트로 자동 게시; 기존 코드 정리·수정 동작은 이번 버전에서 제거",
+            "<strong>auto-updater 재시도 안정화 및 오류 표시 개선</strong> — 버전 확인·다운로드 중 일시적 네트워크 오류를 즉시 실패 대신 재시도; 오류 발생 시 분류명과 OS 오류 코드를 구체적으로 표시; 업데이트 실패 시 상태 표시줄에 현재 버전 표시",
+            "<strong>대용량 파일 diff 렌더링 성능 향상</strong> — 대용량 파일 편집 시 생성되는 diff의 렌더링 속도 개선; 긴 파일 수정 작업 시 응답성 향상",
+            "<strong>프롬프트 히스토리 연속 중복 미기록</strong> — 화살표 위로 이전 프롬프트를 불러와 그대로 다시 제출해도 히스토리에 중복 추가되지 않음; 반복 명령 실행 시 히스토리 오염 방지",
+            "<strong>엔터프라이즈 로그인 정책 적용 버그 수정</strong> — <code>forceLoginOrgUUID</code>·<code>forceLoginMethod</code> 관리형 설정이 서드파티 공급자·API 키 세션에 적용되지 않던 버그 수정; 조직 보안 정책이 모든 인증 방식에 일관 적용",
+            "<strong>! 명령 출력 <code>&amp;</code> 이스케이프 버그 수정</strong> — <code>!</code> 명령 실행 결과에서 <code>&amp;</code>가 <code>&amp;amp;</code>로 잘못 표시되어 <code>gcloud auth login</code> 등의 URL 복붙이 깨지던 문제 해소; 헤드리스 머신에서 URL 기반 인증 워크플로 정상화"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.146",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.147",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "146"
+          "bgNum": "147"
         },
         {
           "id": "nextjs-1626",
