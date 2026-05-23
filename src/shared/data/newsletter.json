@@ -1,11 +1,12 @@
 {
   "meta": {
-    "volume": "VOL. 002 / ISSUE 30",
+    "volume": "VOL. 002 / ISSUE 31",
     "topic": "CLAUDE CODE + FRONTEND",
-    "date": "2026.05.22 FRI",
+    "date": "2026.05.23 SAT",
     "sourceCount": 8
   },
   "ticker": [
+    "CLAUDE CODE v2.1.149 — /usage 카테고리별 한도 분석·/diff 키보드 스크롤·GFM 체크박스·PowerShell 보안 패치 및 20건 이상 버그 수정",
     "CLAUDE CODE v2.1.148 — Bash exit code 127 회귀 버그 긴급 수정",
     "CLAUDE CODE v2.1.147 — Pinned 백그라운드 세션 상시 유지·/code-review effort 파라미터 추가·auto-updater 재시도 안정화·프롬프트 히스토리 중복 제거",
     "CLAUDE CODE v2.1.146 — /code-review 명령 신설·AskUserQuestion 억제 해소·MCP 페이지네이션·백그라운드 권한 재요청 버그 다수 수정",
@@ -101,31 +102,31 @@
   "sections": [
     {
       "label": "🤖 Claude Code / AI",
-      "date": "2026.05.22",
+      "date": "2026.05.23",
       "news": [
         {
-          "id": "claude-code-21148",
+          "id": "claude-code-21149",
           "category": "tool",
           "variant": "hero",
           "tag": "TOOL",
-          "version": "v2.1.148",
+          "version": "v2.1.149",
           "title": "Claude Code",
           "date": "2026-05-22",
           "source": "anthropics/claude-code",
           "bullets": [
-            "<strong>Bash 도구 exit code 127 회귀 버그 긴급 수정</strong> — v2.1.147 배포 직후 일부 사용자 환경에서 Bash 도구로 실행하는 모든 명령이 exit code 127(명령을 찾을 수 없음)을 반환하던 심각한 회귀 버그 해소; 영향받은 환경에서 셸 작업 전체가 중단되던 상태 정상화",
-            "<strong>exit code 127 영향 범위</strong> — exit code 127은 셸이 명령 경로를 찾지 못했을 때 반환하는 표준 오류 코드; 일부 시스템에서 PATH 처리 이상으로 단순 명령 하나가 아닌 모든 Bash 실행이 실패하여 실질적 작업 불가 상태 초래",
-            "<strong>v2.1.147 회귀 원인 격리</strong> — 전 버전에서 도입된 Bash 환경 초기화 개선 코드가 특정 시스템 구성과 충돌하여 발생; 해당 코드 경로를 격리·수정하여 재발 방지",
-            "<strong>v2.1.147 핵심 기능 완전 유지</strong> — Pinned 백그라운드 세션 상시 유지·/code-review effort 파라미터·auto-updater 재시도 안정화·프롬프트 히스토리 중복 제거 등 v2.1.147의 모든 기능을 그대로 계승하며 회귀만 제거",
-            "<strong>일부 사용자 환경에서만 재현</strong> — 모든 환경이 아닌 특정 시스템 구성(OS 종류·셸 설정 등)에서만 발생한 문제였으나 해당 환경에서는 Bash 도구 전면 마비; Claude Code 팀이 보고 수신 후 수 시간 내 진단 및 배포",
-            "<strong>자동 업데이터로 무중단 전파</strong> — 내장 auto-updater를 통해 사용자 개입 없이 v2.1.148 자동 전파; 수동 업데이트는 <code>npm install -g @anthropic-ai/claude-code@latest</code> 또는 <code>/update</code> 명령으로 즉시 적용 가능",
-            "<strong>핫픽스 릴리즈 체계 신뢰성 검증</strong> — 회귀 감지·진단·배포까지 최단 시간 내 처리; 향후 Bash 도구 환경 변수·경로 처리 관련 변경에 대한 회귀 테스트 강화 예정"
+            "<strong>/usage 카테고리별 한도 분석</strong> — skills·subagents·plugins·MCP 서버별 비용 내역을 항목 단위로 분류해 현재 한도 사용량의 원인을 한눈에 파악; 어느 구성요소가 한도를 소모하는지 즉시 진단 가능",
+            "<strong>/diff 키보드 스크롤 지원</strong> — diff 상세 보기에서 방향키·<code>j</code>/<code>k</code>·<code>PgUp</code>/<code>PgDn</code>·<code>Space</code>·<code>Home</code>/<code>End</code>로 키보드 전용 탐색 가능; 마우스 없이도 대용량 패치 전체 검토 원활",
+            "<strong>GFM 태스크 리스트 체크박스 렌더링</strong> — Markdown 출력에서 <code>- [ ] todo</code>/<code>- [x] done</code> 형식의 GitHub Flavored Markdown 체크박스를 일반 bullet 대신 실제 체크박스로 시각화",
+            "<strong>Enterprise: allowAllClaudeAiMcps 관리 설정 추가</strong> — <code>managed-mcp.json</code>과 함께 claude.ai 클라우드 MCP 커넥터 전체를 로드하는 엔터프라이즈 전용 관리 설정 옵션 신규 지원; 중앙 관리 환경에서 MCP 커넥터 배포 간소화",
+            "<strong>PowerShell 권한 우회 보안 패치</strong> — 내장 <code>cd</code> 함수(<code>cd..</code>·<code>cd\\</code>·<code>cd~</code>·<code>X:</code>)가 감지되지 않은 채 작업 디렉토리를 변경하여 워크스페이스 외부 파일에 접근 가능하던 취약점 차단; 권한 분석기 <code>PWD</code>/<code>OLDPWD</code>/<code>DIRSTACK</code> 스테일 추적값 신뢰 버그도 함께 수정",
+            "<strong>git worktree 샌드박스 쓰기 허용 범위 수정</strong> — worktree에서 쓰기 허용 목록이 전체 메인 저장소 루트를 포함하던 버그 수정; 이제 공유 <code>.git</code> 디렉토리만 허용하며 <code>hooks/</code>·<code>config</code>는 명시적으로 차단",
+            "<strong>20건 이상 UX·버그 수정</strong> — <code>/ultraplan</code> 원격 세션 \"uncommitted changes 캡처 불가\" 오류 해소·<code>find</code>로 macOS 파일 테이블 소진 크래시 수정·<code>/config</code> 팬텀 변경 보고·<code>/insights</code> 선택 필드 누락 크래시·<code>Ctrl+O</code> 트랜스크립트 뷰 동결·프롬프트 히스토리 중복 제출 등 다수 수정"
           ],
           "link": {
-            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.148",
+            "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.149",
             "label": "github.com/anthropics/claude-code →"
           },
-          "bgNum": "148"
+          "bgNum": "149"
         },
         {
           "id": "nextjs-1626",
